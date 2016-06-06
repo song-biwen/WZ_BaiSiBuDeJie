@@ -53,8 +53,11 @@
 
 - (void)configueViewWithViewController:(UIViewController *)VC tabBarItemWithTitile:(NSString *)title withImageName:(NSString *)imageName withSelectedImageName:(NSString *)selectedImageName {
     
-    /** 随机数函数arc4random_uniform（x），可以用来产生0～(x-1)范围内的随机数 */
-    VC.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
+    /** 
+      1.随机数函数arc4random_uniform（x），可以用来产生0～(x-1)范围内的随机数
+      2.这样会提前创建视图 即项目启动时，把【VC viewDidLoad】全部都走一遍
+      VC.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
+     */
     
     /** 设置tabbarItem的标题 颜色 字体大小 */
     VC.tabBarItem.title = title;

@@ -26,6 +26,7 @@
      */
     
     self.navigationItem.title = @"我的";
+    self.view.backgroundColor = WZColorDefault;
     
     /*
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];

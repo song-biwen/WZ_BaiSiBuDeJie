@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+/** 我的关注 */
 @interface WZFriendTrendsViewController : UIViewController
 
 @end

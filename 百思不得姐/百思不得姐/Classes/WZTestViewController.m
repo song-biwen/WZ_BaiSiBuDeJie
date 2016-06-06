@@ -1,22 +1,24 @@
 //
-//  WZNavigationController.m
+//  WZTestViewController.m
 //  百思不得姐
 //
-//  Created by songbiwen on 16/6/3.
+//  Created by songbiwen on 16/6/6.
 //  Copyright © 2016年 songbiwen. All rights reserved.
 //
 
-#import "WZNavigationController.h"
+#import "WZTestViewController.h"
 
-@interface WZNavigationController ()
+@interface WZTestViewController ()
 
 @end
 
-@implementation WZNavigationController
+@implementation WZTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"WZTestViewController";
+    self.view.backgroundColor = WZColorDefault;
 }
 
 - (void)didReceiveMemoryWarning {

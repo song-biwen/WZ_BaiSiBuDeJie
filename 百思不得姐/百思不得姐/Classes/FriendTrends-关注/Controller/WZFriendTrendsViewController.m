@@ -8,6 +8,9 @@
 
 #import "WZFriendTrendsViewController.h"
 
+#import "WZRecommendViewController.h" //推荐关注
+
+
 @interface WZFriendTrendsViewController ()
 
 @end
@@ -25,7 +28,8 @@
      self.tabBarItem.title = @"我的关注";
      */
     
-    self.navigationItem.title = @"我的关注";
+    self.title = @"我的关注";
+    self.view.backgroundColor = WZColorDefault;
     
     /*
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -39,7 +43,10 @@
 }
 
 - (void)buttonAction {
-    WZLogFunc;
+//    WZLogFunc;
+    WZRecommendViewController *vc = [[WZRecommendViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end

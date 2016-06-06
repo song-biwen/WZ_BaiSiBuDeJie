@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.navigationItem.titleView = WZImageView(@"MainTitle");
+    self.view.backgroundColor = WZColorDefault;
     
     /*
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

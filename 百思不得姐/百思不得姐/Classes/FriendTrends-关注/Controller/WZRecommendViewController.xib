@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WZRecommendViewController">
+            <connections>
+                <outlet property="left_tableView" destination="XIA-J7-bh1" id="3Fm-Mk-Njn"/>
+                <outlet property="right_tableView" destination="kaL-hw-PlG" id="ARD-GI-lCe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Vr-zo-i2w" userLabel="View-左边">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-J7-bh1">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="AxN-a9-d8Q"/>
+                                <outlet property="delegate" destination="-1" id="7JZ-tR-fzV"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="XIA-J7-bh1" secondAttribute="trailing" id="Dqm-YR-AG0"/>
+                        <constraint firstItem="XIA-J7-bh1" firstAttribute="leading" secondItem="4Vr-zo-i2w" secondAttribute="leading" id="Pyh-lN-PWP"/>
+                        <constraint firstAttribute="bottom" secondItem="XIA-J7-bh1" secondAttribute="bottom" id="auw-5G-TdX"/>
+                        <constraint firstItem="XIA-J7-bh1" firstAttribute="top" secondItem="4Vr-zo-i2w" secondAttribute="top" id="dzQ-Ka-PyM"/>
+                        <constraint firstAttribute="width" constant="80" id="iOx-m5-mBV"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH8-yg-JGw" userLabel="View-右边">
+                    <rect key="frame" x="80" y="0.0" width="520" height="600"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kaL-hw-PlG">
+                            <rect key="frame" x="0.0" y="0.0" width="520" height="600"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="jSE-Xi-IH4"/>
+                                <outlet property="delegate" destination="-1" id="im1-WH-uQj"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="kaL-hw-PlG" firstAttribute="leading" secondItem="sH8-yg-JGw" secondAttribute="leading" id="0Ub-tD-mAb"/>
+                        <constraint firstAttribute="trailing" secondItem="kaL-hw-PlG" secondAttribute="trailing" id="Fhz-QQ-nnQ"/>
+                        <constraint firstAttribute="width" constant="80" id="HM4-ON-XyK"/>
+                        <constraint firstItem="kaL-hw-PlG" firstAttribute="top" secondItem="sH8-yg-JGw" secondAttribute="top" id="JqR-ov-DJI"/>
+                        <constraint firstAttribute="bottom" secondItem="kaL-hw-PlG" secondAttribute="bottom" id="zdA-Eo-Y1R"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="HM4-ON-XyK"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sH8-yg-JGw" secondAttribute="trailing" id="Fcs-Si-NJH"/>
+                <constraint firstItem="4Vr-zo-i2w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kbz-8n-sRb"/>
+                <constraint firstAttribute="bottom" secondItem="sH8-yg-JGw" secondAttribute="bottom" id="LuD-O9-x9G"/>
+                <constraint firstItem="4Vr-zo-i2w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X45-A8-rFU"/>
+                <constraint firstAttribute="bottom" secondItem="4Vr-zo-i2w" secondAttribute="bottom" id="Y4n-2i-nKv"/>
+                <constraint firstItem="sH8-yg-JGw" firstAttribute="leading" secondItem="4Vr-zo-i2w" secondAttribute="trailing" id="u0x-hi-DVf"/>
+                <constraint firstItem="sH8-yg-JGw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wTm-yg-djt"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

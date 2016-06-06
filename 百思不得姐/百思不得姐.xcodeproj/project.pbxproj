@@ -7,51 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C82F5E31D001EC10044509D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82F5E21D001EC10044509D /* main.m */; };
-		4C82F5E61D001EC10044509D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82F5E51D001EC10044509D /* AppDelegate.m */; };
+		4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AA1D054EE100F18B82 /* WZFriendTrendsViewController.xib */; };
+		4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */; };
+		4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AF1D055A4900F18B82 /* WZRecommendViewController.m */; };
+		4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1DA4B01D055A4900F18B82 /* WZRecommendViewController.xib */; };
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
-		4C947F851D0128A900443770 /* WZHomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947F841D0128A900443770 /* WZHomeTabBarController.m */; };
-		4C947F891D01539900443770 /* WZEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947F881D01539900443770 /* WZEssenceViewController.m */; };
-		4C947F8C1D0153A500443770 /* WZNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947F8B1D0153A500443770 /* WZNewViewController.m */; };
-		4C947F8F1D0153B200443770 /* WZPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947F8E1D0153B200443770 /* WZPublishViewController.m */; };
-		4C947F921D0153BD00443770 /* WZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947F911D0153BD00443770 /* WZMeViewController.m */; };
-		4C947F951D0153D400443770 /* WZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947F941D0153D400443770 /* WZFriendTrendsViewController.m */; };
-		4C947F9B1D015C6A00443770 /* WZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947F9A1D015C6A00443770 /* WZTabBar.m */; };
-		4C947FA51D01783400443770 /* WZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947FA41D01783400443770 /* WZNavigationController.m */; };
-		4C947FA81D017DCF00443770 /* UIView+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947FA71D017DCF00443770 /* UIView+WZCategory.m */; };
-		4C947FAB1D017E2500443770 /* UIBarButtonItem+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C947FAA1D017E2500443770 /* UIBarButtonItem+WZCategory.m */; };
+		4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0751D050F2F00A7FAF5 /* WZEssenceViewController.m */; };
+		4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE07B1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m */; };
+		4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0811D050F2F00A7FAF5 /* WZMeViewController.m */; };
+		4CBDE0A11D050F2F00A7FAF5 /* WZNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0871D050F2F00A7FAF5 /* WZNewViewController.m */; };
+		4CBDE0A21D050F2F00A7FAF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE08C1D050F2F00A7FAF5 /* AppDelegate.m */; };
+		4CBDE0A31D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE08F1D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m */; };
+		4CBDE0A41D050F2F00A7FAF5 /* UIView+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0911D050F2F00A7FAF5 /* UIView+WZCategory.m */; };
+		4CBDE0A51D050F2F00A7FAF5 /* WZHomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0941D050F2F00A7FAF5 /* WZHomeTabBarController.m */; };
+		4CBDE0A61D050F2F00A7FAF5 /* WZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0961D050F2F00A7FAF5 /* WZNavigationController.m */; };
+		4CBDE0A71D050F2F00A7FAF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0971D050F2F00A7FAF5 /* main.m */; };
+		4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE09B1D050F2F00A7FAF5 /* WZTabBar.m */; };
+		4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */; };
+		4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */; };
+		4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */; };
+		4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */; };
+		4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */; };
+		4CD610E11D05604E00B2580E /* WZRecommandRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD610DF1D05604E00B2580E /* WZRecommandRightTableViewCell.xib */; };
 		8A452A1E3AA9C08076620E6F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 644AE6A22815CDDE03BBF66F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C1DA4AA1D054EE100F18B82 /* WZFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZFriendTrendsViewController.xib; sourceTree = "<group>"; };
+		4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		4C1DA4AE1D055A4900F18B82 /* WZRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommendViewController.h; sourceTree = "<group>"; };
+		4C1DA4AF1D055A4900F18B82 /* WZRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommendViewController.m; sourceTree = "<group>"; };
+		4C1DA4B01D055A4900F18B82 /* WZRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommendViewController.xib; sourceTree = "<group>"; };
 		4C82F5DE1D001EC10044509D /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C82F5E21D001EC10044509D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4C82F5E41D001EC10044509D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4C82F5E51D001EC10044509D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C82F5ED1D001EC10044509D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C82F5F21D001EC10044509D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C947F831D0128A900443770 /* WZHomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZHomeTabBarController.h; sourceTree = "<group>"; };
-		4C947F841D0128A900443770 /* WZHomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZHomeTabBarController.m; sourceTree = "<group>"; };
-		4C947F861D012BD500443770 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		4C947F871D01539900443770 /* WZEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceViewController.h; sourceTree = "<group>"; };
-		4C947F881D01539900443770 /* WZEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceViewController.m; sourceTree = "<group>"; };
-		4C947F8A1D0153A500443770 /* WZNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZNewViewController.h; sourceTree = "<group>"; };
-		4C947F8B1D0153A500443770 /* WZNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZNewViewController.m; sourceTree = "<group>"; };
-		4C947F8D1D0153B200443770 /* WZPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZPublishViewController.h; sourceTree = "<group>"; };
-		4C947F8E1D0153B200443770 /* WZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZPublishViewController.m; sourceTree = "<group>"; };
-		4C947F901D0153BD00443770 /* WZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeViewController.h; sourceTree = "<group>"; };
-		4C947F911D0153BD00443770 /* WZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZMeViewController.m; sourceTree = "<group>"; };
-		4C947F931D0153D400443770 /* WZFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZFriendTrendsViewController.h; sourceTree = "<group>"; };
-		4C947F941D0153D400443770 /* WZFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZFriendTrendsViewController.m; sourceTree = "<group>"; };
-		4C947F991D015C6A00443770 /* WZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTabBar.h; sourceTree = "<group>"; };
-		4C947F9A1D015C6A00443770 /* WZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTabBar.m; sourceTree = "<group>"; };
-		4C947FA31D01783400443770 /* WZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZNavigationController.h; sourceTree = "<group>"; };
-		4C947FA41D01783400443770 /* WZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZNavigationController.m; sourceTree = "<group>"; };
-		4C947FA61D017DCF00443770 /* UIView+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WZCategory.h"; sourceTree = "<group>"; };
-		4C947FA71D017DCF00443770 /* UIView+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WZCategory.m"; sourceTree = "<group>"; };
-		4C947FA91D017E2500443770 /* UIBarButtonItem+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WZCategory.h"; sourceTree = "<group>"; };
-		4C947FAA1D017E2500443770 /* UIBarButtonItem+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WZCategory.m"; sourceTree = "<group>"; };
 		4C947FAC1D0180B100443770 /* 笔记.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "笔记.h"; sourceTree = "<group>"; };
+		4CBDE0741D050F2F00A7FAF5 /* WZEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceViewController.h; sourceTree = "<group>"; };
+		4CBDE0751D050F2F00A7FAF5 /* WZEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceViewController.m; sourceTree = "<group>"; };
+		4CBDE07A1D050F2F00A7FAF5 /* WZFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZFriendTrendsViewController.h; sourceTree = "<group>"; };
+		4CBDE07B1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZFriendTrendsViewController.m; sourceTree = "<group>"; };
+		4CBDE0801D050F2F00A7FAF5 /* WZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeViewController.h; sourceTree = "<group>"; };
+		4CBDE0811D050F2F00A7FAF5 /* WZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZMeViewController.m; sourceTree = "<group>"; };
+		4CBDE0861D050F2F00A7FAF5 /* WZNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZNewViewController.h; sourceTree = "<group>"; };
+		4CBDE0871D050F2F00A7FAF5 /* WZNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZNewViewController.m; sourceTree = "<group>"; };
+		4CBDE08B1D050F2F00A7FAF5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4CBDE08C1D050F2F00A7FAF5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4CBDE08E1D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WZCategory.h"; sourceTree = "<group>"; };
+		4CBDE08F1D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WZCategory.m"; sourceTree = "<group>"; };
+		4CBDE0901D050F2F00A7FAF5 /* UIView+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WZCategory.h"; sourceTree = "<group>"; };
+		4CBDE0911D050F2F00A7FAF5 /* UIView+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WZCategory.m"; sourceTree = "<group>"; };
+		4CBDE0931D050F2F00A7FAF5 /* WZHomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZHomeTabBarController.h; sourceTree = "<group>"; };
+		4CBDE0941D050F2F00A7FAF5 /* WZHomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZHomeTabBarController.m; sourceTree = "<group>"; };
+		4CBDE0951D050F2F00A7FAF5 /* WZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZNavigationController.h; sourceTree = "<group>"; };
+		4CBDE0961D050F2F00A7FAF5 /* WZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZNavigationController.m; sourceTree = "<group>"; };
+		4CBDE0971D050F2F00A7FAF5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CBDE0981D050F2F00A7FAF5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4CBDE09A1D050F2F00A7FAF5 /* WZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTabBar.h; sourceTree = "<group>"; };
+		4CBDE09B1D050F2F00A7FAF5 /* WZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTabBar.m; sourceTree = "<group>"; };
+		4CBDE09C1D050F2F00A7FAF5 /* WZPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZPublishViewController.h; sourceTree = "<group>"; };
+		4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZPublishViewController.m; sourceTree = "<group>"; };
+		4CBDE0AA1D051C9800A7FAF5 /* WZTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTestViewController.h; sourceTree = "<group>"; };
+		4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTestViewController.m; sourceTree = "<group>"; };
+		4CD610D81D05603900B2580E /* WZRecommandLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandLeftTableViewCell.h; sourceTree = "<group>"; };
+		4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandLeftTableViewCell.m; sourceTree = "<group>"; };
+		4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandLeftTableViewCell.xib; sourceTree = "<group>"; };
+		4CD610DD1D05604E00B2580E /* WZRecommandRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandRightTableViewCell.h; sourceTree = "<group>"; };
+		4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandRightTableViewCell.m; sourceTree = "<group>"; };
+		4CD610DF1D05604E00B2580E /* WZRecommandRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandRightTableViewCell.xib; sourceTree = "<group>"; };
 		5A2997A7562692472BB1CAC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		644AE6A22815CDDE03BBF66F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BE7918B4C31BDC980EE819 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,13 +121,7 @@
 		4C82F5E01D001EC10044509D /* 百思不得姐 */ = {
 			isa = PBXGroup;
 			children = (
-				4C947F9C1D01624700443770 /* FriendTrends */,
-				4C947F9D1D01626600443770 /* Essence */,
-				4C947F9E1D01627000443770 /* New */,
-				4C947F9F1D01627900443770 /* Publish */,
-				4C947FA01D01628200443770 /* Me */,
-				4C947FA21D01630800443770 /* Main */,
-				4C947FA11D01629500443770 /* Other */,
+				4CBDE0711D050F2F00A7FAF5 /* Classes */,
 				4C82F5E11D001EC10044509D /* Supporting Files */,
 			);
 			path = "百思不得姐";
@@ -116,82 +132,213 @@
 			children = (
 				4C82F5ED1D001EC10044509D /* Assets.xcassets */,
 				4C82F5F21D001EC10044509D /* Info.plist */,
-				4C82F5E21D001EC10044509D /* main.m */,
-				4C947F861D012BD500443770 /* PrefixHeader.pch */,
 				4C947FAC1D0180B100443770 /* 笔记.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4C947F9C1D01624700443770 /* FriendTrends */ = {
+		4CBDE0711D050F2F00A7FAF5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4C947F931D0153D400443770 /* WZFriendTrendsViewController.h */,
-				4C947F941D0153D400443770 /* WZFriendTrendsViewController.m */,
+				4CBDE0721D050F2F00A7FAF5 /* Essence-精华 */,
+				4CBDE0841D050F2F00A7FAF5 /* New-新帖 */,
+				4CBDE0781D050F2F00A7FAF5 /* FriendTrends-关注 */,
+				4CBDE07E1D050F2F00A7FAF5 /* Me-我 */,
+				4CBDE08A1D050F2F00A7FAF5 /* Other-其他 */,
+				4CBDE09C1D050F2F00A7FAF5 /* WZPublishViewController.h */,
+				4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */,
+				4CBDE0AA1D051C9800A7FAF5 /* WZTestViewController.h */,
+				4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */,
 			);
-			name = FriendTrends;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		4C947F9D1D01626600443770 /* Essence */ = {
+		4CBDE0721D050F2F00A7FAF5 /* Essence-精华 */ = {
 			isa = PBXGroup;
 			children = (
-				4C947F871D01539900443770 /* WZEssenceViewController.h */,
-				4C947F881D01539900443770 /* WZEssenceViewController.m */,
+				4CBDE0731D050F2F00A7FAF5 /* Controller */,
+				4CBDE0761D050F2F00A7FAF5 /* Model */,
+				4CBDE0771D050F2F00A7FAF5 /* View */,
 			);
-			name = Essence;
+			path = "Essence-精华";
 			sourceTree = "<group>";
 		};
-		4C947F9E1D01627000443770 /* New */ = {
+		4CBDE0731D050F2F00A7FAF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4C947F8A1D0153A500443770 /* WZNewViewController.h */,
-				4C947F8B1D0153A500443770 /* WZNewViewController.m */,
+				4CBDE0741D050F2F00A7FAF5 /* WZEssenceViewController.h */,
+				4CBDE0751D050F2F00A7FAF5 /* WZEssenceViewController.m */,
 			);
-			name = New;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		4C947F9F1D01627900443770 /* Publish */ = {
+		4CBDE0761D050F2F00A7FAF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4C947F8D1D0153B200443770 /* WZPublishViewController.h */,
-				4C947F8E1D0153B200443770 /* WZPublishViewController.m */,
 			);
-			name = Publish;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		4C947FA01D01628200443770 /* Me */ = {
+		4CBDE0771D050F2F00A7FAF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4C947F901D0153BD00443770 /* WZMeViewController.h */,
-				4C947F911D0153BD00443770 /* WZMeViewController.m */,
 			);
-			name = Me;
+			path = View;
 			sourceTree = "<group>";
 		};
-		4C947FA11D01629500443770 /* Other */ = {
+		4CBDE0781D050F2F00A7FAF5 /* FriendTrends-关注 */ = {
 			isa = PBXGroup;
 			children = (
-				4C82F5E41D001EC10044509D /* AppDelegate.h */,
-				4C82F5E51D001EC10044509D /* AppDelegate.m */,
-				4C947FA61D017DCF00443770 /* UIView+WZCategory.h */,
-				4C947FA71D017DCF00443770 /* UIView+WZCategory.m */,
-				4C947F991D015C6A00443770 /* WZTabBar.h */,
-				4C947F9A1D015C6A00443770 /* WZTabBar.m */,
-				4C947FA91D017E2500443770 /* UIBarButtonItem+WZCategory.h */,
-				4C947FAA1D017E2500443770 /* UIBarButtonItem+WZCategory.m */,
+				4CBDE0791D050F2F00A7FAF5 /* Controller */,
+				4CBDE07C1D050F2F00A7FAF5 /* Model */,
+				4CBDE07D1D050F2F00A7FAF5 /* View */,
 			);
-			name = Other;
+			path = "FriendTrends-关注";
 			sourceTree = "<group>";
 		};
-		4C947FA21D01630800443770 /* Main */ = {
+		4CBDE0791D050F2F00A7FAF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4C947F831D0128A900443770 /* WZHomeTabBarController.h */,
-				4C947F841D0128A900443770 /* WZHomeTabBarController.m */,
-				4C947FA31D01783400443770 /* WZNavigationController.h */,
-				4C947FA41D01783400443770 /* WZNavigationController.m */,
+				4CBDE07A1D050F2F00A7FAF5 /* WZFriendTrendsViewController.h */,
+				4CBDE07B1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m */,
+				4C1DA4AA1D054EE100F18B82 /* WZFriendTrendsViewController.xib */,
+				4C1DA4AE1D055A4900F18B82 /* WZRecommendViewController.h */,
+				4C1DA4AF1D055A4900F18B82 /* WZRecommendViewController.m */,
+				4C1DA4B01D055A4900F18B82 /* WZRecommendViewController.xib */,
 			);
-			name = Main;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CBDE07C1D050F2F00A7FAF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CBDE07D1D050F2F00A7FAF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CD610D81D05603900B2580E /* WZRecommandLeftTableViewCell.h */,
+				4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */,
+				4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */,
+				4CD610DD1D05604E00B2580E /* WZRecommandRightTableViewCell.h */,
+				4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */,
+				4CD610DF1D05604E00B2580E /* WZRecommandRightTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CBDE07E1D050F2F00A7FAF5 /* Me-我 */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE07F1D050F2F00A7FAF5 /* Controller */,
+				4CBDE0821D050F2F00A7FAF5 /* Model */,
+				4CBDE0831D050F2F00A7FAF5 /* View */,
+			);
+			path = "Me-我";
+			sourceTree = "<group>";
+		};
+		4CBDE07F1D050F2F00A7FAF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE0801D050F2F00A7FAF5 /* WZMeViewController.h */,
+				4CBDE0811D050F2F00A7FAF5 /* WZMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CBDE0821D050F2F00A7FAF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CBDE0831D050F2F00A7FAF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CBDE0841D050F2F00A7FAF5 /* New-新帖 */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE0851D050F2F00A7FAF5 /* Controller */,
+				4CBDE0881D050F2F00A7FAF5 /* Model */,
+				4CBDE0891D050F2F00A7FAF5 /* View */,
+			);
+			path = "New-新帖";
+			sourceTree = "<group>";
+		};
+		4CBDE0851D050F2F00A7FAF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE0861D050F2F00A7FAF5 /* WZNewViewController.h */,
+				4CBDE0871D050F2F00A7FAF5 /* WZNewViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CBDE0881D050F2F00A7FAF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CBDE0891D050F2F00A7FAF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CBDE08A1D050F2F00A7FAF5 /* Other-其他 */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE08D1D050F2F00A7FAF5 /* Category */,
+				4CBDE0921D050F2F00A7FAF5 /* Controller */,
+				4CBDE0991D050F2F00A7FAF5 /* View */,
+				4CBDE08B1D050F2F00A7FAF5 /* AppDelegate.h */,
+				4CBDE08C1D050F2F00A7FAF5 /* AppDelegate.m */,
+				4CBDE0971D050F2F00A7FAF5 /* main.m */,
+				4CBDE0981D050F2F00A7FAF5 /* PrefixHeader.pch */,
+				4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */,
+			);
+			path = "Other-其他";
+			sourceTree = "<group>";
+		};
+		4CBDE08D1D050F2F00A7FAF5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE08E1D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.h */,
+				4CBDE08F1D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m */,
+				4CBDE0901D050F2F00A7FAF5 /* UIView+WZCategory.h */,
+				4CBDE0911D050F2F00A7FAF5 /* UIView+WZCategory.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		4CBDE0921D050F2F00A7FAF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE0931D050F2F00A7FAF5 /* WZHomeTabBarController.h */,
+				4CBDE0941D050F2F00A7FAF5 /* WZHomeTabBarController.m */,
+				4CBDE0951D050F2F00A7FAF5 /* WZNavigationController.h */,
+				4CBDE0961D050F2F00A7FAF5 /* WZNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CBDE0991D050F2F00A7FAF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE09A1D050F2F00A7FAF5 /* WZTabBar.h */,
+				4CBDE09B1D050F2F00A7FAF5 /* WZTabBar.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9835DD8ABC15F3C192E147E0 /* Frameworks */ = {
@@ -263,7 +410,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */,
+				4CD610E11D05604E00B2580E /* WZRecommandRightTableViewCell.xib in Resources */,
+				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
+				4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,18 +473,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C947F851D0128A900443770 /* WZHomeTabBarController.m in Sources */,
-				4C947F951D0153D400443770 /* WZFriendTrendsViewController.m in Sources */,
-				4C947F8F1D0153B200443770 /* WZPublishViewController.m in Sources */,
-				4C947FAB1D017E2500443770 /* UIBarButtonItem+WZCategory.m in Sources */,
-				4C82F5E61D001EC10044509D /* AppDelegate.m in Sources */,
-				4C947F8C1D0153A500443770 /* WZNewViewController.m in Sources */,
-				4C947F921D0153BD00443770 /* WZMeViewController.m in Sources */,
-				4C947FA51D01783400443770 /* WZNavigationController.m in Sources */,
-				4C947F891D01539900443770 /* WZEssenceViewController.m in Sources */,
-				4C947FA81D017DCF00443770 /* UIView+WZCategory.m in Sources */,
-				4C947F9B1D015C6A00443770 /* WZTabBar.m in Sources */,
-				4C82F5E31D001EC10044509D /* main.m in Sources */,
+				4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */,
+				4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */,
+				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
+				4CBDE0A71D050F2F00A7FAF5 /* main.m in Sources */,
+				4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */,
+				4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */,
+				4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */,
+				4CBDE0A11D050F2F00A7FAF5 /* WZNewViewController.m in Sources */,
+				4CBDE0A31D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m in Sources */,
+				4CBDE0A61D050F2F00A7FAF5 /* WZNavigationController.m in Sources */,
+				4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */,
+				4CBDE0A41D050F2F00A7FAF5 /* UIView+WZCategory.m in Sources */,
+				4CBDE0A51D050F2F00A7FAF5 /* WZHomeTabBarController.m in Sources */,
+				4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */,
+				4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */,
+				4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */,
+				4CBDE0A21D050F2F00A7FAF5 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +584,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PREFIX_HEADER = "/Users/songbiwen/WZ_BaiSiBuDeJie/百思不得姐/百思不得姐/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/songbiwen/WZ_BaiSiBuDeJie/百思不得姐/百思不得姐/Classes/Other-其他/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.renhedao.-----";
@@ -442,7 +598,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PREFIX_HEADER = "/Users/songbiwen/WZ_BaiSiBuDeJie/百思不得姐/百思不得姐/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/songbiwen/WZ_BaiSiBuDeJie/百思不得姐/百思不得姐/Classes/Other-其他/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.renhedao.-----";

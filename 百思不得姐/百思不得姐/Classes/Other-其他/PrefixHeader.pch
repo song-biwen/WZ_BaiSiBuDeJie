@@ -24,6 +24,8 @@
 #define WZImage(imageName) [UIImage imageNamed:imageName]
 #define WZImageView(imageName) [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]]
 #define WZFont(size) [UIFont systemFontOfSize:size]
+#define WZColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define WZColorDefault WZColor(223,223,223,1.0)
 
 
 #import "UIView+WZCategory.h"

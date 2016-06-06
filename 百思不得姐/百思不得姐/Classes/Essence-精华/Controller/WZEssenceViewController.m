@@ -7,6 +7,7 @@
 //
 
 #import "WZEssenceViewController.h"
+#import "WZTestViewController.h"
 
 @interface WZEssenceViewController ()
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     
     self.navigationItem.titleView = WZImageView(@"MainTitle");
+    self.view.backgroundColor = WZColorDefault;
     
     /** 
      UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -29,10 +31,14 @@
      */
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"MainTagSubIcon" highlightImageName:@"MainTagSubIconClick" target:self action:@selector(buttonAction)];
+    
 }
 
 - (void)buttonAction {
     WZLogFunc;
+    
+    WZTestViewController *VC = [[WZTestViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
     
 }
 
