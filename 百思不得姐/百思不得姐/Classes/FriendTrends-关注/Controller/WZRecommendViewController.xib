@@ -14,14 +14,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="64" width="600" height="536"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Vr-zo-i2w" userLabel="View-左边">
-                    <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="536"/>
                     <subviews>
                         <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-J7-bh1">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="536"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="AxN-a9-d8Q"/>
@@ -29,7 +29,7 @@
                             </connections>
                         </tableView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="XIA-J7-bh1" secondAttribute="trailing" id="Dqm-YR-AG0"/>
                         <constraint firstItem="XIA-J7-bh1" firstAttribute="leading" secondItem="4Vr-zo-i2w" secondAttribute="leading" id="Pyh-lN-PWP"/>
@@ -39,10 +39,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH8-yg-JGw" userLabel="View-右边">
-                    <rect key="frame" x="80" y="0.0" width="520" height="600"/>
+                    <rect key="frame" x="80" y="0.0" width="520" height="536"/>
                     <subviews>
                         <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kaL-hw-PlG">
-                            <rect key="frame" x="0.0" y="0.0" width="520" height="600"/>
+                            <rect key="frame" x="0.0" y="0.0" width="520" height="536"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="jSE-Xi-IH4"/>
@@ -67,14 +67,28 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="4Vr-zo-i2w" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0Nl-gZ-g8f"/>
                 <constraint firstAttribute="trailing" secondItem="sH8-yg-JGw" secondAttribute="trailing" id="Fcs-Si-NJH"/>
                 <constraint firstItem="4Vr-zo-i2w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kbz-8n-sRb"/>
+                <constraint firstItem="sH8-yg-JGw" firstAttribute="centerY" secondItem="4Vr-zo-i2w" secondAttribute="centerY" id="Lok-oo-Ild"/>
                 <constraint firstAttribute="bottom" secondItem="sH8-yg-JGw" secondAttribute="bottom" id="LuD-O9-x9G"/>
+                <constraint firstItem="4Vr-zo-i2w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ohm-6y-ycf"/>
                 <constraint firstItem="4Vr-zo-i2w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X45-A8-rFU"/>
                 <constraint firstAttribute="bottom" secondItem="4Vr-zo-i2w" secondAttribute="bottom" id="Y4n-2i-nKv"/>
+                <constraint firstItem="sH8-yg-JGw" firstAttribute="top" secondItem="4Vr-zo-i2w" secondAttribute="top" id="hLx-ei-1sk"/>
                 <constraint firstItem="sH8-yg-JGw" firstAttribute="leading" secondItem="4Vr-zo-i2w" secondAttribute="trailing" id="u0x-hi-DVf"/>
                 <constraint firstItem="sH8-yg-JGw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wTm-yg-djt"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Ohm-6y-ycf"/>
+                    <exclude reference="Y4n-2i-nKv"/>
+                    <exclude reference="LuD-O9-x9G"/>
+                    <exclude reference="wTm-yg-djt"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="223" y="362"/>
         </view>
     </objects>
 </document>

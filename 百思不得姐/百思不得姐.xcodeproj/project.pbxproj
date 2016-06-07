@@ -11,6 +11,9 @@
 		4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */; };
 		4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AF1D055A4900F18B82 /* WZRecommendViewController.m */; };
 		4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1DA4B01D055A4900F18B82 /* WZRecommendViewController.xib */; };
+		4C6399491D0676D800192953 /* WZRecommandType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6399481D0676D800192953 /* WZRecommandType.m */; };
+		4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */; };
+		4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */; };
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
 		4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0751D050F2F00A7FAF5 /* WZEssenceViewController.m */; };
 		4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE07B1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m */; };
@@ -38,6 +41,11 @@
 		4C1DA4AE1D055A4900F18B82 /* WZRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommendViewController.h; sourceTree = "<group>"; };
 		4C1DA4AF1D055A4900F18B82 /* WZRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommendViewController.m; sourceTree = "<group>"; };
 		4C1DA4B01D055A4900F18B82 /* WZRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommendViewController.xib; sourceTree = "<group>"; };
+		4C6399471D0676D800192953 /* WZRecommandType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandType.h; sourceTree = "<group>"; };
+		4C6399481D0676D800192953 /* WZRecommandType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandType.m; sourceTree = "<group>"; };
+		4C63994A1D067CE500192953 /* WZRecommandLeft2TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandLeft2TableViewCell.h; sourceTree = "<group>"; };
+		4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandLeft2TableViewCell.m; sourceTree = "<group>"; };
+		4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandLeft2TableViewCell.xib; sourceTree = "<group>"; };
 		4C82F5DE1D001EC10044509D /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C82F5ED1D001EC10044509D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C82F5F21D001EC10044509D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,6 +220,8 @@
 		4CBDE07C1D050F2F00A7FAF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C6399471D0676D800192953 /* WZRecommandType.h */,
+				4C6399481D0676D800192953 /* WZRecommandType.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +232,9 @@
 				4CD610D81D05603900B2580E /* WZRecommandLeftTableViewCell.h */,
 				4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */,
 				4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */,
+				4C63994A1D067CE500192953 /* WZRecommandLeft2TableViewCell.h */,
+				4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */,
+				4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */,
 				4CD610DD1D05604E00B2580E /* WZRecommandRightTableViewCell.h */,
 				4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */,
 				4CD610DF1D05604E00B2580E /* WZRecommandRightTableViewCell.xib */,
@@ -415,6 +428,7 @@
 				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
 				4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */,
+				4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +499,9 @@
 				4CBDE0A61D050F2F00A7FAF5 /* WZNavigationController.m in Sources */,
 				4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */,
 				4CBDE0A41D050F2F00A7FAF5 /* UIView+WZCategory.m in Sources */,
+				4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */,
 				4CBDE0A51D050F2F00A7FAF5 /* WZHomeTabBarController.m in Sources */,
+				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
 				4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */,
 				4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */,
 				4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */,
