@@ -4,7 +4,8 @@
 //
 //  Created by songbiwen on 16/6/6.
 //  Copyright © 2016年 songbiwen. All rights reserved.
-//
+// 1.解决重复请求问题
+// 2.网络慢带来的细节问题
 
 #import "WZRecommendViewController.h"
 #import "WZRecommandLeftTableViewCell.h" //推荐关注-左边 cell
@@ -12,27 +13,25 @@
 //2.0版本
 #import "WZRecommandLeft2TableViewCell.h" //推荐关注-左边cell
 #import "WZRecommandType.h" // 推荐关注，左边数据model
+#import "WZRecommandUser.h" // 推荐关注，右边数据model
 #import <AFNetworking.h>
 #import <MJExtension.h>
+#import <MJRefresh.h>
+#import <SVProgressHUD.h>
 
 
 
 static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
+#define KSelectedType [self.leftItems objectAtIndex:self.left_tableView.indexPathForSelectedRow.row]
 
 @interface WZRecommendViewController ()
-<WZRecommandLeftTableViewCellDelegate>
-
 //左列
 @property (nonatomic, strong) NSMutableArray *leftItems;
-//右列
-@property (nonatomic, strong) NSMutableArray *rightItems;
-//key_value对
-@property (nonatomic, strong) NSMutableArray *items;
 
+//请求参数 - 解决多次切换leftTablevIew请求问题
+@property (nonatomic, strong) NSDictionary *parameter;
 
-@property (nonatomic, strong) NSDictionary *selectedItem;
-@property (nonatomic, strong) UIButton *selected_button;
-
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 @end
 
 @implementation WZRecommendViewController
@@ -46,16 +45,17 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
     self.right_tableView.backgroundColor = WZColorDefault;
     
     self.leftItems = [NSMutableArray array];
-    self.rightItems = [NSMutableArray array];
-    self.items = [NSMutableArray array];
     
     //设置inset解决两个tablevIew偏移量不同问题
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.left_tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     self.right_tableView.contentInset = self.left_tableView.contentInset;
     
+    //集成刷新
+    [self setupRefresh];
     //获取左边列表数据
     [self fetchLeftTableViewData];
+    
 }
 
 
@@ -69,11 +69,17 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger rowCount = 0;
     
-    if (tableView.tag == 1) {
-        rowCount = self.leftItems.count;
-    }
-    if (tableView.tag == 2) {
-        rowCount = self.rightItems.count;
+    NSInteger left_count = self.leftItems.count;
+    if (left_count > 0) {
+        
+        if (tableView.tag == 1) {
+            rowCount = left_count;
+        }
+        
+        if (tableView.tag == 2) {
+            rowCount = [KSelectedType current_count];
+            [self checkFooterStatus];
+        }
     }
     
     return rowCount;
@@ -82,25 +88,6 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     id tableCell = nil;
     if (tableView.tag == 1) {
-        
-        /*
-        NSDictionary *info = self.leftItems[indexPath.row];
-        
-        WZRecommandLeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WZRecommandLeftTableViewCell"];
-        if (!cell) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"WZRecommandLeftTableViewCell" owner:self options:nil] lastObject];
-        }
-        
-        cell.delegate = self;
-        [cell setInfo:info];
-        cell.item_button.tag = indexPath.row;
-        cell.item_button.selected = [info isEqualToDictionary:self.selectedItem];
-        if (cell.item_button.selected) {
-            self.selected_button = cell.item_button;
-        }
-         */
-        
-        
         //2.0版本
         
         WZRecommandLeft2TableViewCell *cell = [WZRecommandLeft2TableViewCell cellWithTableView:tableView];
@@ -110,16 +97,10 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
     }
     
     //WZRecommandRightTableViewCell
-    if (tableView.tag == 2) {
+    if (tableView.tag == 2 && (indexPath.row < [KSelectedType current_count])) {
         
-        NSDictionary *info = self.rightItems[indexPath.row];
-        
-        WZRecommandRightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WZRecommandRightTableViewCell"];
-        if (!cell) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"WZRecommandRightTableViewCell" owner:self options:nil] lastObject];
-        }
-        
-        [cell setInfo:info];
+        WZRecommandRightTableViewCell *cell = [WZRecommandRightTableViewCell cellWithTableView:tableView];
+        cell.recommandUser = [KSelectedType list][indexPath.row];
         tableCell = cell;
     }
     
@@ -140,37 +121,47 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
     
     if (tableView.tag == 1) {
         /*
-         模拟网速慢的时候
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self fetchRigthTableViewDataWithSender:self.leftItems[indexPath.row]];
+         //模拟网速慢的时候
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //2.0解决重复发送请求的问题
+            //结束刷新
+            [self.right_tableView.mj_footer endRefreshing];
+            [self.right_tableView.mj_header endRefreshing];
+            self.parameter = nil;
+            
+            if ([KSelectedType current_count] > 0) {
+                //显示之前的数据
+                [self.right_tableView reloadData];
+            }else {
+                //解决切换时，数据没有及时更新的问题
+                [self.right_tableView reloadData];
+                [self.right_tableView.mj_header beginRefreshing];
+            }
         });
-         */
+        */
         
-    }
-}
-
-#pragma WZRecommandLeftTableViewCellDelegate 2.0版本时取消使用
-- (void)buttonClickForWZRecommandLeftTableViewCellWithSender:(UIButton *)button {
-    
-    NSUInteger tag = button.tag;
-    
-    NSDictionary *info = self.leftItems[tag];
-    if (![info isEqualToDictionary:self.selectedItem]) {
+        //2.0解决重复发送请求的问题
+        //结束刷新
+        [self.right_tableView.mj_footer endRefreshing];
+        [self.right_tableView.mj_header endRefreshing];
+        self.parameter = nil;
         
-        //取消上一个选中按钮
-        self.selected_button.selected = NO;
-        self.selectedItem = [[NSDictionary alloc] initWithDictionary:info];
-        button.selected = YES;
-        self.selected_button = button;
+        if ([KSelectedType current_count] > 0) {
+            //显示之前的数据
+            [self.right_tableView reloadData];
+        }else {
+            //解决切换时，数据没有及时更新的问题
+            [self.right_tableView reloadData];
+            [self.right_tableView.mj_header beginRefreshing];
+        }
         
-        [self fetchRigthTableViewDataWithSender:self.selectedItem[@"id"]];
     }
 }
 
 #pragma mark - 获取左边数据
 - (void)fetchLeftTableViewData {
     
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:
     @{
     @"a":@"category",
     @"c":@"subscribe"
@@ -182,61 +173,130 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
 //       WZLog(@"%@",responseObject);
        if ([responseObject[@"list"] isKindOfClass:[NSArray class]] && [(NSArray *)responseObject[@"list"] count] > 0) {
            
-           /*
-           [self.leftItems addObjectsFromArray:responseObject[@"list"]];
-           self.selectedItem = [[NSDictionary alloc] initWithDictionary:self.leftItems.firstObject];
-           
-           [self fetchRigthTableViewDataWithSender:self.selectedItem[@"id"]];
-            */
-           
            //2.0版本
            self.leftItems = [WZRecommandType mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
            [self.left_tableView reloadData];
            [self.left_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-           [self fetchRigthTableViewDataWithSender:self.leftItems.firstObject];
+           
+           //下拉刷新
+           [self.right_tableView.mj_header beginRefreshing];
        }
        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
        
+        [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
     }];
 
 }
 
 #pragma mark - 获取右边数据
-- (void)fetchRigthTableViewDataWithSender:(id)sender {
+- (void)fetchRigthTableViewDataWithHeaderRefresh:(BOOL)isHeaderRefresh {
     
-    NSString *category_id = nil;
-    if ([sender isKindOfClass:[NSString class]]) {
-        category_id = sender;
+//    WZLogFunc;
+    
+    //获取选择的左边model
+    WZRecommandType *recommandType = KSelectedType;
+    if (isHeaderRefresh) {
+        recommandType.current_page = 1;
     }
     
-    if ([sender isKindOfClass:[WZRecommandType class]]) {
-        category_id = [(WZRecommandType *)sender id];
-    }
+    NSDictionary *parameter = @{
+                                @"a":@"list",
+                                @"c":@"subscribe",
+                                @"category_id":[recommandType id],
+                                @"page":@(recommandType.current_page)
+                                };
     
-    if (category_id.length == 0) return;
+    self.parameter = parameter;
     
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:
-    @{
-    @"a":@"list",
-    @"c":@"subscribe",
-    @"category_id":category_id
-    }
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameter
+    
     progress:^(NSProgress * _Nonnull downloadProgress) {
 
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
-    WZLog(@"%@",responseObject);
-    if ([responseObject[@"list"] isKindOfClass:[NSArray class]] && [(NSArray *)responseObject[@"list"] count] > 0) {
-       [self.rightItems removeAllObjects];
-       [self.rightItems addObjectsFromArray:responseObject[@"list"]];
-       [self.right_tableView reloadData];
-    }
-
+//    WZLog(@"%@",responseObject);
+        
+        if ([responseObject[@"list"] isKindOfClass:[NSArray class]] && [(NSArray *)responseObject[@"list"] count] > 0) {
+            
+            if (isHeaderRefresh) {
+                [recommandType.list removeAllObjects];
+            }
+            [recommandType.list addObjectsFromArray:[WZRecommandUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]]];
+        }
+        
+        recommandType.total = [responseObject[@"total"] integerValue];
+        recommandType.current_count = recommandType.list.count;
+        
+        if (recommandType.current_count < recommandType.total) {
+            recommandType.current_page ++;
+        }
+        
+        //解决多次切换请求,不是最后一次请求
+        if (self.parameter != parameter) return;
+        
+        [self.right_tableView reloadData];
+        
+        [self checkFooterStatus];
+        [self.right_tableView.mj_header endRefreshing];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
+        
+        [self checkFooterStatus];
+        [self.right_tableView.mj_header endRefreshing];
+        
+        //解决多次切换请求问题
+        if (self.parameter != parameter) return;
+        [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+        
     }];
 }
 
 
+#pragma mark - 集成刷新
+- (void)setupRefresh {
+    
+    self.right_tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    self.right_tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
+}
+
+#pragma mark - 下拉刷新
+- (void)headerRefresh {
+    [self fetchRigthTableViewDataWithHeaderRefresh:YES];
+}
+
+#pragma mark - 上拉刷新
+- (void)footerRefresh {
+    [self fetchRigthTableViewDataWithHeaderRefresh:NO];
+}
+
+#pragma mark - 检查footer状态
+- (void)checkFooterStatus {
+    
+    WZRecommandType *recommandType = KSelectedType;
+    self.right_tableView.mj_footer.hidden = recommandType.current_count == 0;
+    
+    if (recommandType.current_count < recommandType.total) {
+        [self.right_tableView.mj_footer endRefreshing];
+    }else {
+        [self.right_tableView.mj_footer endRefreshingWithNoMoreData];
+    }
+    
+}
+
+#pragma mark - 正在请求数据时，退出当前控制器,导致控制器销毁
+- (void)dealloc {
+    //取消网络请求
+    [self.manager.operationQueue cancelAllOperations];
+    
+    self.parameter = nil;
+}
+
+- (AFHTTPSessionManager *)manager {
+    if (!_manager) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 @end

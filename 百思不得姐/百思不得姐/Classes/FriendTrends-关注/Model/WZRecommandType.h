@@ -15,4 +15,10 @@
 @property (nonatomic, copy) NSString *count;
 @property (nonatomic, copy) NSString *name;
 
+//右边推荐用户
+@property (nonatomic, strong) NSMutableArray *list;
+@property (nonatomic, assign) NSInteger total;
+@property (nonatomic, assign) NSInteger current_page;
+@property (nonatomic, assign) NSInteger current_count;
+
 @end

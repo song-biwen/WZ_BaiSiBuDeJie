@@ -8,9 +8,18 @@
 
 #import "WZRecommandRightTableViewCell.h"
 #import <UIImageView+WebCache.h>
+#import "WZRecommandUser.h"
 
 
 @implementation WZRecommandRightTableViewCell
++ (instancetype)cellWithTableView:(UITableView *)tableView {
+    
+    WZRecommandRightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self)];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+    }
+    return cell;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -32,10 +41,19 @@
     self.follow_label.text = [NSString stringWithFormat:@"%@人关注",info[@"fans_count"]];
 }
 
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
+- (void)setRecommandUser:(WZRecommandUser *)recommandUser {
+    if (_recommandUser != recommandUser) {
+        _recommandUser = recommandUser;
+    }
+    
+    [self.avator_imageView sd_setImageWithURL:[NSURL URLWithString:recommandUser.header] placeholderImage:WZImage(@"defaultUserIcon")];
+    self.name_label.text = recommandUser.screen_name;
+    self.follow_label.text = [NSString stringWithFormat:@"%@人关注",recommandUser.fans_count];
+}
 @end

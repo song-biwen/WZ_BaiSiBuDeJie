@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WZRecommandUser;
 
 /** 推荐关注-右边列表 */
 @interface WZRecommandRightTableViewCell : UITableViewCell
+
++ (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avator_imageView;
 @property (weak, nonatomic) IBOutlet UIButton *follow_button;
@@ -17,4 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *follow_label;
 
 @property (nonatomic, strong) NSDictionary *info;
+//2.0版本
+@property (nonatomic, strong) WZRecommandUser *recommandUser;
+
 @end

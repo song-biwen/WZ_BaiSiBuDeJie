@@ -31,7 +31,14 @@
  8.当cell的selection设为none时，当cell被选中时，内部的子控件将不进入高亮状态
    此时设置一下方法将不起作用
     self.textLabel.highlightedTextColor = [UIColor redColor];
- 
- 
+ 9.
+     //设置inset解决两个tablevIew偏移量不同问题
+     self.automaticallyAdjustsScrollViewInsets = NO;
+     self.left_tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+     self.right_tableView.contentInset = self.left_tableView.contentInset;
+ 10.
+    内存警告
+    UIApplicationDidReceiveMemoryWarningNotification
+    取消网络请求
  */
 #endif /* ___h */

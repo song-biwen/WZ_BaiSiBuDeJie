@@ -9,5 +9,12 @@
 #import "WZRecommandType.h"
 
 @implementation WZRecommandType
+- (NSMutableArray *)list {
+    if (!_list) {
+        _list = [NSMutableArray array];
+    }
+    return _list;
+}
+
 
 @end
