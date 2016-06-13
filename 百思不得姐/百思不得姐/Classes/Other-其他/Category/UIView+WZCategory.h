@@ -27,4 +27,6 @@
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize size;
 
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
 @end

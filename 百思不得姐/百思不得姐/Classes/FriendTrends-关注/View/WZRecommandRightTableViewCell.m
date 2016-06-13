@@ -38,6 +38,7 @@
     
     [self.avator_imageView sd_setImageWithURL:[NSURL URLWithString:info[@"header"]]];
     self.name_label.text = info[@"screen_name"];
+    
     self.follow_label.text = [NSString stringWithFormat:@"%@人关注",info[@"fans_count"]];
 }
 
@@ -54,6 +55,13 @@
     
     [self.avator_imageView sd_setImageWithURL:[NSURL URLWithString:recommandUser.header] placeholderImage:WZImage(@"defaultUserIcon")];
     self.name_label.text = recommandUser.screen_name;
-    self.follow_label.text = [NSString stringWithFormat:@"%@人关注",recommandUser.fans_count];
+    
+    NSString *fans_count = nil;
+    if ([_recommandUser.fans_count intValue] < 10000) {
+        fans_count = [NSString stringWithFormat:@"%@人关注",_recommandUser.fans_count];
+    }else {
+        fans_count = [NSString stringWithFormat:@"%.1f万人关注",[_recommandUser.fans_count intValue]/10000.0];
+    }
+    self.follow_label.text = fans_count;
 }
 @end

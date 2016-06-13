@@ -40,5 +40,11 @@
     内存警告
     UIApplicationDidReceiveMemoryWarningNotification
     取消网络请求
+ 11.
+    [NSString stringWithFormat:@"%zd",indexPath.row]
+ 12.
+    重写setFrame方法,改变cell的x width height值，实现cell之间的间隙
+ 13.
+    button 默认的image与titleLabel是左右排列
  */
 #endif /* ___h */

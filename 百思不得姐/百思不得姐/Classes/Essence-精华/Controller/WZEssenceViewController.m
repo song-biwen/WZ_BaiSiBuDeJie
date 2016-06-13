@@ -7,7 +7,7 @@
 //
 
 #import "WZEssenceViewController.h"
-#import "WZTestViewController.h"
+#import "WZRecommandTagsViewController.h"
 
 @interface WZEssenceViewController ()
 
@@ -37,7 +37,7 @@
 - (void)buttonAction {
     WZLogFunc;
     
-    WZTestViewController *VC = [[WZTestViewController alloc] init];
+    WZRecommandTagsViewController *VC = [[WZRecommandTagsViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
     
 }
