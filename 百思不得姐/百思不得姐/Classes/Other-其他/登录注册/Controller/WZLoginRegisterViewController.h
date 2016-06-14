@@ -10,5 +10,14 @@
 
 /** 登录注册 */
 @interface WZLoginRegisterViewController : UIViewController
+//手机号
+@property (weak, nonatomic) IBOutlet UITextField *phone_textField;
+
+//密码
+@property (weak, nonatomic) IBOutlet UITextField *password_textField;
+
+
+//登录框的水平约束
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *horizontalConstraint;
 
 @end

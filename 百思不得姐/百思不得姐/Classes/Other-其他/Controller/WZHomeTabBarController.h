@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface WZHomeTabBarController : UITabBarController
+/** 显示登录注册页面 */
++ (void)showLoginRegisterController;
+
+/** 使登录注册页面消失 */
++ (void)dismissLoginRegisterController;
 
 @end

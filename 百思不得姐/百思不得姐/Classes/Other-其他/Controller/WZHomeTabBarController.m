@@ -7,16 +7,19 @@
 //
 
 #import "WZHomeTabBarController.h"
-#import "WZEssenceViewController.h"
-#import "WZNewViewController.h"
+#import "WZEssenceViewController.h" //精华
+#import "WZNewViewController.h" //最新
 #import "WZPublishViewController.h"
-#import "WZFriendTrendsViewController.h"
-#import "WZMeViewController.h"
+#import "WZFriendTrendsViewController.h" //关注
+#import "WZMeViewController.h" //我
 #import "WZTabBar.h"
 #import "WZNavigationController.h"
+#import "WZLoginRegisterViewController.h" //登录注册
 
 
 @interface WZHomeTabBarController ()
+//当前视图控制器
+@property (nonatomic, strong) UIViewController *currentViewController;
 
 @end
 
@@ -85,6 +88,62 @@
     WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:VC];
     [self addChildViewController:nav];
     
+}
+
+/** 显示登录注册页面 */
+//+ (void)showLoginRegisterController {
+//    
+//    WZNavigationController *VC = [[WZNavigationController alloc] initWithRootViewController:[[WZLoginRegisterViewController alloc] init]];
+//    [self.currentViewController.navigationController presentViewController:VC animated:YES completion:nil];
+//    
+//}
+
+/** 使登录注册页面消失 */
++ (void)dismissLoginRegisterController {
+    
+}
+
+- (UIViewController *)currentViewController {
+    if (!_currentViewController) {
+        
+        UIViewController *currentVC = nil;
+        
+        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        if(window.windowLevel != UIWindowLevelNormal)
+        {
+            NSArray *windows = [[UIApplication sharedApplication] windows];
+            for(UIWindow *tmpWin in windows)
+            {
+                if(tmpWin.windowLevel == UIWindowLevelNormal)
+                {
+                    window = tmpWin;
+                    break;
+                }
+            }
+        }
+        
+        NSArray *viewsArray = [window subviews];
+        if([viewsArray count] > 0)
+        {
+            
+            UIView *frontView = [viewsArray objectAtIndex:0];
+            
+            id nextResponder = [frontView nextResponder];
+            
+            if([nextResponder isKindOfClass:[UIViewController class]])
+            {
+                currentVC = nextResponder;
+            }
+            else
+            {
+                currentVC = window.rootViewController;
+            }
+        }
+        
+        _currentViewController = currentVC;
+    }
+    
+    return _currentViewController;
 }
 
 @end

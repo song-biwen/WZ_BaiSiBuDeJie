@@ -40,6 +40,7 @@
 		4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */; };
 		4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */; };
 		4CD610E11D05604E00B2580E /* WZRecommandRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD610DF1D05604E00B2580E /* WZRecommandRightTableViewCell.xib */; };
+		4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD9CCBE1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m */; };
 		8A452A1E3AA9C08076620E6F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 644AE6A22815CDDE03BBF66F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,8 @@
 		4CD610DD1D05604E00B2580E /* WZRecommandRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandRightTableViewCell.h; sourceTree = "<group>"; };
 		4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandRightTableViewCell.m; sourceTree = "<group>"; };
 		4CD610DF1D05604E00B2580E /* WZRecommandRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandRightTableViewCell.xib; sourceTree = "<group>"; };
+		4CD9CCBD1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTextFieldPlaceHolder.h; sourceTree = "<group>"; };
+		4CD9CCBE1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTextFieldPlaceHolder.m; sourceTree = "<group>"; };
 		5A2997A7562692472BB1CAC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		644AE6A22815CDDE03BBF66F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BE7918B4C31BDC980EE819 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 			children = (
 				4CABF6311D0EA8C300503A29 /* WZVerticalButton.h */,
 				4CABF6321D0EA8C300503A29 /* WZVerticalButton.m */,
+				4CD9CCBD1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.h */,
+				4CD9CCBE1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */,
 				4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */,
 				4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */,
+				4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */,
 				4CBDE0A11D050F2F00A7FAF5 /* WZNewViewController.m in Sources */,
 				4CBDE0A31D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m in Sources */,
 				4CBDE0A61D050F2F00A7FAF5 /* WZNavigationController.m in Sources */,

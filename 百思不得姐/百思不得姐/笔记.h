@@ -10,7 +10,7 @@
 #define ___h
 
 /** 
- 下次学习0723 04
+ 下次学习0726 08
  
  1.后面带有 UI_APPEARANCE_SELECTOR  字段的方法名 可以通过统一设置属性
  2.随机数函数arc4random_uniform（x），可以用来产生0～(x-1)范围内的随机数 
@@ -46,5 +46,33 @@
     重写setFrame方法,改变cell的x width height值，实现cell之间的间隙
  13.
     button 默认的image与titleLabel是左右排列
+ 14.
+    跟网络有关的优化 见WZRecommendViewController
+ 15. 改变textFiled属性 Placeholder的颜色
+     方法一：attributedPlaceholder
+     self.phone_textField.delegate = self;
+     self.password_textField.delegate = self;
+     [self setUpSubViews];
+     方法二：重写drawPlaceholderInRect 见WZTextFieldPlaceHolder
+     方法三：利用运行时 runtime 见WZTextFieldPlaceHolder
+ */
+
+/**
+ 类别
+ + UIBarButtonItem+WZCategory
+ + UIView+WZCategory.h
+ */
+
+/** 
+ 扩展类
+ + WZTabBar
+ + WZVerticalButton
+ + WZTextFieldPlaceHolder
+ 
+ */
+
+/** 
+ 待解决事情：
+ 怎样全局使用登录注册
  */
 #endif /* ___h */
