@@ -10,7 +10,7 @@
 #define ___h
 
 /** 
- 下次学习0726 08
+ 下次学习0727 01
  
  1.后面带有 UI_APPEARANCE_SELECTOR  字段的方法名 可以通过统一设置属性
  2.随机数函数arc4random_uniform（x），可以用来产生0～(x-1)范围内的随机数 
