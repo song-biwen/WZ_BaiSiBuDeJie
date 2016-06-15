@@ -20,6 +20,8 @@
 		4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */; };
 		4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */; };
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
+		4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */; };
+		4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */; };
 		4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */; };
 		4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */; };
 		4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF6321D0EA8C300503A29 /* WZVerticalButton.m */; };
@@ -68,6 +70,9 @@
 		4C82F5ED1D001EC10044509D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C82F5F21D001EC10044509D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C947FAC1D0180B100443770 /* 笔记.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "笔记.h"; sourceTree = "<group>"; };
+		4CA666A21D10EF4C00E6BEF1 /* WZGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZGuideView.h; sourceTree = "<group>"; };
+		4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZGuideView.m; sourceTree = "<group>"; };
+		4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZGuideView.xib; sourceTree = "<group>"; };
 		4CABF62C1D0E9F1800503A29 /* WZLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLoginRegisterViewController.h; sourceTree = "<group>"; };
 		4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLoginRegisterViewController.m; sourceTree = "<group>"; };
 		4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -423,6 +428,9 @@
 			children = (
 				4CBDE09A1D050F2F00A7FAF5 /* WZTabBar.h */,
 				4CBDE09B1D050F2F00A7FAF5 /* WZTabBar.m */,
+				4CA666A21D10EF4C00E6BEF1 /* WZGuideView.h */,
+				4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */,
+				4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,6 +512,7 @@
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
 				4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */,
 				4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */,
+				4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +573,7 @@
 			files = (
 				4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */,
 				4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */,
+				4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */,
 				4C21B17A1D0CF93C00D2CDB3 /* WZRecommandUser.m in Sources */,
 				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
 				4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */,

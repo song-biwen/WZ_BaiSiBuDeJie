@@ -21,8 +21,16 @@
 //    
 //}
 
-+ (void)initialize
-{
++ (void)initialize {
+    [super initialize];
+    
+//    [self getIvars];
+    
+//    [self getProperties];
+}
+
++ (void)getIvars {
+    
     unsigned int count = 0;
     
     //拷贝出所有成员变量列表
@@ -34,8 +42,22 @@
     
     //释放
     free(ivars);
+    
 }
 
++ (void)getProperties {
+    
+    unsigned int count = 0;
+    //拷贝出所有属性列表
+    objc_property_t *properties = class_copyPropertyList([UITextField class], &count);
+    for (int i = 0; i < count; i ++) {
+        objc_property_t property = properties[i];
+        WZLog(@"%s",property_getName(property));
+    }
+    
+    free(properties);
+    
+}
 
 /** Xib */
 - (void)awakeFromNib {

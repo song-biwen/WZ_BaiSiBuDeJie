@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WZHomeTabBarController.h"
-
+#import "WZGuideView.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +27,9 @@
     
     /** 显示窗口 */
     [self.window makeKeyAndVisible];
+    
+    /** 显示引导页 */
+    [WZGuideView show];
     
     return YES;
 }
