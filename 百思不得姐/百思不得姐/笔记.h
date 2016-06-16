@@ -55,6 +55,7 @@
      [self setUpSubViews];
      方法二：重写drawPlaceholderInRect 见WZTextFieldPlaceHolder
      方法三：利用运行时 runtime 见WZTextFieldPlaceHolder
+ 16.automaticallyChangeAlpha //根据拖拽比例自动切换透明度
  */
 
 /**
@@ -69,6 +70,14 @@
  + WZVerticalButton
  + WZTextFieldPlaceHolder
  
+ */
+
+
+/** 
+ 跟网络相关问题
+ + 多次请求
+ + 网络不好时，同时下拉新数据，又上拉加载更多
+ + 网络不好时，正在请求数据，视图被释放
  */
 
 /** 

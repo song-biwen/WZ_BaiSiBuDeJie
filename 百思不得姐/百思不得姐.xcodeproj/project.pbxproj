@@ -43,6 +43,11 @@
 		4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE09B1D050F2F00A7FAF5 /* WZTabBar.m */; };
 		4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */; };
 		4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */; };
+		4CC73FF61D1242DA0074474D /* WZEssenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC73FF51D1242DA0074474D /* WZEssenceModel.m */; };
+		4CC73FF91D1242F10074474D /* WZEssenceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC73FF81D1242F10074474D /* WZEssenceListModel.m */; };
+		4CC73FFD1D127D790074474D /* WZEssenceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC73FFB1D127D790074474D /* WZEssenceCell.m */; };
+		4CC73FFE1D127D790074474D /* WZEssenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC73FFC1D127D790074474D /* WZEssenceCell.xib */; };
+		4CC740011D1296380074474D /* NSDate+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC740001D1296380074474D /* NSDate+WZCategory.m */; };
 		4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */; };
 		4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */; };
 		4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */; };
@@ -119,6 +124,15 @@
 		4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZPublishViewController.m; sourceTree = "<group>"; };
 		4CBDE0AA1D051C9800A7FAF5 /* WZTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTestViewController.h; sourceTree = "<group>"; };
 		4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTestViewController.m; sourceTree = "<group>"; };
+		4CC73FF41D1242DA0074474D /* WZEssenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceModel.h; sourceTree = "<group>"; };
+		4CC73FF51D1242DA0074474D /* WZEssenceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceModel.m; sourceTree = "<group>"; };
+		4CC73FF71D1242F10074474D /* WZEssenceListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceListModel.h; sourceTree = "<group>"; };
+		4CC73FF81D1242F10074474D /* WZEssenceListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceListModel.m; sourceTree = "<group>"; };
+		4CC73FFA1D127D790074474D /* WZEssenceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceCell.h; sourceTree = "<group>"; };
+		4CC73FFB1D127D790074474D /* WZEssenceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceCell.m; sourceTree = "<group>"; };
+		4CC73FFC1D127D790074474D /* WZEssenceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZEssenceCell.xib; sourceTree = "<group>"; };
+		4CC73FFF1D1296380074474D /* NSDate+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WZCategory.h"; sourceTree = "<group>"; };
+		4CC740001D1296380074474D /* NSDate+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WZCategory.m"; sourceTree = "<group>"; };
 		4CD610D81D05603900B2580E /* WZRecommandLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandLeftTableViewCell.h; sourceTree = "<group>"; };
 		4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandLeftTableViewCell.m; sourceTree = "<group>"; };
 		4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandLeftTableViewCell.xib; sourceTree = "<group>"; };
@@ -280,6 +294,10 @@
 			children = (
 				4C21B1831D0D592B00D2CDB3 /* WZRecommandTag.h */,
 				4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */,
+				4CC73FF41D1242DA0074474D /* WZEssenceModel.h */,
+				4CC73FF51D1242DA0074474D /* WZEssenceModel.m */,
+				4CC73FF71D1242F10074474D /* WZEssenceListModel.h */,
+				4CC73FF81D1242F10074474D /* WZEssenceListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +308,9 @@
 				4C21B17E1D0D559500D2CDB3 /* WZRecommandTagsCell.h */,
 				4C21B17F1D0D559500D2CDB3 /* WZRecommandTagsCell.m */,
 				4C21B1801D0D559500D2CDB3 /* WZRecommandTagsCell.xib */,
+				4CC73FFA1D127D790074474D /* WZEssenceCell.h */,
+				4CC73FFB1D127D790074474D /* WZEssenceCell.m */,
+				4CC73FFC1D127D790074474D /* WZEssenceCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,6 +454,8 @@
 				4CBDE08F1D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m */,
 				4CBDE0901D050F2F00A7FAF5 /* UIView+WZCategory.h */,
 				4CBDE0911D050F2F00A7FAF5 /* UIView+WZCategory.m */,
+				4CC73FFF1D1296380074474D /* NSDate+WZCategory.h */,
+				4CC740001D1296380074474D /* NSDate+WZCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -532,6 +555,7 @@
 				4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */,
 				4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */,
 				4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */,
+				4CC73FFE1D127D790074474D /* WZEssenceCell.xib in Resources */,
 				4CD610E11D05604E00B2580E /* WZRecommandRightTableViewCell.xib in Resources */,
 				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
@@ -601,6 +625,7 @@
 				4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */,
 				4C21B17A1D0CF93C00D2CDB3 /* WZRecommandUser.m in Sources */,
 				4CA666B21D1138C800E6BEF1 /* WZEssencePictureController.m in Sources */,
+				4CC73FF91D1242F10074474D /* WZEssenceListModel.m in Sources */,
 				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
 				4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */,
 				4CA666AC1D11389E00E6BEF1 /* WZEssenceVideoController.m in Sources */,
@@ -616,7 +641,9 @@
 				4CBDE0A61D050F2F00A7FAF5 /* WZNavigationController.m in Sources */,
 				4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */,
 				4CBDE0A41D050F2F00A7FAF5 /* UIView+WZCategory.m in Sources */,
+				4CC73FF61D1242DA0074474D /* WZEssenceModel.m in Sources */,
 				4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */,
+				4CC740011D1296380074474D /* NSDate+WZCategory.m in Sources */,
 				4CBDE0A51D050F2F00A7FAF5 /* WZHomeTabBarController.m in Sources */,
 				4C21B17D1D0D553900D2CDB3 /* WZRecommandTagsViewController.m in Sources */,
 				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
@@ -624,6 +651,7 @@
 				4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */,
 				4CA666A91D11385300E6BEF1 /* WZEssenceAllController.m in Sources */,
 				4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */,
+				4CC73FFD1D127D790074474D /* WZEssenceCell.m in Sources */,
 				4CA666AF1D1138B500E6BEF1 /* WZEssenceVoiceController.m in Sources */,
 				4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */,
 				4C21B1811D0D559500D2CDB3 /* WZRecommandTagsCell.m in Sources */,

@@ -53,6 +53,8 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     NSUInteger index = scrollView.contentOffset.x / scrollView.width;
+    
+    //考虑到通用性，下面这段代码最好在相应的子控件器内实现
     UITableViewController *tableViewController = [self.childViewControllers objectAtIndex:index];
     
     CGFloat top = self.title_view.bottom;
