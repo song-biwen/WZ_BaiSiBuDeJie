@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** 精华model */
 @interface WZEssenceModel : NSObject
 //总数量
 @property (nonatomic, assign) NSInteger count;

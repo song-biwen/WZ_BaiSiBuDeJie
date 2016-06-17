@@ -19,8 +19,13 @@
 //是否是昨天
 - (BOOL)isYesterday;
 
+//跟当前的时间比较
+- (NSDateComponents *)intervalFromNow;
 
-//比较时间
+//字符串转时间
++ (NSDate *)dateWithString:(NSString *)string;
+
+//比较时间 sender类型为NSString NSDate
 + (NSString *)intervalFromNow:(id)sender;
 @end
 

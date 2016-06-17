@@ -31,6 +31,11 @@
 
 #define WZUrl(urlString) [NSURL URLWithString:urlString]
 
+#define WZScreenWidth [UIScreen mainScreen].bounds.size.width
+#define WZScreenHeight [UIScreen mainScreen].bounds.size.height
+#define WZScreenBounds [UIScreen mainScreen].bounds
+
+
 
 
 #define KURLPrePath @"http://api.budejie.com/api/api_open.php"
@@ -38,7 +43,7 @@
 #import "UIView+WZCategory.h"
 #import "UIBarButtonItem+WZCategory.h"
 #import "NSDate+WZCategory.h"
-
+#import "WZConst.h"
 
 
 #import <AFNetworking.h>

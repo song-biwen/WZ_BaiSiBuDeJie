@@ -22,11 +22,6 @@
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
 		4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */; };
 		4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */; };
-		4CA666A91D11385300E6BEF1 /* WZEssenceAllController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A81D11385300E6BEF1 /* WZEssenceAllController.m */; };
-		4CA666AC1D11389E00E6BEF1 /* WZEssenceVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666AB1D11389E00E6BEF1 /* WZEssenceVideoController.m */; };
-		4CA666AF1D1138B500E6BEF1 /* WZEssenceVoiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666AE1D1138B500E6BEF1 /* WZEssenceVoiceController.m */; };
-		4CA666B21D1138C800E6BEF1 /* WZEssencePictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666B11D1138C800E6BEF1 /* WZEssencePictureController.m */; };
-		4CA666B51D11390500E6BEF1 /* WZEssenceWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666B41D11390500E6BEF1 /* WZEssenceWordController.m */; };
 		4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */; };
 		4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */; };
 		4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF6321D0EA8C300503A29 /* WZVerticalButton.m */; };
@@ -48,6 +43,11 @@
 		4CC73FFD1D127D790074474D /* WZEssenceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC73FFB1D127D790074474D /* WZEssenceCell.m */; };
 		4CC73FFE1D127D790074474D /* WZEssenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC73FFC1D127D790074474D /* WZEssenceCell.xib */; };
 		4CC740011D1296380074474D /* NSDate+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC740001D1296380074474D /* NSDate+WZCategory.m */; };
+		4CD01C471D139B9200E553CF /* WZEssenseBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD01C461D139B9200E553CF /* WZEssenseBaseController.m */; };
+		4CD01C4A1D13A64900E553CF /* WZConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD01C491D13A64900E553CF /* WZConst.m */; };
+		4CD01C4C1D13A7C500E553CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD01C4B1D13A7C500E553CF /* UIKit.framework */; };
+		4CD01C4F1D13ED2100E553CF /* WZEssencePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD01C4E1D13ED2100E553CF /* WZEssencePictureView.m */; };
+		4CD01C511D13ED2D00E553CF /* WZEssencePictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD01C501D13ED2D00E553CF /* WZEssencePictureView.xib */; };
 		4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */; };
 		4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */; };
 		4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD610DE1D05604E00B2580E /* WZRecommandRightTableViewCell.m */; };
@@ -83,16 +83,6 @@
 		4CA666A21D10EF4C00E6BEF1 /* WZGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZGuideView.h; sourceTree = "<group>"; };
 		4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZGuideView.m; sourceTree = "<group>"; };
 		4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZGuideView.xib; sourceTree = "<group>"; };
-		4CA666A71D11385300E6BEF1 /* WZEssenceAllController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceAllController.h; sourceTree = "<group>"; };
-		4CA666A81D11385300E6BEF1 /* WZEssenceAllController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceAllController.m; sourceTree = "<group>"; };
-		4CA666AA1D11389E00E6BEF1 /* WZEssenceVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceVideoController.h; sourceTree = "<group>"; };
-		4CA666AB1D11389E00E6BEF1 /* WZEssenceVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceVideoController.m; sourceTree = "<group>"; };
-		4CA666AD1D1138B500E6BEF1 /* WZEssenceVoiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceVoiceController.h; sourceTree = "<group>"; };
-		4CA666AE1D1138B500E6BEF1 /* WZEssenceVoiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceVoiceController.m; sourceTree = "<group>"; };
-		4CA666B01D1138C800E6BEF1 /* WZEssencePictureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssencePictureController.h; sourceTree = "<group>"; };
-		4CA666B11D1138C800E6BEF1 /* WZEssencePictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssencePictureController.m; sourceTree = "<group>"; };
-		4CA666B31D11390500E6BEF1 /* WZEssenceWordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceWordController.h; sourceTree = "<group>"; };
-		4CA666B41D11390500E6BEF1 /* WZEssenceWordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceWordController.m; sourceTree = "<group>"; };
 		4CABF62C1D0E9F1800503A29 /* WZLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLoginRegisterViewController.h; sourceTree = "<group>"; };
 		4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLoginRegisterViewController.m; sourceTree = "<group>"; };
 		4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -133,6 +123,14 @@
 		4CC73FFC1D127D790074474D /* WZEssenceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZEssenceCell.xib; sourceTree = "<group>"; };
 		4CC73FFF1D1296380074474D /* NSDate+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WZCategory.h"; sourceTree = "<group>"; };
 		4CC740001D1296380074474D /* NSDate+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WZCategory.m"; sourceTree = "<group>"; };
+		4CD01C451D139B9200E553CF /* WZEssenseBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenseBaseController.h; sourceTree = "<group>"; };
+		4CD01C461D139B9200E553CF /* WZEssenseBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenseBaseController.m; sourceTree = "<group>"; };
+		4CD01C481D13A64900E553CF /* WZConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZConst.h; sourceTree = "<group>"; };
+		4CD01C491D13A64900E553CF /* WZConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZConst.m; sourceTree = "<group>"; };
+		4CD01C4B1D13A7C500E553CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CD01C4D1D13ED2100E553CF /* WZEssencePictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssencePictureView.h; sourceTree = "<group>"; };
+		4CD01C4E1D13ED2100E553CF /* WZEssencePictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssencePictureView.m; sourceTree = "<group>"; };
+		4CD01C501D13ED2D00E553CF /* WZEssencePictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZEssencePictureView.xib; sourceTree = "<group>"; };
 		4CD610D81D05603900B2580E /* WZRecommandLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandLeftTableViewCell.h; sourceTree = "<group>"; };
 		4CD610D91D05603900B2580E /* WZRecommandLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandLeftTableViewCell.m; sourceTree = "<group>"; };
 		4CD610DA1D05603900B2580E /* WZRecommandLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandLeftTableViewCell.xib; sourceTree = "<group>"; };
@@ -151,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD01C4C1D13A7C500E553CF /* UIKit.framework in Frameworks */,
 				8A452A1E3AA9C08076620E6F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,16 +272,8 @@
 			children = (
 				4CBDE0741D050F2F00A7FAF5 /* WZEssenceViewController.h */,
 				4CBDE0751D050F2F00A7FAF5 /* WZEssenceViewController.m */,
-				4CA666A71D11385300E6BEF1 /* WZEssenceAllController.h */,
-				4CA666A81D11385300E6BEF1 /* WZEssenceAllController.m */,
-				4CA666AA1D11389E00E6BEF1 /* WZEssenceVideoController.h */,
-				4CA666AB1D11389E00E6BEF1 /* WZEssenceVideoController.m */,
-				4CA666AD1D1138B500E6BEF1 /* WZEssenceVoiceController.h */,
-				4CA666AE1D1138B500E6BEF1 /* WZEssenceVoiceController.m */,
-				4CA666B01D1138C800E6BEF1 /* WZEssencePictureController.h */,
-				4CA666B11D1138C800E6BEF1 /* WZEssencePictureController.m */,
-				4CA666B31D11390500E6BEF1 /* WZEssenceWordController.h */,
-				4CA666B41D11390500E6BEF1 /* WZEssenceWordController.m */,
+				4CD01C451D139B9200E553CF /* WZEssenseBaseController.h */,
+				4CD01C461D139B9200E553CF /* WZEssenseBaseController.m */,
 				4C21B17B1D0D553900D2CDB3 /* WZRecommandTagsViewController.h */,
 				4C21B17C1D0D553900D2CDB3 /* WZRecommandTagsViewController.m */,
 			);
@@ -311,6 +302,9 @@
 				4CC73FFA1D127D790074474D /* WZEssenceCell.h */,
 				4CC73FFB1D127D790074474D /* WZEssenceCell.m */,
 				4CC73FFC1D127D790074474D /* WZEssenceCell.xib */,
+				4CD01C4D1D13ED2100E553CF /* WZEssencePictureView.h */,
+				4CD01C4E1D13ED2100E553CF /* WZEssencePictureView.m */,
+				4CD01C501D13ED2D00E553CF /* WZEssencePictureView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +437,8 @@
 				4CBDE0971D050F2F00A7FAF5 /* main.m */,
 				4CBDE0981D050F2F00A7FAF5 /* PrefixHeader.pch */,
 				4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */,
+				4CD01C481D13A64900E553CF /* WZConst.h */,
+				4CD01C491D13A64900E553CF /* WZConst.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -486,6 +482,7 @@
 		9835DD8ABC15F3C192E147E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CD01C4B1D13A7C500E553CF /* UIKit.framework */,
 				644AE6A22815CDDE03BBF66F /* libPods.a */,
 			);
 			name = Frameworks;
@@ -560,6 +557,7 @@
 				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
 				4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */,
+				4CD01C511D13ED2D00E553CF /* WZEssencePictureView.xib in Resources */,
 				4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */,
 				4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */,
 			);
@@ -622,17 +620,17 @@
 			files = (
 				4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */,
 				4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */,
+				4CD01C4A1D13A64900E553CF /* WZConst.m in Sources */,
 				4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */,
 				4C21B17A1D0CF93C00D2CDB3 /* WZRecommandUser.m in Sources */,
-				4CA666B21D1138C800E6BEF1 /* WZEssencePictureController.m in Sources */,
+				4CD01C471D139B9200E553CF /* WZEssenseBaseController.m in Sources */,
 				4CC73FF91D1242F10074474D /* WZEssenceListModel.m in Sources */,
 				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
 				4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */,
-				4CA666AC1D11389E00E6BEF1 /* WZEssenceVideoController.m in Sources */,
+				4CD01C4F1D13ED2100E553CF /* WZEssencePictureView.m in Sources */,
 				4CBDE0A71D050F2F00A7FAF5 /* main.m in Sources */,
 				4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */,
 				4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */,
-				4CA666B51D11390500E6BEF1 /* WZEssenceWordController.m in Sources */,
 				4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */,
 				4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */,
 				4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */,
@@ -649,10 +647,8 @@
 				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
 				4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */,
 				4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */,
-				4CA666A91D11385300E6BEF1 /* WZEssenceAllController.m in Sources */,
 				4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */,
 				4CC73FFD1D127D790074474D /* WZEssenceCell.m in Sources */,
-				4CA666AF1D1138B500E6BEF1 /* WZEssenceVoiceController.m in Sources */,
 				4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */,
 				4C21B1811D0D559500D2CDB3 /* WZRecommandTagsCell.m in Sources */,
 				4CBDE0A21D050F2F00A7FAF5 /* AppDelegate.m in Sources */,

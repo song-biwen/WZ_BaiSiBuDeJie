@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class WZRecommandTag;
 
+/** 推荐关注 cell */
 @interface WZRecommandTagsCell : UITableViewCell
 + (WZRecommandTagsCell *)cellWithTableView:(UITableView *)tableView;
 

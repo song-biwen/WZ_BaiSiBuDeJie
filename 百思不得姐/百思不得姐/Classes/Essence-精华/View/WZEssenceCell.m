@@ -8,6 +8,7 @@
 
 #import "WZEssenceCell.h"
 #import "WZEssenceListModel.h" //数据模型
+#import "WZEssencePictureView.h" //图片View
 
 @interface WZEssenceCell()
 //头像
@@ -34,6 +35,15 @@
 //评论
 @property (weak, nonatomic) IBOutlet UIButton *comment_button;
 
+//是否是sina用户
+@property (weak, nonatomic) IBOutlet UIImageView *sina_imageView;
+
+//消息文本
+@property (weak, nonatomic) IBOutlet UILabel *message_label;
+
+//图片View
+@property (nonatomic, weak) WZEssencePictureView *pictureView;
+
 @end
 @implementation WZEssenceCell
 
@@ -45,40 +55,38 @@
     return cell;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+/** cell 高度 */
++ (CGFloat)heightOftableViewCell:(WZEssenceListModel *)model {
+    CGFloat height = 0;
     
-    self.contentView.backgroundColor = WZColorDefault;
+    CGFloat topViewH = WZEssenceBaseCellTopHeight;
+    CGFloat bottomViewH = WZEssenceBaseCellBottomHeight;
     
-    self.avator_imageView.layer.cornerRadius = self.avator_imageView.width/2.0;
-    self.avator_imageView.layer.masksToBounds = YES;
+    CGSize maxSize = CGSizeMake(WZScreenWidth - 2 * WZEssenceBaseCellMargin, MAXFLOAT);
+    CGFloat middleViewH = [model.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:WZFont(14)} context:nil].size.height;
+    CGFloat middleViewMargin = 2 * WZEssenceBaseCellMargin;
     
-    //设置背景图片
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = WZImage(@"mainCellBackground");
-    self.backgroundView = imageView;
+    height = topViewH + bottomViewH + middleViewH + middleViewMargin + WZEssenceBaseCellMargin;
+    return height;
     
-}
-
-//重写方法改变cell的大小
-- (void)setFrame:(CGRect)frame {
-    
-    CGFloat margin = 10;
-    frame.origin.x += margin;
-    frame.size.width -= 2 * margin;
-    frame.size.height -= margin;
-    frame.origin.y += margin;
-    
-    [super setFrame:frame];
 }
 
 - (void)setListModel:(WZEssenceListModel *)listModel {
     _listModel = listModel;
     
+    //    _listModel.sina_v = arc4random_uniform(10) % 2;测试数据
+    
     [self.avator_imageView sd_setImageWithURL:WZUrl(_listModel.profile_image) placeholderImage:WZImageDefault];
     self.name_label.text = _listModel.name;
     self.creatTime_label.text = [NSDate intervalFromNow:_listModel.create_time];
+    self.sina_imageView.hidden = !_listModel.sina_v;
+    self.message_label.text = _listModel.text;
     
+    
+    if (listModel.type == WZEssenceBaseTypePicture) {
+        self.pictureView.listModel = _listModel;
+        self.pictureView.frame = _listModel.pictureF;
+    }
     
     [self setupButton:self.ding_button count:[_listModel.ding integerValue] placeholder:@"顶"];
     [self setupButton:self.cai_button count:[_listModel.cai integerValue] placeholder:@"踩"];
@@ -97,5 +105,42 @@
     }
     
     [button setTitle:placeholder forState:UIControlStateNormal];
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+//    self.contentView.backgroundColor = WZColorDefault;
+    
+    self.avator_imageView.layer.cornerRadius = self.avator_imageView.width/2.0;
+    self.avator_imageView.layer.masksToBounds = YES;
+    
+    //设置背景图片
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.image = WZImage(@"mainCellBackground");
+    self.backgroundView = imageView;
+    
+    
+}
+
+//重写方法改变cell的大小设置cell间的边距
+- (void)setFrame:(CGRect)frame {
+    
+    frame.origin.x += WZEssenceBaseCellMargin;
+    frame.size.width -= 2 * WZEssenceBaseCellMargin;
+    frame.size.height -= WZEssenceBaseCellMargin;
+    frame.origin.y += WZEssenceBaseCellMargin;
+    
+    [super setFrame:frame];
+}
+
+
+- (WZEssencePictureView *)pictureView {
+    if (!_pictureView) {
+        WZEssencePictureView *pictureView = [WZEssencePictureView pictureView];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView;
 }
 @end

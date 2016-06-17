@@ -1,18 +1,18 @@
 //
-//  WZEssenceWordController.m
+//  WZEssenseBaseController.m
 //  百思不得姐
 //
 //  Created by songbiwen on 16/6/15.
 //  Copyright © 2016年 songbiwen. All rights reserved.
 //
 
-#import "WZEssenceWordController.h"
+#import "WZEssenseBaseController.h"
 #import "WZEssenceCell.h" //cell
 
 #import "WZEssenceModel.h" //模型
 #import "WZEssenceListModel.h" //列表数据模型
 
-@interface WZEssenceWordController ()
+@interface WZEssenseBaseController ()
 //网络请求
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 //数据模型
@@ -20,9 +20,10 @@
 
 //上一次的请求参数 - 解决多次切换leftTablevIew请求问题
 @property (nonatomic, strong) NSDictionary *parameter;
+
 @end
 
-@implementation WZEssenceWordController
+@implementation WZEssenseBaseController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +49,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
+    
     WZEssenceCell *cell = [WZEssenceCell cellOfTableView:tableView];
     cell.listModel = self.essenseModel.lists[indexPath.row];
     return cell;
@@ -57,7 +58,13 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
+    
+    WZEssenceListModel *model = self.essenseModel.lists[indexPath.row];
+    
+//    return [WZEssenceCell heightOftableViewCell:model];
+    
+    //2.0版本在model里面处理数据
+    return model.cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,7 +77,7 @@
     NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
     parameter[@"a"] = @"list";
     parameter[@"c"] = @"data";
-    parameter[@"type"] = @"29";
+    parameter[@"type"] = @(self.essence_type);
     parameter[@"page"] = isHeaderRefresh ? @(0): @(self.essenseModel.current_page);
     parameter[@"maxtime"] = isHeaderRefresh ? @"": self.essenseModel.maxtime;
     
@@ -155,7 +162,7 @@
     [self loadDataWithHeaderRefresh:NO];
 }
 
-/** 
+/**
  * 在页面消失的时候，取消网络请求
  */
 - (void)dealloc

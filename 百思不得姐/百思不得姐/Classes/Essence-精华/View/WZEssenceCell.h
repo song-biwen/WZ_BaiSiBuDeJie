@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @class WZEssenceListModel;
+
+/** 精华cell */
 @interface WZEssenceCell : UITableViewCell
 
 + (instancetype)cellOfTableView:(UITableView *)tableView;
 
-@property (nonatomic, strong) WZEssenceListModel *listModel;
+/** cell 高度 */
++ (CGFloat)heightOftableViewCell:(WZEssenceListModel *)model;
 
+//数据model
+@property (nonatomic, strong) WZEssenceListModel *listModel;
 @end

@@ -13,6 +13,6 @@
 + (void)showLoginRegisterController;
 
 /** 使登录注册页面消失 */
-+ (void)dismissLoginRegisterController;
+//+ (void)dismissLoginRegisterController;
 
 @end

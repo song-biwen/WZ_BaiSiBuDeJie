@@ -12,12 +12,3 @@
 @interface WZEssenceViewController : UIViewController
 
 @end
-/** 
- 
- #import "WZEssenceAllController.h"//全部
- #import "WZEssenceVideoController.h" //视频
- #import "WZEssenceVoiceController.h" //声音
- #import "WZEssencePictureController.h" //图片
- #import "WZEssenceWordController.h"  //段子
- 
- */

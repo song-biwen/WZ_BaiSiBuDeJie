@@ -8,11 +8,8 @@
 
 #import "WZEssenceViewController.h"
 #import "WZRecommandTagsViewController.h" //推荐关注
-#import "WZEssenceAllController.h"//全部
-#import "WZEssenceVideoController.h" //视频
-#import "WZEssenceVoiceController.h" //声音
-#import "WZEssencePictureController.h" //图片
-#import "WZEssenceWordController.h"  //段子
+
+#import "WZEssenseBaseController.h" //2.0 将五个子视图控制器整合为1个
 
 
 @interface WZEssenceViewController ()
@@ -39,11 +36,13 @@
     
     //设置导航栏
     [self setupNav];
-    //设置titleView
-    [self setupTitleView];
+   
     
     //设置子控制器
     [self setupChildViewControllers];
+    
+    //设置titleView
+    [self setupTitleView];
     
     //设置contentView
     [self setupContentView];
@@ -116,17 +115,55 @@
     [self addChildViewController:[[class alloc] init]];
 }
 
-/** 
-  设置子控制器
+
+/**
+ 设置子控制器 2.0
  */
 - (void)setupChildViewControllers {
+    //全部
+    WZEssenseBaseController *allVC = [[WZEssenseBaseController alloc] init];
+    allVC.title = @"全部";
+    allVC.essence_type = WZEssenceBaseTypeAll;
+    [self addChildViewController:allVC];
     
-    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceAllController class])];
-    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceVideoController class])];
-    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceVoiceController class])];
-    [self addChildViewControllerWithSender:NSStringFromClass([WZEssencePictureController class])];
-    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceWordController class])];
+    //视频
+    WZEssenseBaseController *videoVC = [[WZEssenseBaseController alloc] init];
+    videoVC.title = @"视频";
+    videoVC.essence_type = WZEssenceBaseTypeVideo;
+    [self addChildViewController:videoVC];
+    
+    //声音
+    WZEssenseBaseController *voiceVC = [[WZEssenseBaseController alloc] init];
+    voiceVC.title = @"声音";
+    voiceVC.essence_type = WZEssenceBaseTypeVideo;
+    [self addChildViewController:voiceVC];
+    
+    //图片
+    WZEssenseBaseController *pictureVC = [[WZEssenseBaseController alloc] init];
+    pictureVC.title = @"图片";
+    pictureVC.essence_type = WZEssenceBaseTypePicture;
+    [self addChildViewController:pictureVC];
+    
+    //段子
+    WZEssenseBaseController *wordVC = [[WZEssenseBaseController alloc] init];
+    wordVC.title = @"段子";
+    wordVC.essence_type = WZEssenceBaseTypeWord;
+    [self addChildViewController:wordVC];
+    
 }
+
+
+///** 
+//  设置子控制器
+// */
+//- (void)setupChildViewControllers {
+//    
+//    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceAllController class])];
+//    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceVideoController class])];
+//    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceVoiceController class])];
+//    [self addChildViewControllerWithSender:NSStringFromClass([WZEssencePictureController class])];
+//    [self addChildViewControllerWithSender:NSStringFromClass([WZEssenceWordController class])];
+//}
 
 /** 设置ContentView */
 - (void)setupContentView {
@@ -160,8 +197,7 @@
     [titleView addSubview:line_view];
     
     //设置里面切换item
-    NSArray *titles = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
-    NSUInteger title_count = titles.count;
+    NSUInteger title_count = self.childViewControllers.count;
     CGFloat width = self.view.width * 1.0 / title_count;
     CGFloat height = titleView.height;
     for (int i = 0; i < title_count; i ++) {
@@ -169,7 +205,8 @@
         button.tag = i + 1;
         button.frame = CGRectMake(width * i, 0, width, height);
         button.titleLabel.font = WZFont(14);
-        [button setTitle:titles[i] forState:UIControlStateNormal];
+        WZEssenseBaseController *baseVc = self.childViewControllers[i];
+        [button setTitle:baseVc.title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
         [button addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];

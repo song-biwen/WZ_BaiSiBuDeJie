@@ -10,7 +10,7 @@
 #define ___h
 
 /** 
- 下次学习0727 01
+ 下次学习0729 05
  
  1.后面带有 UI_APPEARANCE_SELECTOR  字段的方法名 可以通过统一设置属性
  2.随机数函数arc4random_uniform（x），可以用来产生0～(x-1)范围内的随机数 
@@ -56,6 +56,8 @@
      方法二：重写drawPlaceholderInRect 见WZTextFieldPlaceHolder
      方法三：利用运行时 runtime 见WZTextFieldPlaceHolder
  16.automaticallyChangeAlpha //根据拖拽比例自动切换透明度
+ 17.self.autoresizingMask = UIViewAutoresizingNone;
+    实现效果：控件不会跟着屏幕大小的改变而改变
  */
 
 /**

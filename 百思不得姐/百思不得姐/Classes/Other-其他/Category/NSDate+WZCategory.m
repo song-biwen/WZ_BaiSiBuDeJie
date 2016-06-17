@@ -9,7 +9,9 @@
 #import "NSDate+WZCategory.h"
 
 
-#define WZDateStyle @"yyyy-MM-dd HH:mm:ss" //24时，date-string
+#define WZDateFormatterStyleForLastYear @"yyyy-MM-dd HH:mm:ss"
+#define WZDateFormatterStyleForThisYear @"MM-dd HH:mm:ss"
+#define WZDateFormatterStyleForYesterday @"昨天 HH:mm:ss"
 
 @implementation NSDate (WZCategory)
 
@@ -70,8 +72,58 @@
     && cmps.day == 1;
 }
 
+//跟当前的时间比较
+- (NSDateComponents *)intervalFromNow {
+    
+    NSCalendar *calender = [NSCalendar currentCalendar];
+    NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDateComponents *components = [calender components:unit fromDate:self toDate:[NSDate date] options:0];
+    return components;
+}
+
+//字符串转时间
++ (NSDate *)dateWithString:(NSString *)string {
+    
+    NSMutableString *mutable_string = [[NSMutableString alloc] init];
+    NSArray *array = [string componentsSeparatedByCharactersInSet:[NSCharacterSet alphanumericCharacterSet]];
+    
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([obj length] > 0) {
+            
+            if (([mutable_string rangeOfString:@"yyyy"].location == NSNotFound)) {
+                [mutable_string appendString:@"yyyy"];
+            }
+            else if (([mutable_string rangeOfString:@"MM"].location == NSNotFound)) {
+                [mutable_string appendString:@"MM"];
+            }
+            else if (([mutable_string rangeOfString:@"dd"].location == NSNotFound)){
+                [mutable_string appendString:@"dd"];
+            }
+            else if (([mutable_string rangeOfString:@"HH"].location == NSNotFound)){
+                [mutable_string appendString:@"HH"];
+            }
+            else if (([mutable_string rangeOfString:@"mm"].location == NSNotFound)){
+                [mutable_string appendString:@"mm"];
+            }
+            
+            [mutable_string appendString:obj];
+        }
+        
+    }];
+    
+    if (([mutable_string rangeOfString:@"ss"].location == NSNotFound)){
+        [mutable_string appendString:@"ss"];
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:mutable_string];
+    return [dateFormatter dateFromString:string];
+    
+}
+
 //比较时间
-/** 
+/**
 今年
  {
      今天 {
@@ -95,95 +147,59 @@
  }
  
  */
+
+//比较时间 sender类型为NSString NSDate
 + (NSString *)intervalFromNow:(id)sender {
     
     NSString *time_string = nil;
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:WZDateStyle];
-    
-    NSCalendar *calender = [NSCalendar currentCalendar];
-    
     NSDate *_date;
+    
     if ([sender isKindOfClass:[NSDate class]]) {
         _date = (NSDate *)sender;
     }
     
     if ([sender isKindOfClass:[NSString class]]) {
-        
-        NSMutableString *mutable_string = [[NSMutableString alloc] init];
-        NSArray *array = [(NSString *)sender componentsSeparatedByCharactersInSet:[NSCharacterSet alphanumericCharacterSet]];
-        
-        [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            if ([obj length] > 0) {
-                
-                if (([mutable_string rangeOfString:@"yyyy"].location == NSNotFound)) {
-                    [mutable_string appendString:@"yyyy"];
-                }
-                else if (([mutable_string rangeOfString:@"MM"].location == NSNotFound)) {
-                    [mutable_string appendString:@"MM"];
-                }
-                else if (([mutable_string rangeOfString:@"dd"].location == NSNotFound)){
-                    [mutable_string appendString:@"dd"];
-                }
-                else if (([mutable_string rangeOfString:@"HH"].location == NSNotFound)){
-                    [mutable_string appendString:@"HH"];
-                }
-                else if (([mutable_string rangeOfString:@"mm"].location == NSNotFound)){
-                    [mutable_string appendString:@"mm"];
-                }
-                
-                [mutable_string appendString:obj];
-            }
-            
-        }];
-        
-        if (([mutable_string rangeOfString:@"ss"].location == NSNotFound)){
-            [mutable_string appendString:@"ss"];
-        }
-        
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:mutable_string];
-        _date = [dateFormatter dateFromString:(NSString *)sender];
+        //字符串转时间
+        _date = [NSDate dateWithString:(NSString *)sender];
     }
     
-    NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    NSDateComponents *components = [calender components:unit fromDate:_date toDate:[NSDate date] options:0];
     
-    time_string = [dateFormatter stringFromDate:_date];
-    NSRange space_range = [time_string rangeOfString:@" "];
-    NSRange range = [time_string rangeOfString:@"-"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
-    
-    if ([_date isToday]) {
-        //当天
-        if (components.hour >= 1) {
-            //大于等于1小时
-            time_string = [NSString stringWithFormat:@"%zd小时前",components.hour];
-        }else {
-            //小于1小时
-            if (components.minute >= 1) {
-                //大于等于1分钟
+    if ([_date isThisYear]) {//今年
+        
+        if ([_date isToday]) { //今天
+            
+            //时间组成
+            NSDateComponents *components = [_date intervalFromNow];
+            
+            if (components.hour >= 1) { //大于等于1小时
+                time_string = [NSString stringWithFormat:@"%zd小时前",components.hour];
+            }
+            else if (components.minute >= 1) { // 1分钟 <= 时间 < 1小时
                 time_string = [NSString stringWithFormat:@"%zd分钟前",components.minute];
-            }else {
-                //小于1分钟
+            }else { //1分钟内
                 time_string = @"刚刚";
             }
         }
+        else if ([_date isYesterday]) { //昨天
+            
+            [dateFormatter setDateFormat:WZDateFormatterStyleForYesterday];
+            time_string = [dateFormatter stringFromDate:_date];
+        }
+        else { //其他
+            
+            [dateFormatter setDateFormat:WZDateFormatterStyleForThisYear];
+            time_string = [dateFormatter stringFromDate:_date];
+            
+        }
         
-    }
-    else if ([_date isYesterday]) {
-        //昨天
-        time_string = [NSString stringWithFormat:@"昨天 %@",[time_string substringFromIndex:space_range.length + space_range.location]];
-    }
-    else if ([_date isThisYear]) {
-        //今年
-        time_string = [time_string substringFromIndex:range.length + range.location];
-    }
-    else {
-        //非今年
-        time_string = time_string;
+    }else {//非今年
+        
+        //非今年时间的显示格式为yyyy-MM-dd HH:mm:ss
+        [dateFormatter setDateFormat:WZDateFormatterStyleForLastYear];
+        time_string = [dateFormatter stringFromDate:_date];
     }
     
     return time_string;

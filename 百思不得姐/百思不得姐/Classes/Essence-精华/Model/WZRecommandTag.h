@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** 推荐标签model */
 @interface WZRecommandTag : NSObject
 @property (nonatomic, copy) NSString *theme_id;
 @property (nonatomic, copy) NSString *theme_name;
