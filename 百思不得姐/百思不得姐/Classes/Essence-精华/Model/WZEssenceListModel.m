@@ -60,13 +60,17 @@
             CGFloat pictureH = pictureW * self.height / self.width;
             CGFloat pictureX = WZEssenceBaseCellMargin;
             CGFloat pictureY = _cellHeight;
-            _pictureF = CGRectMake(pictureX, pictureY, pictureW, pictureH);
             
-            if (pictureH > WZScreenHeight) {
+            if (pictureH >= WZEssenceBaseCellPictureMaxHeight) {
                 //是大图
-                pictureH = pictureW;
+                //图片高度比例
+                _pictureScale = WZEssenceBaseCellPictureDefaultHeight / pictureH;
+                
+                pictureH = WZEssenceBaseCellPictureDefaultHeight;
                 _is_larger = YES;
             }
+            
+            _pictureF = CGRectMake(pictureX, pictureY, pictureW, pictureH);
             
             _cellHeight += pictureH + WZEssenceBaseCellMargin;
         }

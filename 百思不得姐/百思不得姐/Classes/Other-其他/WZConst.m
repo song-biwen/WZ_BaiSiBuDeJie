@@ -18,3 +18,9 @@ CGFloat const WZEssenceBaseCellTopHeight = 40;
 
 /*精华cell 底部高度*/
 CGFloat const WZEssenceBaseCellBottomHeight = 40;
+
+/*精华cell 图片的最大高度*/
+CGFloat const WZEssenceBaseCellPictureMaxHeight = 1000;
+
+/*精华cell 图片超出最大高度后，现在默认高度*/
+CGFloat const WZEssenceBaseCellPictureDefaultHeight = 250;

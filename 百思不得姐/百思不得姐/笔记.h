@@ -58,6 +58,10 @@
  16.automaticallyChangeAlpha //根据拖拽比例自动切换透明度
  17.self.autoresizingMask = UIViewAutoresizingNone;
     实现效果：控件不会跟着屏幕大小的改变而改变
+ 18.在不知道图片扩展名的情况下，知道图片的类型？
+    实现方法：取出图片数据的第一个字节，就可以判断出图片的真实类型
+ 19. self.picture_imageView.layer.contentsRect = CGRectMake(0, 0, 1, _listModel.pictureScale); //按比例显示图片的上部分
+ 
  */
 
 /**

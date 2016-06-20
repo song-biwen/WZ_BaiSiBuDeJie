@@ -38,6 +38,9 @@
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
 //pictureView 的尺寸
 @property (nonatomic, assign, readonly) CGRect pictureF;
-@property (nonatomic, assign, readonly) BOOL is_larger; //是否是大图
+//是否是大图
+@property (nonatomic, assign, readonly) BOOL is_larger;
+//图片缩放比例
+@property (nonatomic, assign, readonly) CGFloat pictureScale;
 
 @end

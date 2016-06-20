@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DACircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>M13ProgressSuite.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,6 +52,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1C57E23697E3157F42674F01405238CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
@@ -62,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9775596B3CA16905FC8F66DA8E2A3C67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1CA4238C1F2F221C2ABED4767913656</key>
+		<key>CE296C13442243F1D753441F5377EC80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3421243A5F5AEF96334B5A991951B7F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E56654AC09C244B49F390E701F2E8172</key>
+		<key>F3F669A07A0543916E41B3B15E1B398D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

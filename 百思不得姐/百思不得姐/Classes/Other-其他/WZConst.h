@@ -29,3 +29,9 @@ UIKIT_EXTERN CGFloat const WZEssenceBaseCellTopHeight;
 
 /*精华cell 底部高度*/
 UIKIT_EXTERN CGFloat const WZEssenceBaseCellBottomHeight;
+
+/*精华cell 图片的最大高度*/
+UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureMaxHeight;
+
+/*精华cell 图片超出最大高度后，现在默认高度*/
+UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureDefaultHeight;

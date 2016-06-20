@@ -10,6 +10,7 @@
 
 #import "WZRecommendViewController.h" //推荐关注
 #import "WZLoginRegisterViewController.h" //登录注册
+#import "WZHomeTabBarController.h"
 
 
 @interface WZFriendTrendsViewController ()
@@ -52,7 +53,11 @@
 
 //登录注册
 - (IBAction)loginAndRegisterAction:(id)sender {
-    WZLoginRegisterViewController *loginRegisterVC = [[WZLoginRegisterViewController alloc] init];
-    [self.navigationController presentViewController:loginRegisterVC animated:YES completion:nil];
+    
+    
+//    WZLoginRegisterViewController *loginRegisterVC = [[WZLoginRegisterViewController alloc] init];
+//    [self.navigationController presentViewController:loginRegisterVC animated:YES completion:nil];
+    
+    [WZHomeTabBarController showLoginRegisterController];
 }
 @end

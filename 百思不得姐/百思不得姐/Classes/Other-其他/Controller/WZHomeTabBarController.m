@@ -21,6 +21,9 @@
 //当前视图控制器
 @property (nonatomic, strong) UIViewController *currentViewController;
 
+//登录注册
+@property (nonatomic, strong) WZLoginRegisterViewController *loginRegisterVc;
+
 @end
 
 @implementation WZHomeTabBarController
@@ -91,12 +94,11 @@
 }
 
 /** 显示登录注册页面 */
-//+ (void)showLoginRegisterController {
-//    
-//    WZNavigationController *VC = [[WZNavigationController alloc] initWithRootViewController:[[WZLoginRegisterViewController alloc] init]];
-//    [self.currentViewController.navigationController presentViewController:VC animated:YES completion:nil];
-//    
-//}
++ (void)showLoginRegisterController {
+    
+    WZLoginRegisterViewController *loginRegisterVC = [[WZLoginRegisterViewController alloc] init];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:loginRegisterVC animated:YES completion:nil];
+}
 
 /** 使登录注册页面消失 */
 + (void)dismissLoginRegisterController {
@@ -146,4 +148,11 @@
     return _currentViewController;
 }
 
+
+- (WZLoginRegisterViewController *)loginRegisterVc {
+    if (!_loginRegisterVc) {
+        _loginRegisterVc = [[WZLoginRegisterViewController alloc] init];
+    }
+    return _loginRegisterVc;
+}
 @end

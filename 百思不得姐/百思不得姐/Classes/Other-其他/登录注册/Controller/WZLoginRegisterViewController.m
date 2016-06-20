@@ -98,7 +98,9 @@
     WZLogFunc;
     //腾讯微博的高亮图片有问题
     WZTestViewController *textVC = [[WZTestViewController alloc] init];
-    [self.navigationController pushViewController:textVC animated:YES];
+//    [[UIApplication sharedApplication].keyWindow.rootViewController pushViewController:textVC animated:YES];
+   
+//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:textVC animated:YES completion:nil];
 }
 
 //设置属性

@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - DACircularProgress (2.3.1)
   - M13ProgressSuite (1.2.7)
   - Masonry (0.6.4)
   - MJExtension (3.0.10)
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
+  - DACircularProgress (~> 2.3.1)
   - M13ProgressSuite (~> 1.2.7)
   - Masonry (~> 0.6.4)
   - MJExtension (~> 3.0.10)
@@ -34,6 +36,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   M13ProgressSuite: 03d194af6359da440641ba758aed5a18b0386a86
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548

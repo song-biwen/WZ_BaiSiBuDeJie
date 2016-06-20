@@ -31,8 +31,15 @@
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.backgroundColor = WZColorDefault;
     
+    //模拟网络慢
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        //集成刷新控件
+//        [self setupRefresh];
+//    });
+    
     //集成刷新控件
     [self setupRefresh];
+   
 }
 
 #pragma mark - UITableViewDataSource
