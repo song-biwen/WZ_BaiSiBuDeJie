@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class WZEssenceListModel;
+
 /** 点击图片放大 */
 @interface WZShowImageViewController : UIViewController
+
+//数据model
+@property (nonatomic, strong) WZEssenceListModel *listModel;
 
 @end

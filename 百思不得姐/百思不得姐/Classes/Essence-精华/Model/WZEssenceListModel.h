@@ -42,5 +42,7 @@
 @property (nonatomic, assign, readonly) BOOL is_larger;
 //图片缩放比例
 @property (nonatomic, assign, readonly) CGFloat pictureScale;
+//图片下载进度
+@property (nonatomic, assign) CGFloat pictureProgress;
 
 @end
