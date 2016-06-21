@@ -6,6 +6,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 3,
+          "top" : 3,
+          "right" : 3,
+          "left" : 3
+        }
+      },
       "idiom" : "universal",
       "filename" : "FollowBtnBg@2x.png",
       "scale" : "2x"

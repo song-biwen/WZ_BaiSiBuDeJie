@@ -7,6 +7,7 @@
 //
 
 #import "WZTestViewController.h"
+#import "WZLoginRegisterViewController.h" //登录注册
 
 @interface WZTestViewController ()
 
@@ -17,23 +18,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBarHidden = NO;
     self.navigationItem.title = @"WZTestViewController";
     self.view.backgroundColor = WZColorDefault;
+    
+    UIButton *button = [[UIButton alloc] init];
+    button.center = CGPointMake(WZScreenWidth * 0.5, WZScreenHeight * 0.5);
+    button.size = CGSizeMake(100, 30);
+    [button setTitle:@"取消" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)cancelAction {
+    
+    WZLog(@"%@",[UIApplication sharedApplication].keyWindow.rootViewController);
+    
+    id vc = self.navigationController.childViewControllers[0];
+    if ([vc isKindOfClass:[WZLoginRegisterViewController class]]) {
+        WZLoginRegisterViewController *loginVc = (WZLoginRegisterViewController *)vc;
+        [loginVc dismissViewControllerAnimated:YES completion:nil];
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

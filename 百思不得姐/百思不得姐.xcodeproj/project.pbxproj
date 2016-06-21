@@ -38,6 +38,9 @@
 		4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE09B1D050F2F00A7FAF5 /* WZTabBar.m */; };
 		4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */; };
 		4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */; };
+		4CC29AE01D18DAFD0027BA38 /* WZPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC29ADF1D18DAFD0027BA38 /* WZPublishViewController.xib */; };
+		4CC29AE31D192D190027BA38 /* WZPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC29AE21D192D190027BA38 /* WZPublishView.m */; };
+		4CC29AE51D192D360027BA38 /* WZPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC29AE41D192D350027BA38 /* WZPublishView.xib */; };
 		4CC73FF61D1242DA0074474D /* WZEssenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC73FF51D1242DA0074474D /* WZEssenceModel.m */; };
 		4CC73FF91D1242F10074474D /* WZEssenceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC73FF81D1242F10074474D /* WZEssenceListModel.m */; };
 		4CC73FFD1D127D790074474D /* WZEssenceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC73FFB1D127D790074474D /* WZEssenceCell.m */; };
@@ -113,10 +116,14 @@
 		4CBDE0981D050F2F00A7FAF5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4CBDE09A1D050F2F00A7FAF5 /* WZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTabBar.h; sourceTree = "<group>"; };
 		4CBDE09B1D050F2F00A7FAF5 /* WZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTabBar.m; sourceTree = "<group>"; };
-		4CBDE09C1D050F2F00A7FAF5 /* WZPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZPublishViewController.h; sourceTree = "<group>"; };
-		4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZPublishViewController.m; sourceTree = "<group>"; };
+		4CBDE09C1D050F2F00A7FAF5 /* WZPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPublishViewController.h; path = ../WZPublishViewController.h; sourceTree = "<group>"; };
+		4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPublishViewController.m; path = ../WZPublishViewController.m; sourceTree = "<group>"; };
 		4CBDE0AA1D051C9800A7FAF5 /* WZTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTestViewController.h; sourceTree = "<group>"; };
 		4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTestViewController.m; sourceTree = "<group>"; };
+		4CC29ADF1D18DAFD0027BA38 /* WZPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WZPublishViewController.xib; path = ../WZPublishViewController.xib; sourceTree = "<group>"; };
+		4CC29AE11D192D190027BA38 /* WZPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZPublishView.h; sourceTree = "<group>"; };
+		4CC29AE21D192D190027BA38 /* WZPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZPublishView.m; sourceTree = "<group>"; };
+		4CC29AE41D192D350027BA38 /* WZPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZPublishView.xib; sourceTree = "<group>"; };
 		4CC73FF41D1242DA0074474D /* WZEssenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceModel.h; sourceTree = "<group>"; };
 		4CC73FF51D1242DA0074474D /* WZEssenceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceModel.m; sourceTree = "<group>"; };
 		4CC73FF71D1242F10074474D /* WZEssenceListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceListModel.h; sourceTree = "<group>"; };
@@ -257,8 +264,6 @@
 				4CBDE0781D050F2F00A7FAF5 /* FriendTrends-关注 */,
 				4CBDE07E1D050F2F00A7FAF5 /* Me-我 */,
 				4CBDE08A1D050F2F00A7FAF5 /* Other-其他 */,
-				4CBDE09C1D050F2F00A7FAF5 /* WZPublishViewController.h */,
-				4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */,
 				4CBDE0AA1D051C9800A7FAF5 /* WZTestViewController.h */,
 				4CBDE0AB1D051C9800A7FAF5 /* WZTestViewController.m */,
 			);
@@ -443,6 +448,12 @@
 				4CBDE08D1D050F2F00A7FAF5 /* Category */,
 				4CBDE0921D050F2F00A7FAF5 /* Controller */,
 				4CBDE0991D050F2F00A7FAF5 /* View */,
+				4CBDE09C1D050F2F00A7FAF5 /* WZPublishViewController.h */,
+				4CBDE09D1D050F2F00A7FAF5 /* WZPublishViewController.m */,
+				4CC29ADF1D18DAFD0027BA38 /* WZPublishViewController.xib */,
+				4CC29AE11D192D190027BA38 /* WZPublishView.h */,
+				4CC29AE21D192D190027BA38 /* WZPublishView.m */,
+				4CC29AE41D192D350027BA38 /* WZPublishView.xib */,
 				4CBDE08B1D050F2F00A7FAF5 /* AppDelegate.h */,
 				4CBDE08C1D050F2F00A7FAF5 /* AppDelegate.m */,
 				4CBDE0971D050F2F00A7FAF5 /* main.m */,
@@ -567,10 +578,12 @@
 				4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */,
 				4CC73FFE1D127D790074474D /* WZEssenceCell.xib in Resources */,
 				4CD610E11D05604E00B2580E /* WZRecommandRightTableViewCell.xib in Resources */,
+				4CC29AE51D192D360027BA38 /* WZPublishView.xib in Resources */,
 				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
 				4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */,
 				4CD01C511D13ED2D00E553CF /* WZEssencePictureView.xib in Resources */,
+				4CC29AE01D18DAFD0027BA38 /* WZPublishViewController.xib in Resources */,
 				4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */,
 				4CD206FB1D17D03C002CB379 /* WZShowImageViewController.xib in Resources */,
 				4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */,
@@ -633,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */,
+				4CC29AE31D192D190027BA38 /* WZPublishView.m in Sources */,
 				4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */,
 				4CD01C4A1D13A64900E553CF /* WZConst.m in Sources */,
 				4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */,

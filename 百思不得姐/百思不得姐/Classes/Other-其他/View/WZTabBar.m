@@ -7,6 +7,8 @@
 //
 
 #import "WZTabBar.h"
+#import "WZPublishViewController.h"
+#import "WZPublishView.h" //发布view
 
 @implementation WZTabBar
 
@@ -61,7 +63,19 @@
 /** 发布按钮点击 */
 - (void)publishButtonAction {
     
-    WZLogFunc;
+//    WZPublishViewController *publishVc = [[WZPublishViewController alloc] init];
+//    
+//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publishVc animated:NO completion:nil];
+    
+    
+    //2.0 可实现背景半透明效果
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    WZPublishView *publishView = [WZPublishView publishView];
+    publishView.frame = window.bounds;
+    [window.rootViewController.view addSubview:publishView];
+    
+    //3.0
+//    [WZPublishView show];
 }
 
 @end

@@ -10,7 +10,10 @@
 #define ___h
 
 /** 
- 下次学习0729 05
+ 下次学习0730 06
+ pod install --verbose --no-repo-update
+ pod update --verbose --no-repo-update
+ 
  
  1.后面带有 UI_APPEARANCE_SELECTOR  字段的方法名 可以通过统一设置属性
  2.随机数函数arc4random_uniform（x），可以用来产生0～(x-1)范围内的随机数 
@@ -61,7 +64,15 @@
  18.在不知道图片扩展名的情况下，知道图片的类型？
     实现方法：取出图片数据的第一个字节，就可以判断出图片的真实类型
  19. self.picture_imageView.layer.contentsRect = CGRectMake(0, 0, 1, _listModel.pictureScale); //按比例显示图片的上部分
+ 20.
  
+     pop和Core Animation的区别
+     1.Core Animation的动画只能添加到layer上
+     2.pop的动画能添加到任何对象
+     3.pop的底层并非基于Core Animation, 是基于CADisplayLink
+     4.Core Animation的动画仅仅是表象, 并不会真正修改对象的frame\size等值
+     5.pop的动画实时修改对象的属性, 真正地修改了对象的属性
+
  */
 
 /**

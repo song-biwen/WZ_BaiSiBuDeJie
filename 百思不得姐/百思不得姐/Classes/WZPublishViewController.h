@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+/** 发布 */
 @interface WZPublishViewController : UIViewController
 
 @end

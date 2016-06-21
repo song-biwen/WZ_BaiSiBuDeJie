@@ -22,10 +22,16 @@
 
 @implementation WZLoginRegisterViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController setNavigationBarHidden:YES];
     
     /**
      改变textFiled属性 Placeholder的颜色
@@ -98,9 +104,7 @@
     WZLogFunc;
     //腾讯微博的高亮图片有问题
     WZTestViewController *textVC = [[WZTestViewController alloc] init];
-//    [[UIApplication sharedApplication].keyWindow.rootViewController pushViewController:textVC animated:YES];
-   
-//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:textVC animated:YES completion:nil];
+    [self.navigationController pushViewController:textVC animated:YES];
 }
 
 //设置属性

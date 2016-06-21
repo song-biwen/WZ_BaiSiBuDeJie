@@ -97,11 +97,14 @@
 + (void)showLoginRegisterController {
     
     WZLoginRegisterViewController *loginRegisterVC = [[WZLoginRegisterViewController alloc] init];
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:loginRegisterVC animated:YES completion:nil];
+    WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:loginRegisterVC];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:nil];
 }
 
 /** 使登录注册页面消失 */
 + (void)dismissLoginRegisterController {
+    
+    WZLog(@"%@",[UIApplication sharedApplication].keyWindow.rootViewController);
     
 }
 
