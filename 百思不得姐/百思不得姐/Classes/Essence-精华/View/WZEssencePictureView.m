@@ -35,8 +35,6 @@
 - (void)setListModel:(WZEssenceListModel *)listModel {
     _listModel = listModel;
     
-    //点击图片查看大图
-    [self.picture_imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBigImage)]];
     
     [self.progress_view setProgress:listModel.pictureProgress animated:NO];
     
@@ -118,6 +116,8 @@
     self.picture_imageView.userInteractionEnabled = YES;
     self.bigButton.userInteractionEnabled = NO;
     
+    //点击图片查看大图
+    [self.picture_imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBigImage)]];
     
 }
 @end

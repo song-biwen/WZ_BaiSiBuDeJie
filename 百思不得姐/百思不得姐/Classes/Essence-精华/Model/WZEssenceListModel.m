@@ -75,6 +75,27 @@
             _cellHeight += pictureH + WZEssenceBaseCellMargin;
         }
         
+        if (self.type == WZEssenceBaseTypeVoice) {
+            //声音
+            CGFloat voiceW = maxSize.width;
+            CGFloat voiceH = voiceW * self.height / self.width + WZEssenceBaseCellMargin;
+            CGFloat voiceX = WZEssenceBaseCellMargin;
+            CGFloat voiceY = _cellHeight;
+            _voiceF = CGRectMake(voiceX, voiceY, voiceW, voiceH);
+            
+            _cellHeight += voiceH + WZEssenceBaseCellMargin;
+        }
+        
+        if (self.type == WZEssenceBaseTypeVideo) {
+            //视频
+            CGFloat videoW = maxSize.width;
+            CGFloat videoH = videoW * self.height / self.width;
+            CGFloat videoX = WZEssenceBaseCellMargin;
+            CGFloat videoY = _cellHeight;
+            _videoF = CGRectMake(videoX, videoY, videoW, videoH);
+            
+            _cellHeight += videoH + WZEssenceBaseCellMargin;
+        }
         
         //底部高度
         CGFloat bottomViewH = WZEssenceBaseCellBottomHeight;

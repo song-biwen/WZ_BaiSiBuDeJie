@@ -9,6 +9,8 @@
 #import "WZEssenceCell.h"
 #import "WZEssenceListModel.h" //数据模型
 #import "WZEssencePictureView.h" //图片View
+#import "WZEssenceVoiceView.h" //声音view
+#import "WZEssenceVideoView.h" //视频view
 
 @interface WZEssenceCell()
 //头像
@@ -43,6 +45,12 @@
 
 //图片View
 @property (nonatomic, weak) WZEssencePictureView *pictureView;
+
+//voiceView
+@property (nonatomic, weak) WZEssenceVoiceView *voiceView;
+
+//WZEssenceVideoView
+@property (nonatomic, weak) WZEssenceVideoView *videoView;
 
 @end
 @implementation WZEssenceCell
@@ -83,15 +91,33 @@
     self.message_label.text = _listModel.text;
     
     
-    if (listModel.type == WZEssenceBaseTypePicture) {
+    if (listModel.type == WZEssenceBaseTypePicture) {//图片
         self.pictureView.listModel = _listModel;
         self.pictureView.frame = _listModel.pictureF;
     }
+    else if (listModel.type == WZEssenceBaseTypeVoice) { //声音
+        self.voiceView.listModel = _listModel;
+        self.voiceView.frame = _listModel.voiceF;
+    }
+    else if (listModel.type == WZEssenceBaseTypeVideo) { //视频
+        self.videoView.listModel = _listModel;
+        self.videoView.frame = _listModel.videoF;
+    }
+    
+    //更新界面
+    [self updateSubViews:listModel.type];
     
     [self setupButton:self.ding_button count:[_listModel.ding integerValue] placeholder:@"顶"];
     [self setupButton:self.cai_button count:[_listModel.cai integerValue] placeholder:@"踩"];
     [self setupButton:self.repost_button count:[_listModel.repost integerValue] placeholder:@"转发"];
     [self setupButton:self.comment_button count:[_listModel.comment integerValue] placeholder:@"评论"];
+}
+
+
+- (void)updateSubViews:(WZEssenceBaseType)type {
+    self.pictureView.hidden = type != WZEssenceBaseTypePicture;
+    self.voiceView.hidden = type != WZEssenceBaseTypeVoice;
+    self.videoView.hidden = type != WZEssenceBaseTypeVideo;
 }
 
 //按钮初始化
@@ -142,5 +168,24 @@
         _pictureView = pictureView;
     }
     return _pictureView;
+}
+
+
+- (WZEssenceVoiceView *)voiceView {
+    if (!_voiceView) {
+        _voiceView = [WZEssenceVoiceView voiceView];
+        [self.contentView addSubview:_voiceView];
+    }
+    return _voiceView;
+    
+}
+
+-(WZEssenceVideoView *)videoView {
+    if (!_videoView) {
+        _videoView = [WZEssenceVideoView videoView];
+        [self.contentView addSubview:_videoView];
+    }
+    return _videoView;
+    
 }
 @end

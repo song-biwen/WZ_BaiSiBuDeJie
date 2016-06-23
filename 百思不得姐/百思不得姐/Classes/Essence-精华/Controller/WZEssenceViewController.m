@@ -135,7 +135,7 @@
     //声音
     WZEssenseBaseController *voiceVC = [[WZEssenseBaseController alloc] init];
     voiceVC.title = @"声音";
-    voiceVC.essence_type = WZEssenceBaseTypeVideo;
+    voiceVC.essence_type = WZEssenceBaseTypeVoice;
     [self addChildViewController:voiceVC];
     
     //图片

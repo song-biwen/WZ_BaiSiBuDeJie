@@ -10,7 +10,8 @@
 #define ___h
 
 /** 
- 下次学习0730 06
+ 完成精华部门的页面展示
+ 下次学习0802 06
  pod install --verbose --no-repo-update
  pod update --verbose --no-repo-update
  
@@ -72,7 +73,8 @@
      3.pop的底层并非基于Core Animation, 是基于CADisplayLink
      4.Core Animation的动画仅仅是表象, 并不会真正修改对象的frame\size等值
      5.pop的动画实时修改对象的属性, 真正地修改了对象的属性
-
+21.数字前面加0 03：45
+    [NSString stringWithFormat:@"%02zd:%02zd:%02zd",hour,minute,second]
  */
 
 /**
@@ -102,5 +104,6 @@
  - 怎样全局使用登录注册
  - 文件下载，然后显示
  - 怎么批量上传图片啊
+ - CASpringAnimation
  */
 #endif /* ___h */

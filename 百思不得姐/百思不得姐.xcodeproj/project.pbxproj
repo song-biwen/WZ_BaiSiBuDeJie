@@ -19,6 +19,10 @@
 		4C6399491D0676D800192953 /* WZRecommandType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6399481D0676D800192953 /* WZRecommandType.m */; };
 		4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */; };
 		4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */; };
+		4C75B5811D1B757300D611A1 /* WZEssenceVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C75B5801D1B757300D611A1 /* WZEssenceVoiceView.m */; };
+		4C75B5831D1B75B000D611A1 /* WZEssenceVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C75B5821D1B75B000D611A1 /* WZEssenceVoiceView.xib */; };
+		4C75B5861D1BB15300D611A1 /* WZEssenceVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C75B5851D1BB15300D611A1 /* WZEssenceVideoView.m */; };
+		4C75B5881D1BB16B00D611A1 /* WZEssenceVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C75B5871D1BB16B00D611A1 /* WZEssenceVideoView.xib */; };
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
 		4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */; };
 		4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */; };
@@ -82,6 +86,12 @@
 		4C63994A1D067CE500192953 /* WZRecommandLeft2TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandLeft2TableViewCell.h; sourceTree = "<group>"; };
 		4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandLeft2TableViewCell.m; sourceTree = "<group>"; };
 		4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandLeft2TableViewCell.xib; sourceTree = "<group>"; };
+		4C75B57F1D1B757300D611A1 /* WZEssenceVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceVoiceView.h; sourceTree = "<group>"; };
+		4C75B5801D1B757300D611A1 /* WZEssenceVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceVoiceView.m; sourceTree = "<group>"; };
+		4C75B5821D1B75B000D611A1 /* WZEssenceVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZEssenceVoiceView.xib; sourceTree = "<group>"; };
+		4C75B5841D1BB15300D611A1 /* WZEssenceVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceVideoView.h; sourceTree = "<group>"; };
+		4C75B5851D1BB15300D611A1 /* WZEssenceVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceVideoView.m; sourceTree = "<group>"; };
+		4C75B5871D1BB16B00D611A1 /* WZEssenceVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZEssenceVideoView.xib; sourceTree = "<group>"; };
 		4C82F5DE1D001EC10044509D /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C82F5ED1D001EC10044509D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C82F5F21D001EC10044509D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -321,6 +331,12 @@
 				4CD01C4D1D13ED2100E553CF /* WZEssencePictureView.h */,
 				4CD01C4E1D13ED2100E553CF /* WZEssencePictureView.m */,
 				4CD01C501D13ED2D00E553CF /* WZEssencePictureView.xib */,
+				4C75B57F1D1B757300D611A1 /* WZEssenceVoiceView.h */,
+				4C75B5801D1B757300D611A1 /* WZEssenceVoiceView.m */,
+				4C75B5821D1B75B000D611A1 /* WZEssenceVoiceView.xib */,
+				4C75B5841D1BB15300D611A1 /* WZEssenceVideoView.h */,
+				4C75B5851D1BB15300D611A1 /* WZEssenceVideoView.m */,
+				4C75B5871D1BB16B00D611A1 /* WZEssenceVideoView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -573,11 +589,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C75B5881D1BB16B00D611A1 /* WZEssenceVideoView.xib in Resources */,
 				4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */,
 				4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */,
 				4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */,
 				4CC73FFE1D127D790074474D /* WZEssenceCell.xib in Resources */,
 				4CD610E11D05604E00B2580E /* WZRecommandRightTableViewCell.xib in Resources */,
+				4C75B5831D1B75B000D611A1 /* WZEssenceVoiceView.xib in Resources */,
 				4CC29AE51D192D360027BA38 /* WZPublishView.xib in Resources */,
 				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
@@ -664,6 +682,7 @@
 				4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */,
 				4CBDE0A11D050F2F00A7FAF5 /* WZNewViewController.m in Sources */,
 				4CBDE0A31D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m in Sources */,
+				4C75B5811D1B757300D611A1 /* WZEssenceVoiceView.m in Sources */,
 				4CBDE0A61D050F2F00A7FAF5 /* WZNavigationController.m in Sources */,
 				4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */,
 				4CBDE0A41D050F2F00A7FAF5 /* UIView+WZCategory.m in Sources */,
@@ -678,6 +697,7 @@
 				4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */,
 				4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */,
 				4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */,
+				4C75B5861D1BB15300D611A1 /* WZEssenceVideoView.m in Sources */,
 				4CC73FFD1D127D790074474D /* WZEssenceCell.m in Sources */,
 				4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */,
 				4C21B1811D0D559500D2CDB3 /* WZRecommandTagsCell.m in Sources */,

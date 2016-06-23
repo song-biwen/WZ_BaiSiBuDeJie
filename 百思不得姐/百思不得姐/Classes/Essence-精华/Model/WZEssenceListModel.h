@@ -26,8 +26,10 @@
 @property (nonatomic, copy) NSString *larger_image; // 显示在页面中的视频图片的url 大的
 @property (nonatomic, copy) NSString *middle_image; // 显示在页面中的视频图片的url 中的
 @property (nonatomic, assign) WZEssenceBaseType type; //帖子的类型，1为全部 10为图片 29为段子 31为音频 41为视频
-//is_gif
 @property (nonatomic, assign) BOOL is_gif; //是否是gif动画
+@property (nonatomic, assign) NSInteger voicetime;//声音时长voicetime 
+@property (nonatomic, assign) NSInteger videotime;//视频时长 videotime
+@property (nonatomic, copy) NSString *playcount;//播放次数
 
 
 
@@ -45,4 +47,9 @@
 //图片下载进度
 @property (nonatomic, assign) CGFloat pictureProgress;
 
+//voiceView 的尺寸
+@property (nonatomic, assign, readonly) CGRect voiceF;
+
+//videoView 的尺寸
+@property (nonatomic, assign, readonly) CGRect videoF;
 @end
