@@ -11,6 +11,7 @@
 #import "WZEssencePictureView.h" //图片View
 #import "WZEssenceVoiceView.h" //声音view
 #import "WZEssenceVideoView.h" //视频view
+#import "WZEssenceTopCommentView.h" //最热评论view
 
 @interface WZEssenceCell()
 //头像
@@ -52,6 +53,8 @@
 //WZEssenceVideoView
 @property (nonatomic, weak) WZEssenceVideoView *videoView;
 
+//WZEssenceTopCommentView
+@property (nonatomic, weak) WZEssenceTopCommentView *topCommentView;
 @end
 @implementation WZEssenceCell
 
@@ -111,6 +114,15 @@
     [self setupButton:self.cai_button count:[_listModel.cai integerValue] placeholder:@"踩"];
     [self setupButton:self.repost_button count:[_listModel.repost integerValue] placeholder:@"转发"];
     [self setupButton:self.comment_button count:[_listModel.comment integerValue] placeholder:@"评论"];
+    
+    //最热评论
+    if (listModel.top_cmt.count > 0) {
+        self.topCommentView.listModel = listModel;
+        self.topCommentView.frame = _listModel.topCommentViewF;
+    }
+    
+    self.topCommentView.hidden = listModel.top_cmt.count == 0;
+    
 }
 
 
@@ -180,12 +192,21 @@
     
 }
 
--(WZEssenceVideoView *)videoView {
+- (WZEssenceVideoView *)videoView {
     if (!_videoView) {
         _videoView = [WZEssenceVideoView videoView];
         [self.contentView addSubview:_videoView];
     }
     return _videoView;
+    
+}
+
+- (WZEssenceTopCommentView *)topCommentView {
+    if (!_topCommentView) {
+        _topCommentView = [WZEssenceTopCommentView topCommentView];
+        [self.contentView addSubview:_topCommentView];
+    }
+    return _topCommentView;
     
 }
 @end

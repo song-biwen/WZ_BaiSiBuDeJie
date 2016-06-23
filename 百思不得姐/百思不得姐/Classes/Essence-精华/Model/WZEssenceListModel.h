@@ -30,7 +30,7 @@
 @property (nonatomic, assign) NSInteger voicetime;//声音时长voicetime 
 @property (nonatomic, assign) NSInteger videotime;//视频时长 videotime
 @property (nonatomic, copy) NSString *playcount;//播放次数
-
+@property (nonatomic, strong) NSArray *top_cmt; //最热评论数
 
 
 /** 
@@ -52,4 +52,11 @@
 
 //videoView 的尺寸
 @property (nonatomic, assign, readonly) CGRect videoF;
+
+//topCommentView
+@property (nonatomic, assign, readonly) CGRect topCommentViewF;
+
+//最热评论内容
+@property (nonatomic, copy, readonly) NSString *top_comment;
+
 @end

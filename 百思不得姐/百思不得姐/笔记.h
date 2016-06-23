@@ -75,6 +75,10 @@
      5.pop的动画实时修改对象的属性, 真正地修改了对象的属性
 21.数字前面加0 03：45
     [NSString stringWithFormat:@"%02zd:%02zd:%02zd",hour,minute,second]
+22.mj_replacedKeyFromPropertyName
+23.mj_objectClassInArray
+ 
+ 
  */
 
 /**

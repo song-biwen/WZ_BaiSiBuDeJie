@@ -8,6 +8,8 @@
 
 #import "WZEssenceListModel.h"
 #import <MJExtension.h>
+#import "WZEssenceTopComentModel.h" //最热评论
+#import "WZEssenceUserModel.h" //用户信息
 
 
 @implementation WZEssenceListModel
@@ -24,6 +26,11 @@
              @"larger_image":@"image1",
              @"middle_image":@"image2"
              };
+}
+
+//将数组里面的字典按照相应的model解析
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"top_cmt":@"WZEssenceTopComentModel"};
 }
 
 ////用属性字段替换接口返回数据相应字段
@@ -95,6 +102,25 @@
             _videoF = CGRectMake(videoX, videoY, videoW, videoH);
             
             _cellHeight += videoH + WZEssenceBaseCellMargin;
+        }
+        
+        //最热评论
+        if (self.top_cmt.count > 0) {
+            
+            WZEssenceTopComentModel *commentModel = self.top_cmt.firstObject;
+            WZEssenceUserModel *userModel = commentModel.user;
+            
+            CGFloat topCommentX = WZEssenceBaseCellMargin;
+            CGFloat topCommentY = _cellHeight;
+            CGFloat topCommentW = maxSize.width;
+            
+            NSString *comment = [NSString stringWithFormat:@"%@：%@",userModel.username,commentModel.content];
+            _top_comment = comment;
+            CGFloat topCommentH = [comment boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:WZFont(12)} context:nil].size.height + 15;//15为最热评论标签的高度
+            
+            _topCommentViewF = CGRectMake(topCommentX, topCommentY, topCommentW, topCommentH);
+            _cellHeight += topCommentH + WZEssenceBaseCellMargin;
+            
         }
         
         //底部高度

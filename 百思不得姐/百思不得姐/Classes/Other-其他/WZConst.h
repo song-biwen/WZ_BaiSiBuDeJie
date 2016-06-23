@@ -35,3 +35,7 @@ UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureMaxHeight;
 
 /*精华cell 图片超出最大高度后，现在默认高度*/
 UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureDefaultHeight;
+
+//性别
+UIKIT_EXTERN NSString const *WZEssenceUserSexMale;
+UIKIT_EXTERN NSString const *WZEssenceUserSexFemale;
