@@ -11,6 +11,7 @@
 
 #import "WZEssenceModel.h" //模型
 #import "WZEssenceListModel.h" //列表数据模型
+#import "WZEssenceCommentController.h" //评论
 
 @interface WZEssenseBaseController ()
 //网络请求
@@ -76,6 +77,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    WZEssenceCommentController *commmentVC = [[WZEssenceCommentController alloc] init];
+    commmentVC.listModel = self.essenseModel.lists[indexPath.row];
+    [self.navigationController pushViewController:commmentVC animated:YES];
 }
 
 #pragma mark - 加载数据
@@ -94,7 +99,7 @@
     
     [[AFHTTPSessionManager manager] GET:KURLPrePath parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        WZLog(@"%@",responseObject);
+//        WZLog(@"%@",responseObject);
         //多次请求已最后一次请求为准
         if (self.parameter != parameter) return;
         

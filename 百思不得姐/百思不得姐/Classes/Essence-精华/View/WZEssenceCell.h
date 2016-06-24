@@ -13,6 +13,8 @@
 /** 精华cell */
 @interface WZEssenceCell : UITableViewCell
 
++ (instancetype)cell;
+
 + (instancetype)cellOfTableView:(UITableView *)tableView;
 
 /** cell 高度 */

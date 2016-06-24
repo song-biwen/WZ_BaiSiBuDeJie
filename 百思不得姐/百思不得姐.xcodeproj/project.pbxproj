@@ -30,6 +30,8 @@
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
 		4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */; };
 		4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */; };
+		4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABC0E01D1CD05A00E15DBB /* WZEssenceCommentController.m */; };
+		4CABC0E31D1CD05A00E15DBB /* WZEssenceCommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABC0E11D1CD05A00E15DBB /* WZEssenceCommentController.xib */; };
 		4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */; };
 		4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */; };
 		4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF6321D0EA8C300503A29 /* WZVerticalButton.m */; };
@@ -110,6 +112,9 @@
 		4CA666A21D10EF4C00E6BEF1 /* WZGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZGuideView.h; sourceTree = "<group>"; };
 		4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZGuideView.m; sourceTree = "<group>"; };
 		4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZGuideView.xib; sourceTree = "<group>"; };
+		4CABC0DF1D1CD05A00E15DBB /* WZEssenceCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceCommentController.h; sourceTree = "<group>"; };
+		4CABC0E01D1CD05A00E15DBB /* WZEssenceCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceCommentController.m; sourceTree = "<group>"; };
+		4CABC0E11D1CD05A00E15DBB /* WZEssenceCommentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZEssenceCommentController.xib; sourceTree = "<group>"; };
 		4CABF62C1D0E9F1800503A29 /* WZLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLoginRegisterViewController.h; sourceTree = "<group>"; };
 		4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLoginRegisterViewController.m; sourceTree = "<group>"; };
 		4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -313,6 +318,9 @@
 				4CD206F71D17D03C002CB379 /* WZShowImageViewController.h */,
 				4CD206F81D17D03C002CB379 /* WZShowImageViewController.m */,
 				4CD206F91D17D03C002CB379 /* WZShowImageViewController.xib */,
+				4CABC0DF1D1CD05A00E15DBB /* WZEssenceCommentController.h */,
+				4CABC0E01D1CD05A00E15DBB /* WZEssenceCommentController.m */,
+				4CABC0E11D1CD05A00E15DBB /* WZEssenceCommentController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -616,6 +624,7 @@
 				4C75B5831D1B75B000D611A1 /* WZEssenceVoiceView.xib in Resources */,
 				4CC29AE51D192D360027BA38 /* WZPublishView.xib in Resources */,
 				4C75B5931D1BC7CA00D611A1 /* WZEssenceTopCommentView.xib in Resources */,
+				4CABC0E31D1CD05A00E15DBB /* WZEssenceCommentController.xib in Resources */,
 				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
 				4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */,
@@ -693,6 +702,7 @@
 				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
 				4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */,
 				4CD01C4F1D13ED2100E553CF /* WZEssencePictureView.m in Sources */,
+				4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */,
 				4CBDE0A71D050F2F00A7FAF5 /* main.m in Sources */,
 				4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */,
 				4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */,

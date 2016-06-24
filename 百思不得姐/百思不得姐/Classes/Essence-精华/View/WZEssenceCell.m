@@ -58,6 +58,10 @@
 @end
 @implementation WZEssenceCell
 
++ (instancetype)cell {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+}
+
 + (instancetype)cellOfTableView:(UITableView *)tableView {
     WZEssenceCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self)];
     if (!cell) {
@@ -166,7 +170,8 @@
     
     frame.origin.x += WZEssenceBaseCellMargin;
     frame.size.width -= 2 * WZEssenceBaseCellMargin;
-    frame.size.height -= WZEssenceBaseCellMargin;
+//    frame.size.height -= WZEssenceBaseCellMargin;
+    frame.size.height = self.listModel.cellHeight - WZEssenceBaseCellMargin;
     frame.origin.y += WZEssenceBaseCellMargin;
     
     [super setFrame:frame];
