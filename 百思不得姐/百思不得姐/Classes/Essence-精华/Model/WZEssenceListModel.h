@@ -11,6 +11,7 @@
 /** 精华分类model */
 @interface WZEssenceListModel : NSObject
 
+@property (nonatomic, copy) NSString *ID;//id
 @property (nonatomic, copy) NSString *name;//姓名
 @property (nonatomic, copy) NSString *profile_image;//头像
 @property (nonatomic, copy) NSString *create_time;//时间

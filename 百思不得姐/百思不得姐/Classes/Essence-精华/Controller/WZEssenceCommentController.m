@@ -9,14 +9,24 @@
 #import "WZEssenceCommentController.h"
 #import "WZEssenceListModel.h" //model
 #import "WZEssenceCell.h" //cell
+#import <MJRefresh.h>
 
 @interface WZEssenceCommentController ()
 <UITableViewDelegate, UITableViewDataSource>
+
+{
+    NSString *lastcid;
+    NSInteger currentPage;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 //输入框底部约束
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyboard_bottomConstraint;
+
+//网络请求
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+
 @end
 
 @implementation WZEssenceCommentController
@@ -26,6 +36,9 @@
     
     [self setupBasic];
     [self setupHeader];
+    
+    //集成刷新控件
+    [self setupRefresh];
 }
 
 
@@ -66,6 +79,55 @@
     [self.view endEditing:YES];
 }
 
+/** 加载数据 */
+- (void)loadingDataWithHeaderRefresh:(BOOL)isHeaderRefresh {
+    
+    if (isHeaderRefresh) {
+        currentPage = 1;
+        lastcid = @"";
+    }
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:@"dataList" forKey:@"a"];
+    [parameters setObject:@"comment" forKey:@"c"];
+    [parameters setObject:self.listModel.ID forKey:@"data_id"];
+    [parameters setObject:@"1" forKey:@"hot"];
+    [parameters setObject:@"0" forKey:@"jbk"];
+    [parameters setObject:lastcid forKey:@"lastcid"];
+    [parameters setObject:@(currentPage) forKey:@"page"];
+    
+    WZLog(@"%@",parameters);
+    
+    [self.manager GET:KURLPrePath parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        WZLog(@".....%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+
+/** 上拉加载更多 */
+- (void)footerRefresh {
+    [self loadingDataWithHeaderRefresh:NO];
+}
+
+/** 下拉刷新 */
+- (void)headerRefresh {
+    [self loadingDataWithHeaderRefresh:YES];
+}
+
+
+/** 集成刷新控件 */
+- (void)setupRefresh {
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    /** 根据拖拽比例自动切换透明度 */
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    //加载数据
+    [self.tableView.mj_header beginRefreshing];
+}
+
 /** tableView添加header */
 - (void)setupHeader {
     
@@ -82,6 +144,7 @@
 
 /** 初始化 */
 - (void)setupBasic {
+    
     self.title = @"评论";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"comment_nav_item_share_icon" highlightImageName:@"comment_nav_item_share_icon_click" target:self action:@selector(shareAction)];
     
@@ -116,5 +179,16 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [self.manager.operationQueue cancelAllOperations];
+    
+}
+
+
+- (AFHTTPSessionManager *)manager {
+    if (!_manager) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
 }
 @end
