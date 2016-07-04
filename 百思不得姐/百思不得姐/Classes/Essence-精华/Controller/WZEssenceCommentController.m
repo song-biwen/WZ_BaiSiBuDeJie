@@ -8,8 +8,11 @@
 
 #import "WZEssenceCommentController.h"
 #import "WZEssenceListModel.h" //model
-#import "WZEssenceCell.h" //cell
+#import "WZEssenceTopComentModel.h" //model
 #import <MJRefresh.h>
+#import <MJExtension.h>
+#import "WZCommentCell.h" //cell
+#import "WZEssenceCell.h" //cell
 
 @interface WZEssenceCommentController ()
 <UITableViewDelegate, UITableViewDataSource>
@@ -17,6 +20,7 @@
 {
     NSString *lastcid;
     NSInteger currentPage;
+    NSInteger totalCount;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -27,6 +31,9 @@
 //网络请求
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 
+//数据
+@property (nonatomic, strong) NSMutableArray *hotComments;//最热评论
+@property (nonatomic, strong) NSMutableArray *latestComments;//最新评论
 @end
 
 @implementation WZEssenceCommentController
@@ -45,29 +52,43 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSInteger sectionCount = 0;
+    if (self.hotComments.count > 0) {
+        sectionCount ++;
+    }
     
-    return 1;
+    if (self.latestComments.count > 0) {
+        sectionCount ++;
+    }
+    
+    return sectionCount;
+}
+
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *title = @"";
+    if (self.hotComments.count > 0 && section == 0) {
+        title = @"最热评论";
+    }else if (self.latestComments.count > 0) {
+        title = @"最新评论";
+    }
+    
+    return title;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 30;
+    return [[self arrayOfSection:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%zd----%zd",indexPath.section,indexPath.row];
+    WZCommentCell *cell = [WZCommentCell cellOfTableView:tableView];
+    cell.comentModel = [self modelOfIndexPath:indexPath];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    return [[self modelOfIndexPath:indexPath] cellHeight];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,6 +98,20 @@
 //列表滚动时隐藏输入框
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
+}
+
+
+/** 返回indexPatch对应的model */
+- (WZEssenceTopComentModel *)modelOfIndexPath:(NSIndexPath *)indexPath {
+    return [self arrayOfSection:indexPath.section][indexPath.row];
+}
+
+/** 返回section对应的数组 */
+- (NSArray *)arrayOfSection:(NSInteger)section {
+    if (section == 0) {
+        return self.hotComments.count > 0 ? self.hotComments : self.latestComments;
+    }
+    return self.latestComments;
 }
 
 /** 加载数据 */
@@ -98,9 +133,45 @@
     WZLog(@"%@",parameters);
     
     [self.manager GET:KURLPrePath parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        WZLog(@".....%@",responseObject);
+//        WZLog(@".....%@",responseObject);
         
+//        [responseObject writeToFile:@"/Users/songbiwen/Desktop" atomically:YES];
+        
+        totalCount = [responseObject[@"total"] integerValue];
+        
+        if (isHeaderRefresh) {
+            self.hotComments = [WZEssenceTopComentModel mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
+            [self.latestComments removeAllObjects];
+        }
+       
+        [self.latestComments addObjectsFromArray:[WZEssenceTopComentModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]]];
+        
+        
+        if (self.latestComments.count + self.hotComments.count >= totalCount) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            
+        }else {
+            
+            WZEssenceTopComentModel *lastModel = self.latestComments.lastObject;
+            currentPage ++;
+            lastcid = lastModel.ID;
+            
+            [self.tableView.mj_footer endRefreshing];
+        }
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [self.tableView.mj_header endRefreshing];
+        
+        if (self.latestComments.count + self.hotComments.count >= totalCount) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }else {
+            [self.tableView.mj_footer endRefreshing];
+        }
+        
+        [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
         
     }];
 }
@@ -153,6 +224,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.hotComments = [NSMutableArray array];
+    self.latestComments = [NSMutableArray array];
     
     //监听键盘尺寸的改变
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];

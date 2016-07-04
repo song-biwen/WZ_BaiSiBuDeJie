@@ -33,7 +33,6 @@
 @property (nonatomic, copy) NSString *playcount;//播放次数
 @property (nonatomic, strong) NSArray *top_cmt; //最热评论数
 
-
 /** 
  * 添加辅助参数
  */
