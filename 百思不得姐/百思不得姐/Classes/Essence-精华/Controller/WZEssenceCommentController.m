@@ -13,6 +13,7 @@
 #import <MJExtension.h>
 #import "WZCommentCell.h" //cell
 #import "WZEssenceCell.h" //cell
+#import "WZTableViewHeaderFooterView.h" //自定义headerfooterview
 
 @interface WZEssenceCommentController ()
 <UITableViewDelegate, UITableViewDataSource>
@@ -68,16 +69,16 @@
 }
 
 
-- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *title = @"";
-    if (self.hotComments.count > 0 && section == 0) {
-        title = @"最热评论";
-    }else if (self.latestComments.count > 0) {
-        title = @"最新评论";
-    }
-    
-    return title;
-}
+//- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    NSString *title = @"";
+//    if (self.hotComments.count > 0 && section == 0) {
+//        title = @"最热评论";
+//    }else if (self.latestComments.count > 0) {
+//        title = @"最新评论";
+//    }
+//    
+//    return title;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[self arrayOfSection:section] count];
@@ -90,6 +91,47 @@
 }
 
 #pragma mark - UITableViewDelegate
+//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *headerView = [[UIView alloc] init];
+//    headerView.backgroundColor = WZColorDefault;
+//    
+//    UILabel *label = [[UILabel alloc] init];
+//    label.textColor = [UIColor lightGrayColor];
+//    label.font = WZFont(14);
+//    label.x = WZEssenceBaseCellMargin;
+//    label.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+//    label.width = 100;
+//    
+//    
+//    NSString *title = @"";
+//    if (self.hotComments.count > 0 && section == 0) {
+//        title = @"最热评论";
+//    }else if (self.latestComments.count > 0) {
+//        title = @"最新评论";
+//    }
+//    label.text = title;
+//    
+//    [headerView addSubview:label];
+//    
+//    return headerView;
+//}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    WZTableViewHeaderFooterView *header = [WZTableViewHeaderFooterView headerFooterViewOfTableView:tableView];
+    
+    NSString *title = @"";
+    if (self.hotComments.count > 0 && section == 0) {
+        title = @"最热评论";
+    }else if (self.latestComments.count > 0) {
+        title = @"最新评论";
+    }
+    
+    header.header_title = title;
+    return header;
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [[self modelOfIndexPath:indexPath] cellHeight];
 }

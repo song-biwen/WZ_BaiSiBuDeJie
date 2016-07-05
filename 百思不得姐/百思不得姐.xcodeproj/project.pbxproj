@@ -71,6 +71,7 @@
 		4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD9CCBE1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m */; };
 		4CE9362B1D2A51BE00FFE160 /* WZCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE936291D2A51BE00FFE160 /* WZCommentCell.m */; };
 		4CE9362C1D2A51BE00FFE160 /* WZCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9362A1D2A51BE00FFE160 /* WZCommentCell.xib */; };
+		4CEC43AC1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC43AB1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.m */; };
 		8A452A1E3AA9C08076620E6F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 644AE6A22815CDDE03BBF66F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +186,8 @@
 		4CE936281D2A51BE00FFE160 /* WZCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZCommentCell.h; sourceTree = "<group>"; };
 		4CE936291D2A51BE00FFE160 /* WZCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZCommentCell.m; sourceTree = "<group>"; };
 		4CE9362A1D2A51BE00FFE160 /* WZCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZCommentCell.xib; sourceTree = "<group>"; };
+		4CEC43AA1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		4CEC43AB1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTableViewHeaderFooterView.m; sourceTree = "<group>"; };
 		5A2997A7562692472BB1CAC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		644AE6A22815CDDE03BBF66F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BE7918B4C31BDC980EE819 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -371,6 +374,8 @@
 				4CE936281D2A51BE00FFE160 /* WZCommentCell.h */,
 				4CE936291D2A51BE00FFE160 /* WZCommentCell.m */,
 				4CE9362A1D2A51BE00FFE160 /* WZCommentCell.xib */,
+				4CEC43AA1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.h */,
+				4CEC43AB1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -720,6 +725,7 @@
 				4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */,
 				4C75B58E1D1BC49000D611A1 /* WZEssenceTopComentModel.m in Sources */,
 				4CBDE0A11D050F2F00A7FAF5 /* WZNewViewController.m in Sources */,
+				4CEC43AC1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.m in Sources */,
 				4CBDE0A31D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m in Sources */,
 				4C75B5911D1BC7AD00D611A1 /* WZEssenceTopCommentView.m in Sources */,
 				4C75B5811D1B757300D611A1 /* WZEssenceVoiceView.m in Sources */,

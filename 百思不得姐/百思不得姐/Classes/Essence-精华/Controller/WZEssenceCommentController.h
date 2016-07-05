@@ -10,7 +10,7 @@
 
 @class WZEssenceListModel;
 
-/** 评论 */
+/** 评论详情 */
 @interface WZEssenceCommentController : UIViewController
 //数据模型
 @property (nonatomic, strong) WZEssenceListModel *listModel;
