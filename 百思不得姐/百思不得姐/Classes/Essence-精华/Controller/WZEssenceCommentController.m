@@ -34,6 +34,9 @@
 //数据
 @property (nonatomic, strong) NSMutableArray *hotComments;//最热评论
 @property (nonatomic, strong) NSMutableArray *latestComments;//最新评论
+
+//保存之前的热门评论
+@property (nonatomic, strong) WZEssenceTopComentModel *saved_top_cmt;
 @end
 
 @implementation WZEssenceCommentController
@@ -202,6 +205,13 @@
 /** tableView添加header */
 - (void)setupHeader {
     
+    if (self.listModel.top_cmt) {
+        //进评论详情页面，删除原来的热门评论
+        self.saved_top_cmt = self.listModel.top_cmt;
+        self.listModel.top_cmt = nil;
+        [self.listModel setValue:@(0) forKey:@"cellHeight"];
+    }
+    
     UIView *header = [[UIView alloc] init];
     
     WZEssenceCell *cell = [WZEssenceCell cell];
@@ -254,6 +264,12 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [self.manager.operationQueue cancelAllOperations];
+    
+    if (self.saved_top_cmt) {
+        //还原之前的数据
+        self.listModel.top_cmt = self.saved_top_cmt;
+        [self.listModel setValue:@(0) forKey:@"cellHeight"];
+    }
     
 }
 

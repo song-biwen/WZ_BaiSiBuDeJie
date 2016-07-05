@@ -120,12 +120,12 @@
     [self setupButton:self.comment_button count:[_listModel.comment integerValue] placeholder:@"评论"];
     
     //最热评论
-    if (listModel.top_cmt.count > 0) {
+    if (listModel.top_cmt) {
         self.topCommentView.listModel = listModel;
         self.topCommentView.frame = _listModel.topCommentViewF;
     }
     
-    self.topCommentView.hidden = listModel.top_cmt.count == 0;
+    self.topCommentView.hidden = !listModel.top_cmt;
     
 }
 

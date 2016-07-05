@@ -25,14 +25,15 @@
              @"small_image":@"image0",
              @"larger_image":@"image1",
              @"middle_image":@"image2",
-             @"ID":@"id"
+             @"ID":@"id",
+             @"top_cmt":@"top_cmt[0]"
              };
 }
 
-//将数组里面的字典按照相应的model解析
-+ (NSDictionary *)mj_objectClassInArray {
-    return @{@"top_cmt":@"WZEssenceTopComentModel"};
-}
+////将数组里面的字典按照相应的model解析
+//+ (NSDictionary *)mj_objectClassInArray {
+//    return @{@"top_cmt":@"WZEssenceTopComentModel"};
+//}
 
 ////用属性字段替换接口返回数据相应字段
 //+ (NSString *)mj_replacedKeyFromPropertyName121:(NSString *)propertyName {
@@ -106,9 +107,9 @@
         }
         
         //最热评论
-        if (self.top_cmt.count > 0) {
+        if (self.top_cmt) {
             
-            WZEssenceTopComentModel *commentModel = self.top_cmt.firstObject;
+            WZEssenceTopComentModel *commentModel = self.top_cmt;
             WZEssenceUserModel *userModel = commentModel.user;
             
             CGFloat topCommentX = WZEssenceBaseCellMargin;

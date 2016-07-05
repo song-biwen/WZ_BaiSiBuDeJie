@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 /** 精华分类model */
+@class WZEssenceTopComentModel;
 @interface WZEssenceListModel : NSObject
 
 @property (nonatomic, copy) NSString *ID;//id
@@ -31,7 +32,7 @@
 @property (nonatomic, assign) NSInteger voicetime;//声音时长voicetime 
 @property (nonatomic, assign) NSInteger videotime;//视频时长 videotime
 @property (nonatomic, copy) NSString *playcount;//播放次数
-@property (nonatomic, strong) NSArray *top_cmt; //最热评论数
+@property (nonatomic, strong) WZEssenceTopComentModel *top_cmt; //最热评论数
 
 /** 
  * 添加辅助参数
