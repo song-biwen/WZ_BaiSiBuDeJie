@@ -16,6 +16,7 @@
 		4C21B1811D0D559500D2CDB3 /* WZRecommandTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21B17F1D0D559500D2CDB3 /* WZRecommandTagsCell.m */; };
 		4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C21B1801D0D559500D2CDB3 /* WZRecommandTagsCell.xib */; };
 		4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */; };
+		4C4B8ABC1D2BA0780052B032 /* WZTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */; };
 		4C6399491D0676D800192953 /* WZRecommandType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6399481D0676D800192953 /* WZRecommandType.m */; };
 		4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */; };
 		4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */; };
@@ -90,6 +91,8 @@
 		4C21B1801D0D559500D2CDB3 /* WZRecommandTagsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandTagsCell.xib; sourceTree = "<group>"; };
 		4C21B1831D0D592B00D2CDB3 /* WZRecommandTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandTag.h; sourceTree = "<group>"; };
 		4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandTag.m; sourceTree = "<group>"; };
+		4C4B8ABA1D2BA0780052B032 /* WZTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTopWindow.h; sourceTree = "<group>"; };
+		4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTopWindow.m; sourceTree = "<group>"; };
 		4C6399471D0676D800192953 /* WZRecommandType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandType.h; sourceTree = "<group>"; };
 		4C6399481D0676D800192953 /* WZRecommandType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandType.m; sourceTree = "<group>"; };
 		4C63994A1D067CE500192953 /* WZRecommandLeft2TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandLeft2TableViewCell.h; sourceTree = "<group>"; };
@@ -554,6 +557,8 @@
 				4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */,
 				4CD206FC1D17D091002CB379 /* WZCircularProgressView.h */,
 				4CD206FD1D17D091002CB379 /* WZCircularProgressView.m */,
+				4C4B8ABA1D2BA0780052B032 /* WZTopWindow.h */,
+				4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 			files = (
 				4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */,
 				4CC29AE31D192D190027BA38 /* WZPublishView.m in Sources */,
+				4C4B8ABC1D2BA0780052B032 /* WZTopWindow.m in Sources */,
 				4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */,
 				4CD01C4A1D13A64900E553CF /* WZConst.m in Sources */,
 				4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */,

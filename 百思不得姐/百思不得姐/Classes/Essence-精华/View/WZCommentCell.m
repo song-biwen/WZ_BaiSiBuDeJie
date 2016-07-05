@@ -25,7 +25,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *content_label;
 //音频
 @property (weak, nonatomic) IBOutlet UIButton *voice_button;
-
+//动画图片
+@property (weak, nonatomic) IBOutlet UIImageView *animation_imageView;
 @end
 
 @implementation WZCommentCell
@@ -45,6 +46,8 @@
     self.avator_imageView.layer.borderColor = [UIColor clearColor].CGColor;
     self.avator_imageView.layer.borderWidth = 1.0;
     
+    self.animation_imageView.animationImages = [NSArray arrayWithObjects:WZImage(@"play-voice-icon-0"),WZImage(@"play-voice-icon-1"),WZImage(@"play-voice-icon-2"),WZImage(@"play-voice-icon-3"), nil];
+    self.animation_imageView.animationDuration = 1.0;
 }
 
 - (void)setComentModel:(WZEssenceTopComentModel *)comentModel {
@@ -59,14 +62,16 @@
     [self.zan_button setTitle:[NSString stringWithFormat:@"%zd",comentModel.like_count] forState:UIControlStateNormal];
     
     self.voice_button.hidden = comentModel.voiceuri.length == 0;
+    self.animation_imageView.hidden = self.voice_button.hidden;
+    self.animation_imageView.image = WZImage(@"play-voice-icon-3");
     [self.voice_button setTitle:[NSString stringWithFormat:@"%zd''",comentModel.voicetime] forState:UIControlStateNormal];
 }
 
 //播放音频
 - (IBAction)play {
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(playVoiceWithCommentModel:)]) {
-        [self.delegate playVoiceWithCommentModel:self.comentModel];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(playVoiceWithCommentModel: animationImageView:)]) {
+        [self.delegate playVoiceWithCommentModel:self.comentModel animationImageView:self.animation_imageView];
     }
 }
 

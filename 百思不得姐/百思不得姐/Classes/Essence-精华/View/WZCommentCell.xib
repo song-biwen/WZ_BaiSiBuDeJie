@@ -56,7 +56,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-Wn-tnF" userLabel="音频">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-Wn-tnF" userLabel="音频">
                                 <rect key="frame" x="58" y="31" width="62" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="5mP-pI-UoQ"/>
@@ -64,7 +64,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="10''" image="play-voice-stop" backgroundImage="play-voice-bg">
+                                <state key="normal" title="10''" backgroundImage="play-voice-bg">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="play-voice-bg-select"/>
@@ -72,17 +72,26 @@
                                     <action selector="play" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Hs-Fb-9MT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-voice-icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="rL4-fE-DYR" userLabel="播放动画">
+                                <rect key="frame" x="68" y="35" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="OEJ-sT-IKr"/>
+                                    <constraint firstAttribute="height" constant="15" id="mrw-Fa-Hau"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nXq-gm-BFD" firstAttribute="top" secondItem="OJ1-VA-AVh" secondAttribute="bottom" constant="8" symbolic="YES" id="06u-cb-VdV"/>
                             <constraint firstAttribute="bottom" secondItem="Rj9-nl-5q4" secondAttribute="bottom" id="70i-Mz-aEa"/>
                             <constraint firstItem="nXq-gm-BFD" firstAttribute="leading" secondItem="vTu-od-nJo" secondAttribute="leading" id="8MM-Uk-JKD"/>
+                            <constraint firstItem="rL4-fE-DYR" firstAttribute="leading" secondItem="nXq-gm-BFD" secondAttribute="leading" constant="10" id="D4D-Go-ocU"/>
                             <constraint firstItem="5Ei-cl-HDG" firstAttribute="leading" secondItem="OJ1-VA-AVh" secondAttribute="trailing" id="D6G-RK-PLH"/>
                             <constraint firstItem="0vE-Wn-tnF" firstAttribute="top" secondItem="nXq-gm-BFD" secondAttribute="top" id="FoH-0B-Jtp"/>
                             <constraint firstItem="Rj9-nl-5q4" firstAttribute="centerY" secondItem="DCc-UQ-ed4" secondAttribute="centerY" id="IBf-og-jmf"/>
                             <constraint firstItem="Rj9-nl-5q4" firstAttribute="top" secondItem="DCc-UQ-ed4" secondAttribute="top" constant="10" id="JpF-Ni-vgt"/>
                             <constraint firstItem="0vE-Wn-tnF" firstAttribute="leading" secondItem="nXq-gm-BFD" secondAttribute="leading" id="Ko1-ZJ-SQu"/>
+                            <constraint firstItem="rL4-fE-DYR" firstAttribute="leading" secondItem="0vE-Wn-tnF" secondAttribute="trailing" id="MKq-MS-wLt"/>
                             <constraint firstItem="OJ1-VA-AVh" firstAttribute="leading" secondItem="vTu-od-nJo" secondAttribute="trailing" constant="8" id="PzI-Al-vxd"/>
                             <constraint firstItem="5Ei-cl-HDG" firstAttribute="leading" secondItem="nXq-gm-BFD" secondAttribute="trailing" constant="8" symbolic="YES" id="Ujn-ef-OgR"/>
                             <constraint firstItem="nXq-gm-BFD" firstAttribute="top" secondItem="vTu-od-nJo" secondAttribute="bottom" constant="8" symbolic="YES" id="WJF-aW-5oB"/>
@@ -97,6 +106,7 @@
                             <constraint firstAttribute="bottom" secondItem="5Ei-cl-HDG" secondAttribute="bottom" id="iuq-CA-AFe"/>
                             <constraint firstItem="Rj9-nl-5q4" firstAttribute="top" secondItem="DCc-UQ-ed4" secondAttribute="top" id="pmo-gH-7Iu"/>
                             <constraint firstItem="vTu-od-nJo" firstAttribute="leading" secondItem="Rj9-nl-5q4" secondAttribute="trailing" constant="8" symbolic="YES" id="s1X-r9-Qvr"/>
+                            <constraint firstItem="rL4-fE-DYR" firstAttribute="centerY" secondItem="0vE-Wn-tnF" secondAttribute="centerY" id="tAo-Vt-Ne3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -105,6 +115,7 @@
                                 <exclude reference="pmo-gH-7Iu"/>
                                 <exclude reference="06u-cb-VdV"/>
                                 <exclude reference="ZVj-ro-7IT"/>
+                                <exclude reference="MKq-MS-wLt"/>
                                 <exclude reference="Ujn-ef-OgR"/>
                                 <exclude reference="aKh-oD-eQs"/>
                                 <exclude reference="iuq-CA-AFe"/>
@@ -121,6 +132,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="animation_imageView" destination="rL4-fE-DYR" id="3NX-Jz-7uk"/>
                 <outlet property="avator_imageView" destination="Rj9-nl-5q4" id="D7G-Cy-59W"/>
                 <outlet property="content_label" destination="nXq-gm-BFD" id="5Qr-KF-hgC"/>
                 <outlet property="name_label" destination="OJ1-VA-AVh" id="PZD-Ou-kVL"/>
@@ -135,6 +147,6 @@
         <image name="commentLikeButtonClick" width="19" height="19"/>
         <image name="play-voice-bg" width="62" height="22"/>
         <image name="play-voice-bg-select" width="74" height="24"/>
-        <image name="play-voice-stop" width="12" height="12"/>
+        <image name="play-voice-icon-3" width="15" height="15"/>
     </resources>
 </document>

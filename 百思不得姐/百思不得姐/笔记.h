@@ -78,7 +78,10 @@
     [NSString stringWithFormat:@"%02zd:%02zd:%02zd",hour,minute,second]
 22.mj_replacedKeyFromPropertyName
 23.mj_objectClassInArray
- 
+24.音频播放
+     你下载的时候肯定是下载到本地一个文件夹里面
+     然后每次播放的时候先去文件夹里面比对
+     本地有的话就直接在本地播放，本地没有才下载啊
  
  */
 

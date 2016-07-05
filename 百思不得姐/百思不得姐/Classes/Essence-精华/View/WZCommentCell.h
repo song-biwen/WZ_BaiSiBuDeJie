@@ -11,7 +11,7 @@
 @class WZEssenceTopComentModel;
 @protocol WZCommentCellDelegate <NSObject>
 
-- (void)playVoiceWithCommentModel:(WZEssenceTopComentModel *)comentModel;
+- (void)playVoiceWithCommentModel:(WZEssenceTopComentModel *)comentModel animationImageView:(UIImageView *)animation_imageView;
 @end
 
 

@@ -19,7 +19,7 @@
 
 
 @interface WZEssenceCommentController ()
-<UITableViewDelegate, UITableViewDataSource,WZCommentCellDelegate>
+<UITableViewDelegate, UITableViewDataSource,WZCommentCellDelegate,AVAudioPlayerDelegate>
 
 {
     NSString *lastcid;
@@ -45,6 +45,9 @@
 
 //音频播放
 @property (nonatomic, strong) AVAudioPlayer *player;
+
+//动画图片
+@property (nonatomic, strong) UIImageView *animation_imageView;
 @end
 
 @implementation WZEssenceCommentController
@@ -59,8 +62,22 @@
     [self setupRefresh];
 }
 
+
+#pragma mark - AVAudioPlayerDelegate
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    
+    [self.animation_imageView stopAnimating];
+}
+
+
 #pragma mark -- WZCommentCellDelegate
-- (void)playVoiceWithCommentModel:(WZEssenceTopComentModel *)comentModel {
+- (void)playVoiceWithCommentModel:(WZEssenceTopComentModel *)comentModel animationImageView:(UIImageView *)animation_imageView {
+    
+    if ([self.animation_imageView isAnimating]) {
+        [self.animation_imageView stopAnimating];
+    }
+    
+    self.animation_imageView = animation_imageView;
     
     if (_player.playing) {
         [_player stop];
@@ -85,6 +102,7 @@
     }
     
     _player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:filePath] error:&error];
+    _player.delegate = self;
     if (error) {
         NSLog(@"error:%@",[error description]);
         return;
@@ -93,6 +111,8 @@
     [_player prepareToPlay];
     //播放
     [_player play];
+    
+    [self.animation_imageView startAnimating];
     NSLog(@"----播放本地数据success");
     
 }
