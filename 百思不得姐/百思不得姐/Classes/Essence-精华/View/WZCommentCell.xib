@@ -56,6 +56,22 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-Wn-tnF" userLabel="音频">
+                                <rect key="frame" x="58" y="31" width="62" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="5mP-pI-UoQ"/>
+                                    <constraint firstAttribute="width" constant="62" id="KKX-ma-PTv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="10''" image="play-voice-stop" backgroundImage="play-voice-bg">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="play-voice-bg-select"/>
+                                <connections>
+                                    <action selector="play" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Hs-Fb-9MT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -63,8 +79,10 @@
                             <constraint firstAttribute="bottom" secondItem="Rj9-nl-5q4" secondAttribute="bottom" id="70i-Mz-aEa"/>
                             <constraint firstItem="nXq-gm-BFD" firstAttribute="leading" secondItem="vTu-od-nJo" secondAttribute="leading" id="8MM-Uk-JKD"/>
                             <constraint firstItem="5Ei-cl-HDG" firstAttribute="leading" secondItem="OJ1-VA-AVh" secondAttribute="trailing" id="D6G-RK-PLH"/>
+                            <constraint firstItem="0vE-Wn-tnF" firstAttribute="top" secondItem="nXq-gm-BFD" secondAttribute="top" id="FoH-0B-Jtp"/>
                             <constraint firstItem="Rj9-nl-5q4" firstAttribute="centerY" secondItem="DCc-UQ-ed4" secondAttribute="centerY" id="IBf-og-jmf"/>
                             <constraint firstItem="Rj9-nl-5q4" firstAttribute="top" secondItem="DCc-UQ-ed4" secondAttribute="top" constant="10" id="JpF-Ni-vgt"/>
+                            <constraint firstItem="0vE-Wn-tnF" firstAttribute="leading" secondItem="nXq-gm-BFD" secondAttribute="leading" id="Ko1-ZJ-SQu"/>
                             <constraint firstItem="OJ1-VA-AVh" firstAttribute="leading" secondItem="vTu-od-nJo" secondAttribute="trailing" constant="8" id="PzI-Al-vxd"/>
                             <constraint firstItem="5Ei-cl-HDG" firstAttribute="leading" secondItem="nXq-gm-BFD" secondAttribute="trailing" constant="8" symbolic="YES" id="Ujn-ef-OgR"/>
                             <constraint firstItem="nXq-gm-BFD" firstAttribute="top" secondItem="vTu-od-nJo" secondAttribute="bottom" constant="8" symbolic="YES" id="WJF-aW-5oB"/>
@@ -107,6 +125,7 @@
                 <outlet property="content_label" destination="nXq-gm-BFD" id="5Qr-KF-hgC"/>
                 <outlet property="name_label" destination="OJ1-VA-AVh" id="PZD-Ou-kVL"/>
                 <outlet property="sex_imageView" destination="vTu-od-nJo" id="EsB-Bx-bIs"/>
+                <outlet property="voice_button" destination="0vE-Wn-tnF" id="NeL-bR-Nzb"/>
                 <outlet property="zan_button" destination="5Ei-cl-HDG" id="nYD-dB-7sl"/>
             </connections>
         </tableViewCell>
@@ -114,5 +133,8 @@
     <resources>
         <image name="commentLikeButton" width="18" height="18"/>
         <image name="commentLikeButtonClick" width="19" height="19"/>
+        <image name="play-voice-bg" width="62" height="22"/>
+        <image name="play-voice-bg-select" width="74" height="24"/>
+        <image name="play-voice-stop" width="12" height="12"/>
     </resources>
 </document>

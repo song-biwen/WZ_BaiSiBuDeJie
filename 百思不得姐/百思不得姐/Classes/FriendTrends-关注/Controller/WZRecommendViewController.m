@@ -161,7 +161,7 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
 #pragma mark - 获取左边数据
 - (void)fetchLeftTableViewData {
     
-    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:
+    [self.manager GET:WZUrlDefault parameters:
     @{
     @"a":@"category",
     @"c":@"subscribe"
@@ -210,7 +210,7 @@ static NSString *const leftIdentifierCell = @"WZRecommandLeft2TableViewCell";
     self.parameter = parameter;
     
     
-    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameter
+    [self.manager GET:WZUrlDefault parameters:parameter
     
     progress:^(NSProgress * _Nonnull downloadProgress) {
 

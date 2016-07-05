@@ -847,6 +847,10 @@
 				GCC_PREFIX_HEADER = "/Users/songbiwen/WZ_BaiSiBuDeJie/百思不得姐/百思不得姐/Classes/Other-其他/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/百思不得姐/Classes/Other-其他/View/AVSessionVoice/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.renhedao.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -861,6 +865,10 @@
 				GCC_PREFIX_HEADER = "/Users/songbiwen/WZ_BaiSiBuDeJie/百思不得姐/百思不得姐/Classes/Other-其他/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/百思不得姐/Classes/Other-其他/View/AVSessionVoice/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.renhedao.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

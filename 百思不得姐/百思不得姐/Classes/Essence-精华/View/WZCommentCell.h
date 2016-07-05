@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class WZEssenceTopComentModel;
+@protocol WZCommentCellDelegate <NSObject>
+
+- (void)playVoiceWithCommentModel:(WZEssenceTopComentModel *)comentModel;
+@end
+
+
 /** 评论 */
 @class WZEssenceTopComentModel;
 
@@ -16,5 +23,7 @@
 + (instancetype)cellOfTableView:(UITableView *)tableView;
 
 @property (nonatomic, strong) WZEssenceTopComentModel *comentModel;
+
+@property (nonatomic, assign) id<WZCommentCellDelegate> delegate;
 
 @end

@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet WZVerticalButton *zan_button;
 //内容
 @property (weak, nonatomic) IBOutlet UILabel *content_label;
+//音频
+@property (weak, nonatomic) IBOutlet UIButton *voice_button;
+
 @end
 
 @implementation WZCommentCell
@@ -54,5 +57,17 @@
     self.content_label.text = comentModel.content;
     
     [self.zan_button setTitle:[NSString stringWithFormat:@"%zd",comentModel.like_count] forState:UIControlStateNormal];
+    
+    self.voice_button.hidden = comentModel.voiceuri.length == 0;
+    [self.voice_button setTitle:[NSString stringWithFormat:@"%zd''",comentModel.voicetime] forState:UIControlStateNormal];
 }
+
+//播放音频
+- (IBAction)play {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(playVoiceWithCommentModel:)]) {
+        [self.delegate playVoiceWithCommentModel:self.comentModel];
+    }
+}
+
 @end

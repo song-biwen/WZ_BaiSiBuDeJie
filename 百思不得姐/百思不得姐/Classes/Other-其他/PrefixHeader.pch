@@ -38,7 +38,8 @@
 
 
 
-#define KURLPrePath @"http://api.budejie.com/api/api_open.php"
+#define WZUrlDefault @"http://api.budejie.com/api/api_open.php"
+#define WZUrlPre @"http://wvoice.spriteapp.cn/voice/"
 
 #import "UIView+WZCategory.h"
 #import "UIBarButtonItem+WZCategory.h"

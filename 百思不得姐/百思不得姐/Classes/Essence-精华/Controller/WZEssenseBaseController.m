@@ -97,7 +97,7 @@
     
     WZLog(@"%@",parameter);
     
-    [[AFHTTPSessionManager manager] GET:KURLPrePath parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[AFHTTPSessionManager manager] GET:WZUrlDefault parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
 //        WZLog(@"%@",responseObject);
         //多次请求已最后一次请求为准

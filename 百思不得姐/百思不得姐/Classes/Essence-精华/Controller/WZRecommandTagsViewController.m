@@ -71,7 +71,7 @@
                                 @"action":@"sub",
                                 @"c":@"topic"
                                 };
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[AFHTTPSessionManager manager] GET:WZUrlDefault parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         WZLog(@"%@",responseObject);
         if ([responseObject isKindOfClass:[NSArray class]] && [(NSArray *)responseObject count] > 0) {
             [self.dataSource addObjectsFromArray:[WZRecommandTag mj_objectArrayWithKeyValuesArray:responseObject]];

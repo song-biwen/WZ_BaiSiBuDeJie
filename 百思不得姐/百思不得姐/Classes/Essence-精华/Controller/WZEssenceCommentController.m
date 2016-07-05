@@ -15,8 +15,11 @@
 #import "WZEssenceCell.h" //cell
 #import "WZTableViewHeaderFooterView.h" //自定义headerfooterview
 
+#import <AVFoundation/AVFoundation.h>
+
+
 @interface WZEssenceCommentController ()
-<UITableViewDelegate, UITableViewDataSource>
+<UITableViewDelegate, UITableViewDataSource,WZCommentCellDelegate>
 
 {
     NSString *lastcid;
@@ -38,6 +41,10 @@
 
 //保存之前的热门评论
 @property (nonatomic, strong) WZEssenceTopComentModel *saved_top_cmt;
+
+
+//音频播放
+@property (nonatomic, strong) AVAudioPlayer *player;
 @end
 
 @implementation WZEssenceCommentController
@@ -52,6 +59,43 @@
     [self setupRefresh];
 }
 
+#pragma mark -- WZCommentCellDelegate
+- (void)playVoiceWithCommentModel:(WZEssenceTopComentModel *)comentModel {
+    
+    if (_player.playing) {
+        [_player stop];
+    }
+    
+    NSError *error;
+    NSString *voiceuri = comentModel.voiceuri;
+    NSString *fileName = [[voiceuri stringByReplacingOccurrencesOfString:WZUrlPre withString:@""] stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
+    
+    NSString *docDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [docDirPath stringByAppendingString:[NSString stringWithFormat:@"/%@",fileName]];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        
+        NSLog(@"...将数据保存在本地");
+        
+        //将数据保存到本地指定位置
+        NSURL *voiceUrl = WZUrl(voiceuri);
+        NSData *voiceData = [NSData dataWithContentsOfURL:voiceUrl];
+        [voiceData writeToFile:filePath atomically:YES];
+        
+    }
+    
+    _player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:filePath] error:&error];
+    if (error) {
+        NSLog(@"error:%@",[error description]);
+        return;
+    }
+    //准备播放
+    [_player prepareToPlay];
+    //播放
+    [_player play];
+    NSLog(@"----播放本地数据success");
+    
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -86,6 +130,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WZCommentCell *cell = [WZCommentCell cellOfTableView:tableView];
+    cell.delegate = self;
     cell.comentModel = [self modelOfIndexPath:indexPath];
     return cell;
 }
@@ -177,7 +222,7 @@
     
     WZLog(@"%@",parameters);
     
-    [self.manager GET:KURLPrePath parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:WZUrlDefault parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        WZLog(@".....%@",responseObject);
         
 //        [responseObject writeToFile:@"/Users/songbiwen/Desktop" atomically:YES];
@@ -322,4 +367,5 @@
     }
     return _manager;
 }
+
 @end
