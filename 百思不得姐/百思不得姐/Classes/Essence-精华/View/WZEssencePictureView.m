@@ -9,7 +9,6 @@
 #import "WZEssencePictureView.h"
 #import "WZEssenceListModel.h" //数据model
 #import "WZCircularProgressView.h" //加载进度
-#import "WZShowImageViewController.h" //显示图片
 
 @interface WZEssencePictureView()
 

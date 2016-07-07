@@ -188,7 +188,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		self.minSize = CGSizeZero;
 		self.square = NO;
 		self.contentMode = UIViewContentModeCenter;
-		self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin
+		self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |  UIViewAutoresizingFlexibleBottomMargin
 								| UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 
 		// Transparent background
