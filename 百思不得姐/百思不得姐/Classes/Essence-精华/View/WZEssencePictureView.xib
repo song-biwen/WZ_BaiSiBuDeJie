@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Mb7-m8-Sba" userLabel="占位图片">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="post_placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Mb7-m8-Sba" userLabel="占位图片">
                     <rect key="frame" x="0.0" y="20" width="400" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="dsK-N4-3ys"/>

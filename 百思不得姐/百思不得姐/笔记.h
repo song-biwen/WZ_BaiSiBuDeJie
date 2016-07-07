@@ -11,7 +11,7 @@
 
 /** 
  完成精华部门的页面展示
- 下次学习0802 07 点赞的动画
+ 下次学习0803 01
  
  pod install --verbose --no-repo-update
  pod update --verbose --no-repo-update
@@ -113,6 +113,6 @@
  - 文件下载，然后显示
  - 怎么批量上传图片啊
  - CASpringAnimation
- - 评论详情 音频播放 点击评论 popView
+ - 评论详情 点击评论 popView 点赞的动画
  */
 #endif /* ___h */

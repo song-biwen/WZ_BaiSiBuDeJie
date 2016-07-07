@@ -53,6 +53,8 @@
 #import <SVProgressHUD.h>
 #import <UIImageView+WebCache.h>
 #import "NSData+ImageContentType.h"
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
 
 
 

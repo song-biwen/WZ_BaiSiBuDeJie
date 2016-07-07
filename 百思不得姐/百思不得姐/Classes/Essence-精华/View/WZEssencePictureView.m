@@ -98,10 +98,32 @@
 
 //显示大图
 - (void)showBigImage {
+    // 1.创建图片浏览器
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    NSArray *arr = @[self.listModel.larger_image];
     
-    WZShowImageViewController *showImageVC = [[WZShowImageViewController alloc] init];
-    showImageVC.listModel = self.listModel;
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:showImageVC animated:YES completion:nil];
+    // 2.设置图片浏览器显示的所有图片
+    NSMutableArray *photos = [NSMutableArray array];
+    int count = (int)arr.count;
+    for (int i = 0; i <count; i++){
+        
+        NSString *orurl=[arr objectAtIndex:i];
+        
+        MJPhoto *photo = [[MJPhoto alloc] init];
+        photo.url = WZUrl(orurl);
+        //设置来源于哪一个UIImageView
+        photo.srcImageView = self.picture_imageView;
+        
+        [photos addObject:photo];
+    }
+    
+    browser.photos = photos;
+    
+    // 3.设置默认显示的图片索引
+    browser.currentPhotoIndex = 0;
+    
+    // 4.显示浏览器
+    [browser show];
     
 }
 

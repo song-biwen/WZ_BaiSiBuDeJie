@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C06C1551D2DF3B10055CCAF /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06C1461D2DF3B10055CCAF /* MJPhoto.m */; };
+		4C06C1561D2DF3B10055CCAF /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C06C1471D2DF3B10055CCAF /* MJPhotoBrowser.bundle */; };
+		4C06C1571D2DF3B10055CCAF /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06C1491D2DF3B10055CCAF /* MJPhotoBrowser.m */; };
+		4C06C1581D2DF3B10055CCAF /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06C14B1D2DF3B10055CCAF /* MJPhotoLoadingView.m */; };
+		4C06C1591D2DF3B10055CCAF /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06C14D1D2DF3B10055CCAF /* MJPhotoProgressView.m */; };
+		4C06C15A1D2DF3B10055CCAF /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06C14F1D2DF3B10055CCAF /* MJPhotoToolbar.m */; };
+		4C06C15B1D2DF3B10055CCAF /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06C1511D2DF3B10055CCAF /* MJPhotoView.m */; };
 		4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AA1D054EE100F18B82 /* WZFriendTrendsViewController.xib */; };
 		4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */; };
 		4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1DA4AF1D055A4900F18B82 /* WZRecommendViewController.m */; };
@@ -77,6 +84,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C06C1451D2DF3B10055CCAF /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
+		4C06C1461D2DF3B10055CCAF /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
+		4C06C1471D2DF3B10055CCAF /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
+		4C06C1481D2DF3B10055CCAF /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
+		4C06C1491D2DF3B10055CCAF /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
+		4C06C14A1D2DF3B10055CCAF /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
+		4C06C14B1D2DF3B10055CCAF /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
+		4C06C14C1D2DF3B10055CCAF /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
+		4C06C14D1D2DF3B10055CCAF /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
+		4C06C14E1D2DF3B10055CCAF /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
+		4C06C14F1D2DF3B10055CCAF /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
+		4C06C1501D2DF3B10055CCAF /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
+		4C06C1511D2DF3B10055CCAF /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
 		4C1DA4AA1D054EE100F18B82 /* WZFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZFriendTrendsViewController.xib; sourceTree = "<group>"; };
 		4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		4C1DA4AE1D055A4900F18B82 /* WZRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommendViewController.h; sourceTree = "<group>"; };
@@ -216,6 +236,26 @@
 				5A2997A7562692472BB1CAC5 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C06C1421D2DF3B10055CCAF /* MJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				4C06C1451D2DF3B10055CCAF /* MJPhoto.h */,
+				4C06C1461D2DF3B10055CCAF /* MJPhoto.m */,
+				4C06C1471D2DF3B10055CCAF /* MJPhotoBrowser.bundle */,
+				4C06C1481D2DF3B10055CCAF /* MJPhotoBrowser.h */,
+				4C06C1491D2DF3B10055CCAF /* MJPhotoBrowser.m */,
+				4C06C14A1D2DF3B10055CCAF /* MJPhotoLoadingView.h */,
+				4C06C14B1D2DF3B10055CCAF /* MJPhotoLoadingView.m */,
+				4C06C14C1D2DF3B10055CCAF /* MJPhotoProgressView.h */,
+				4C06C14D1D2DF3B10055CCAF /* MJPhotoProgressView.m */,
+				4C06C14E1D2DF3B10055CCAF /* MJPhotoToolbar.h */,
+				4C06C14F1D2DF3B10055CCAF /* MJPhotoToolbar.m */,
+				4C06C1501D2DF3B10055CCAF /* MJPhotoView.h */,
+				4C06C1511D2DF3B10055CCAF /* MJPhotoView.m */,
+			);
+			path = MJPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		4C82F5D51D001EC10044509D = {
@@ -502,6 +542,7 @@
 		4CBDE08A1D050F2F00A7FAF5 /* Other-其他 */ = {
 			isa = PBXGroup;
 			children = (
+				4C06C1421D2DF3B10055CCAF /* MJPhotoBrowser */,
 				4CABF6281D0E9EE600503A29 /* 登录注册 */,
 				4CBDE08D1D050F2F00A7FAF5 /* Category */,
 				4CBDE0921D050F2F00A7FAF5 /* Controller */,
@@ -647,6 +688,7 @@
 				4C1DA4AB1D054EE100F18B82 /* WZFriendTrendsViewController.xib in Resources */,
 				4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */,
 				4C1DA4B21D055A4900F18B82 /* WZRecommendViewController.xib in Resources */,
+				4C06C1561D2DF3B10055CCAF /* MJPhotoBrowser.bundle in Resources */,
 				4CD01C511D13ED2D00E553CF /* WZEssencePictureView.xib in Resources */,
 				4CC29AE01D18DAFD0027BA38 /* WZPublishViewController.xib in Resources */,
 				4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */,
@@ -717,9 +759,11 @@
 				4CD01C4A1D13A64900E553CF /* WZConst.m in Sources */,
 				4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */,
 				4C21B17A1D0CF93C00D2CDB3 /* WZRecommandUser.m in Sources */,
+				4C06C1571D2DF3B10055CCAF /* MJPhotoBrowser.m in Sources */,
 				4CD01C471D139B9200E553CF /* WZEssenseBaseController.m in Sources */,
 				4CC73FF91D1242F10074474D /* WZEssenceListModel.m in Sources */,
 				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
+				4C06C15A1D2DF3B10055CCAF /* MJPhotoToolbar.m in Sources */,
 				4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */,
 				4CD01C4F1D13ED2100E553CF /* WZEssencePictureView.m in Sources */,
 				4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */,
@@ -736,8 +780,10 @@
 				4C75B5911D1BC7AD00D611A1 /* WZEssenceTopCommentView.m in Sources */,
 				4C75B5811D1B757300D611A1 /* WZEssenceVoiceView.m in Sources */,
 				4CBDE0A61D050F2F00A7FAF5 /* WZNavigationController.m in Sources */,
+				4C06C1581D2DF3B10055CCAF /* MJPhotoLoadingView.m in Sources */,
 				4CBDE0A91D050F2F00A7FAF5 /* WZPublishViewController.m in Sources */,
 				4CBDE0A41D050F2F00A7FAF5 /* UIView+WZCategory.m in Sources */,
+				4C06C1591D2DF3B10055CCAF /* MJPhotoProgressView.m in Sources */,
 				4CC73FF61D1242DA0074474D /* WZEssenceModel.m in Sources */,
 				4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */,
 				4CC740011D1296380074474D /* NSDate+WZCategory.m in Sources */,
@@ -747,9 +793,11 @@
 				4C21B17D1D0D553900D2CDB3 /* WZRecommandTagsViewController.m in Sources */,
 				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
 				4CE9362B1D2A51BE00FFE160 /* WZCommentCell.m in Sources */,
+				4C06C1551D2DF3B10055CCAF /* MJPhoto.m in Sources */,
 				4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */,
 				4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */,
 				4CBDE0AC1D051C9800A7FAF5 /* WZTestViewController.m in Sources */,
+				4C06C15B1D2DF3B10055CCAF /* MJPhotoView.m in Sources */,
 				4C75B5861D1BB15300D611A1 /* WZEssenceVideoView.m in Sources */,
 				4CC73FFD1D127D790074474D /* WZEssenceCell.m in Sources */,
 				4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */,

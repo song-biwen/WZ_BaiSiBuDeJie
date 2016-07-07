@@ -65,6 +65,7 @@
     self.animation_imageView.hidden = self.voice_button.hidden;
     self.animation_imageView.image = WZImage(@"play-voice-icon-3");
     [self.voice_button setTitle:[NSString stringWithFormat:@"%zd''",comentModel.voicetime] forState:UIControlStateNormal];
+    
 }
 
 //播放音频
@@ -75,4 +76,14 @@
     }
 }
 
+//点赞
+- (IBAction)zan {
+    
+    CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    k.values = @[@(0.1),@(1.0),@(1.5)];
+    k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
+    k.calculationMode = kCAAnimationLinear;
+    [self.zan_button.layer addAnimation:k forKey:@"SHOW"];
+    self.zan_button.selected = !self.zan_button.selected;
+}
 @end
