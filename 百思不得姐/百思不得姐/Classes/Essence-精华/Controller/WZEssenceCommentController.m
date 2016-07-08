@@ -18,6 +18,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 
+#define  WZSelectedIndexPath [self.tableView indexPathForSelectedRow]
 @interface WZEssenceCommentController ()
 <UITableViewDelegate, UITableViewDataSource,WZCommentCellDelegate,AVAudioPlayerDelegate>
 
@@ -203,11 +204,61 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    UIMenuController *menuController = [UIMenuController sharedMenuController];
+    if (menuController.isMenuVisible) {
+        [menuController setMenuVisible:NO animated:YES];
+    }else {
+        
+        WZCommentCell *cell = (WZCommentCell *)[tableView cellForRowAtIndexPath:indexPath];
+        [cell becomeFirstResponder];
+        UIMenuItem *ding_item = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+        UIMenuItem *reply_item = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(reply:)];
+        UIMenuItem *report_item = [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(report:)];
+        
+        menuController.menuItems = @[ding_item,reply_item,report_item];
+        CGFloat width = cell.width;
+        CGFloat height = cell.height;
+        CGFloat x = cell.bounds.origin.x;
+        CGFloat y = cell.bounds.origin.y;
+        [menuController setTargetRect:CGRectMake(x, y + height * 0.5, width, height * 0.5) inView:cell];
+        [menuController setMenuVisible:YES animated:YES];
+    }
+    
 }
+
+#pragma mark - UIMenuController
+//顶
+- (void)ding:(UIMenuController *)menu {
+    
+    NSIndexPath *selected_indexPath = WZSelectedIndexPath;
+    
+    WZLog(@"顶....section:%zd...row:%zd",selected_indexPath.section,selected_indexPath.row);
+}
+
+//回复
+- (void)reply:(UIMenuController *)menu {
+    NSIndexPath *selected_indexPath = WZSelectedIndexPath;
+    
+    WZLog(@"回复....section:%zd...row:%zd",selected_indexPath.section,selected_indexPath.row);
+}
+
+//举报
+- (void)report:(UIMenuController *)menu {
+    
+    NSIndexPath *selected_indexPath = WZSelectedIndexPath;
+    
+    WZLog(@"举报....section:%zd...row:%zd",selected_indexPath.section,selected_indexPath.row);
+}
+
 
 //列表滚动时隐藏输入框
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
+    
+    UIMenuController *menuController = [UIMenuController sharedMenuController];
+    if (menuController.isMenuVisible) {
+        [menuController setMenuVisible:NO animated:YES];
+    }
 }
 
 

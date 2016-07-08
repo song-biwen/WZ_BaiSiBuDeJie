@@ -84,4 +84,15 @@
     [self.zan_button.layer addAnimation:k forKey:@"SHOW"];
     self.zan_button.selected = !self.zan_button.selected;
 }
+
+
+#pragma mark - UIMenuController
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    return NO;
+}
+
 @end
