@@ -18,6 +18,8 @@
 
 
 @interface WZHomeTabBarController ()
+<UITabBarControllerDelegate>
+
 //当前视图控制器
 @property (nonatomic, strong) UIViewController *currentViewController;
 
@@ -53,6 +55,8 @@
     
     /** 利用KVC替换掉系统的tabbar */
     [self setValue:[[WZTabBar alloc] init] forKeyPath:@"tabBar"];
+    
+    self.delegate = self;
 }
 
 
@@ -157,5 +161,10 @@
         _loginRegisterVc = [[WZLoginRegisterViewController alloc] init];
     }
     return _loginRegisterVc;
+}
+
+#pragma  mark - UITabBarControllerDelegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    
 }
 @end

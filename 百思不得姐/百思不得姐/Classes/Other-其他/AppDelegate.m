@@ -12,6 +12,7 @@
 #import "WZTopWindow.h"
 
 @interface AppDelegate ()
+<UITabBarControllerDelegate>
 
 @end
 
@@ -24,7 +25,10 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     /** 设置窗口根视图控制器 */
-    self.window.rootViewController = [[WZHomeTabBarController alloc] init];
+    
+    WZHomeTabBarController *homeVC = [[WZHomeTabBarController alloc] init];
+    homeVC.delegate = self;
+    self.window.rootViewController = homeVC;
     
     /** 显示窗口 */
     [self.window makeKeyAndVisible];
@@ -32,6 +36,13 @@
     /** 显示引导页 */
     [WZGuideView show];
     return YES;
+}
+
+
+#pragma mark - UITabBarControllerDelegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    //选择tabbar监听
+    [[NSNotificationCenter defaultCenter] postNotificationName:WZTabbarDidSelectedNotification object:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

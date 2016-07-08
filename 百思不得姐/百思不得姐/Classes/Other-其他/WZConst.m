@@ -26,5 +26,8 @@ CGFloat const WZEssenceBaseCellPictureMaxHeight = 1000;
 CGFloat const WZEssenceBaseCellPictureDefaultHeight = 250;
 
 //性别
-NSString const *WZEssenceUserSexMale = @"m";
-NSString const *WZEssenceUserSexFemale = @"f";
+NSString *const WZEssenceUserSexMale = @"m";
+NSString *const WZEssenceUserSexFemale = @"f";
+
+//tabbar选择通知
+NSString *const WZTabbarDidSelectedNotification = @"WZTabbarDidSelectedNotification";

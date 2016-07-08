@@ -29,4 +29,6 @@
 
 @property (nonatomic) CGFloat x;
 @property (nonatomic) CGFloat y;
+
+- (BOOL)isShowingOnKeyWindow;
 @end

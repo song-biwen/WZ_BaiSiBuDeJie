@@ -37,5 +37,9 @@ UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureMaxHeight;
 UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureDefaultHeight;
 
 //性别
-UIKIT_EXTERN NSString const *WZEssenceUserSexMale;
-UIKIT_EXTERN NSString const *WZEssenceUserSexFemale;
+UIKIT_EXTERN NSString *const WZEssenceUserSexMale;
+UIKIT_EXTERN NSString *const WZEssenceUserSexFemale;
+
+
+//tabbar选择通知
+UIKIT_EXTERN NSString *const WZTabbarDidSelectedNotification;

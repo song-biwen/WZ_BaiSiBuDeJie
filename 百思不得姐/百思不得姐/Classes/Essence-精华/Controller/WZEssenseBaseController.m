@@ -22,6 +22,8 @@
 //上一次的请求参数 - 解决多次切换leftTablevIew请求问题
 @property (nonatomic, strong) NSDictionary *parameter;
 
+//上次选中的tabbarIndex
+@property (nonatomic, assign) NSUInteger last_selectedIndex;
 @end
 
 @implementation WZEssenseBaseController
@@ -31,6 +33,11 @@
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.backgroundColor = WZColorDefault;
+    
+    //上次选中的tabbarIndex
+    self.last_selectedIndex = self.tabBarController.selectedIndex;
+    //监听tabbar选择事件
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarControllerDidSelected) name:WZTabbarDidSelectedNotification object:nil];
     
     //模拟网络慢
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -42,6 +49,18 @@
     [self setupRefresh];
    
 }
+
+
+#pragma mark - 监听tabbar选择事件
+- (void)tabBarControllerDidSelected {
+    
+    if (self.last_selectedIndex == self.tabBarController.selectedIndex && self.view.isShowingOnKeyWindow) {
+        [self.tableView.mj_header beginRefreshing];
+    }
+    
+    self.last_selectedIndex = self.tabBarController.selectedIndex;
+}
+
 
 #pragma mark - UITableViewDataSource
 
