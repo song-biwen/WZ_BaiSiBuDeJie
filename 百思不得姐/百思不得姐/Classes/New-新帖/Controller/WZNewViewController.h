@@ -6,8 +6,8 @@
 //  Copyright © 2016年 songbiwen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WZEssenceViewController.h"
 
-@interface WZNewViewController : UIViewController
+@interface WZNewViewController : WZEssenceViewController
 
 @end

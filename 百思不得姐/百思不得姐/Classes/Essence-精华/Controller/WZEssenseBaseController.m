@@ -106,7 +106,7 @@
 - (void)loadDataWithHeaderRefresh:(BOOL)isHeaderRefresh {
     
     NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
-    parameter[@"a"] = @"list";
+    parameter[@"a"] = self.tabBarController.selectedIndex == 0 ? @"list":@"newlist";
     parameter[@"c"] = @"data";
     parameter[@"type"] = @(self.essence_type);
     parameter[@"page"] = isHeaderRefresh ? @(0): @(self.essenseModel.current_page);
