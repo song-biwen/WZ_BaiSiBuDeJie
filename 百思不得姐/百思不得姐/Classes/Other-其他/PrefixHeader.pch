@@ -45,6 +45,8 @@
 #import "UIBarButtonItem+WZCategory.h"
 #import "NSDate+WZCategory.h"
 #import "WZConst.h"
+#import "UIImage+WZCategory.h"
+#import "UIImageView+WZCategory.h"
 
 
 #import <AFNetworking.h>

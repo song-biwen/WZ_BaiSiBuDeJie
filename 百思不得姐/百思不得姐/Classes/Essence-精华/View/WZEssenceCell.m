@@ -91,7 +91,8 @@
     
     //    _listModel.sina_v = arc4random_uniform(10) % 2;测试数据
     
-    [self.avator_imageView sd_setImageWithURL:WZUrl(_listModel.profile_image) placeholderImage:WZImageDefault];
+    [self.avator_imageView setHeader:_listModel.profile_image];
+   
     self.name_label.text = _listModel.name;
     self.creatTime_label.text = [NSDate intervalFromNow:_listModel.create_time];
     self.sina_imageView.hidden = !_listModel.sina_v;
@@ -153,9 +154,6 @@
     [super awakeFromNib];
     
 //    self.contentView.backgroundColor = WZColorDefault;
-    
-    self.avator_imageView.layer.cornerRadius = self.avator_imageView.width/2.0;
-    self.avator_imageView.layer.masksToBounds = YES;
     
     //设置背景图片
     UIImageView *imageView = [[UIImageView alloc] init];

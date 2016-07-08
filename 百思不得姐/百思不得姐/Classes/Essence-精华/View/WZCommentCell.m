@@ -42,10 +42,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.avator_imageView.layer.cornerRadius = self.avator_imageView.frame.size.width/2.0;
-    self.avator_imageView.layer.borderColor = [UIColor clearColor].CGColor;
-    self.avator_imageView.layer.borderWidth = 1.0;
-    
     self.animation_imageView.animationImages = [NSArray arrayWithObjects:WZImage(@"play-voice-icon-0"),WZImage(@"play-voice-icon-1"),WZImage(@"play-voice-icon-2"),WZImage(@"play-voice-icon-3"), nil];
     self.animation_imageView.animationDuration = 1.0;
 }
@@ -54,7 +50,9 @@
     _comentModel = comentModel;
     
     WZEssenceUserModel *userModel = comentModel.user;
-    [self.avator_imageView sd_setImageWithURL:WZUrl(userModel.profile_image) placeholderImage:WZImageDefault];
+    
+    [self.avator_imageView setHeader:userModel.profile_image];
+    
     self.sex_imageView.image = [userModel.sex isEqualToString:@"m"] ? WZImage(@"Profile_manIcon"):WZImage(@"Profile_womanIcon");
     self.name_label.text = userModel.username;
     self.content_label.text = comentModel.content;

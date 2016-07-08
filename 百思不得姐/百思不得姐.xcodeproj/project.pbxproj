@@ -43,6 +43,8 @@
 		4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */; };
 		4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */; };
 		4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF6321D0EA8C300503A29 /* WZVerticalButton.m */; };
+		4CACEBC91D2F81E600E05547 /* UIImage+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CACEBC81D2F81E600E05547 /* UIImage+WZCategory.m */; };
+		4CACEBCC1D2F834900E05547 /* UIImageView+WZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CACEBCB1D2F834900E05547 /* UIImageView+WZCategory.m */; };
 		4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0751D050F2F00A7FAF5 /* WZEssenceViewController.m */; };
 		4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE07B1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m */; };
 		4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE0811D050F2F00A7FAF5 /* WZMeViewController.m */; };
@@ -146,6 +148,10 @@
 		4CABF62E1D0E9F1800503A29 /* WZLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		4CABF6311D0EA8C300503A29 /* WZVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZVerticalButton.h; sourceTree = "<group>"; };
 		4CABF6321D0EA8C300503A29 /* WZVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZVerticalButton.m; sourceTree = "<group>"; };
+		4CACEBC71D2F81E600E05547 /* UIImage+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WZCategory.h"; sourceTree = "<group>"; };
+		4CACEBC81D2F81E600E05547 /* UIImage+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WZCategory.m"; sourceTree = "<group>"; };
+		4CACEBCA1D2F834900E05547 /* UIImageView+WZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WZCategory.h"; sourceTree = "<group>"; };
+		4CACEBCB1D2F834900E05547 /* UIImageView+WZCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WZCategory.m"; sourceTree = "<group>"; };
 		4CBDE0741D050F2F00A7FAF5 /* WZEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceViewController.h; sourceTree = "<group>"; };
 		4CBDE0751D050F2F00A7FAF5 /* WZEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceViewController.m; sourceTree = "<group>"; };
 		4CBDE07A1D050F2F00A7FAF5 /* WZFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZFriendTrendsViewController.h; sourceTree = "<group>"; };
@@ -573,6 +579,10 @@
 				4CBDE0911D050F2F00A7FAF5 /* UIView+WZCategory.m */,
 				4CC73FFF1D1296380074474D /* NSDate+WZCategory.h */,
 				4CC740001D1296380074474D /* NSDate+WZCategory.m */,
+				4CACEBC71D2F81E600E05547 /* UIImage+WZCategory.h */,
+				4CACEBC81D2F81E600E05547 /* UIImage+WZCategory.m */,
+				4CACEBCA1D2F834900E05547 /* UIImageView+WZCategory.h */,
+				4CACEBCB1D2F834900E05547 /* UIImageView+WZCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -755,6 +765,7 @@
 				4CBDE0A81D050F2F00A7FAF5 /* WZTabBar.m in Sources */,
 				4CC29AE31D192D190027BA38 /* WZPublishView.m in Sources */,
 				4C4B8ABC1D2BA0780052B032 /* WZTopWindow.m in Sources */,
+				4CACEBC91D2F81E600E05547 /* UIImage+WZCategory.m in Sources */,
 				4C1DA4B11D055A4900F18B82 /* WZRecommendViewController.m in Sources */,
 				4CD01C4A1D13A64900E553CF /* WZConst.m in Sources */,
 				4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */,
@@ -768,6 +779,7 @@
 				4CD01C4F1D13ED2100E553CF /* WZEssencePictureView.m in Sources */,
 				4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */,
 				4CBDE0A71D050F2F00A7FAF5 /* main.m in Sources */,
+				4CACEBCC1D2F834900E05547 /* UIImageView+WZCategory.m in Sources */,
 				4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */,
 				4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */,
 				4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */,

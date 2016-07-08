@@ -26,7 +26,8 @@
         _recommandTag = recommandTag;
     }
     
-    [self.conver_imageView sd_setImageWithURL:[NSURL URLWithString:_recommandTag.image_list]];
+    [self.conver_imageView setHeader:_recommandTag.image_list];
+    
     self.name_label.text = _recommandTag.theme_name;
     
     NSString *sub_number = nil;

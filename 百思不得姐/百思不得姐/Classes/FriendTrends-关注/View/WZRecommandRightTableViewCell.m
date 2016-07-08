@@ -23,10 +23,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _avator_imageView.layer.borderWidth = 1.0;
-    _avator_imageView.layer.borderColor = [UIColor clearColor].CGColor;
-    _avator_imageView.layer.cornerRadius = _avator_imageView.width/2.0;
-    _avator_imageView.clipsToBounds = YES;
+    
     self.contentView.backgroundColor = WZColorDefault;
 }
 
@@ -36,7 +33,8 @@
         _info = info;
     }
     
-    [self.avator_imageView sd_setImageWithURL:[NSURL URLWithString:info[@"header"]]];
+    [self.avator_imageView setHeader:info[@"header"]];
+    
     self.name_label.text = info[@"screen_name"];
     
     self.follow_label.text = [NSString stringWithFormat:@"%@人关注",info[@"fans_count"]];
@@ -53,7 +51,7 @@
         _recommandUser = recommandUser;
     }
     
-    [self.avator_imageView sd_setImageWithURL:[NSURL URLWithString:recommandUser.header] placeholderImage:WZImage(@"defaultUserIcon")];
+    [self.avator_imageView setHeader:recommandUser.header];
     self.name_label.text = recommandUser.screen_name;
     
     NSString *fans_count = nil;
