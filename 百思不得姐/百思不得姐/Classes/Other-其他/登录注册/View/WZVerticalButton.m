@@ -26,9 +26,9 @@
     [super layoutSubviews];
     
     //重写图片
-    self.imageView.x = 0;
+    self.imageView.x = self.scale > 0 ? (self.width - self.width * self.scale)* 0.5: 0;
     self.imageView.y = 0;
-    self.imageView.width = self.width;
+    self.imageView.width = self.scale > 0 ? self.width * self.scale : self.width;
     self.imageView.height = self.imageView.width;
     
     //重写标题

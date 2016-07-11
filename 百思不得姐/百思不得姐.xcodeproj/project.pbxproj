@@ -24,6 +24,9 @@
 		4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C21B1801D0D559500D2CDB3 /* WZRecommandTagsCell.xib */; };
 		4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */; };
 		4C4B8ABC1D2BA0780052B032 /* WZTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */; };
+		4C564ABC1D333D80006EBF87 /* WZMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABB1D333D80006EBF87 /* WZMeCell.m */; };
+		4C564ABF1D334204006EBF87 /* WZMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABE1D334204006EBF87 /* WZMeFooterView.m */; };
+		4C564AC21D33444A006EBF87 /* WZMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564AC11D33444A006EBF87 /* WZMeModel.m */; };
 		4C6399491D0676D800192953 /* WZRecommandType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6399481D0676D800192953 /* WZRecommandType.m */; };
 		4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63994B1D067CE500192953 /* WZRecommandLeft2TableViewCell.m */; };
 		4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C63994C1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib */; };
@@ -115,6 +118,12 @@
 		4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandTag.m; sourceTree = "<group>"; };
 		4C4B8ABA1D2BA0780052B032 /* WZTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTopWindow.h; sourceTree = "<group>"; };
 		4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTopWindow.m; sourceTree = "<group>"; };
+		4C564ABA1D333D80006EBF87 /* WZMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeCell.h; sourceTree = "<group>"; };
+		4C564ABB1D333D80006EBF87 /* WZMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZMeCell.m; sourceTree = "<group>"; };
+		4C564ABD1D334204006EBF87 /* WZMeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeFooterView.h; sourceTree = "<group>"; };
+		4C564ABE1D334204006EBF87 /* WZMeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZMeFooterView.m; sourceTree = "<group>"; };
+		4C564AC01D33444A006EBF87 /* WZMeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeModel.h; sourceTree = "<group>"; };
+		4C564AC11D33444A006EBF87 /* WZMeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZMeModel.m; sourceTree = "<group>"; };
 		4C6399471D0676D800192953 /* WZRecommandType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandType.h; sourceTree = "<group>"; };
 		4C6399481D0676D800192953 /* WZRecommandType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandType.m; sourceTree = "<group>"; };
 		4C63994A1D067CE500192953 /* WZRecommandLeft2TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandLeft2TableViewCell.h; sourceTree = "<group>"; };
@@ -501,6 +510,8 @@
 		4CBDE0821D050F2F00A7FAF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C564AC01D33444A006EBF87 /* WZMeModel.h */,
+				4C564AC11D33444A006EBF87 /* WZMeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -508,6 +519,10 @@
 		4CBDE0831D050F2F00A7FAF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C564ABA1D333D80006EBF87 /* WZMeCell.h */,
+				4C564ABB1D333D80006EBF87 /* WZMeCell.m */,
+				4C564ABD1D334204006EBF87 /* WZMeFooterView.h */,
+				4C564ABE1D334204006EBF87 /* WZMeFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -798,10 +813,12 @@
 				4C06C1591D2DF3B10055CCAF /* MJPhotoProgressView.m in Sources */,
 				4CC73FF61D1242DA0074474D /* WZEssenceModel.m in Sources */,
 				4C63994D1D067CE500192953 /* WZRecommandLeft2TableViewCell.m in Sources */,
+				4C564AC21D33444A006EBF87 /* WZMeModel.m in Sources */,
 				4CC740011D1296380074474D /* NSDate+WZCategory.m in Sources */,
 				4CBDE0A51D050F2F00A7FAF5 /* WZHomeTabBarController.m in Sources */,
 				4CD206FE1D17D091002CB379 /* WZCircularProgressView.m in Sources */,
 				4CD206FA1D17D03C002CB379 /* WZShowImageViewController.m in Sources */,
+				4C564ABF1D334204006EBF87 /* WZMeFooterView.m in Sources */,
 				4C21B17D1D0D553900D2CDB3 /* WZRecommandTagsViewController.m in Sources */,
 				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
 				4CE9362B1D2A51BE00FFE160 /* WZCommentCell.m in Sources */,
@@ -815,6 +832,7 @@
 				4CD610DB1D05603900B2580E /* WZRecommandLeftTableViewCell.m in Sources */,
 				4C21B1811D0D559500D2CDB3 /* WZRecommandTagsCell.m in Sources */,
 				4C75B58B1D1BC3A600D611A1 /* WZEssenceUserModel.m in Sources */,
+				4C564ABC1D333D80006EBF87 /* WZMeCell.m in Sources */,
 				4CBDE0A21D050F2F00A7FAF5 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

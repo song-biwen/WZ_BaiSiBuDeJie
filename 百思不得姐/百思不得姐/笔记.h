@@ -11,7 +11,7 @@
 
 /** 
  完成精华部门的页面展示
- 下次学习0803 10
+ 下次学习0805 01
  
  pod install --verbose --no-repo-update
  pod update --verbose --no-repo-update

@@ -10,5 +10,8 @@
 
 /** button 图片与文字竖直排列 */
 @interface WZVerticalButton : UIButton
-
+/** 
+ 图片的宽度占父视图的比例 scale 0 ~ 1
+ */
+@property (nonatomic, assign) CGFloat scale;
 @end
