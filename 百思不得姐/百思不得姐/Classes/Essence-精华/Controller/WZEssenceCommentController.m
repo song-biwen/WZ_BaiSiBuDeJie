@@ -296,7 +296,20 @@
     [self.manager GET:WZUrlDefault parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        WZLog(@".....%@",responseObject);
         
-//        [responseObject writeToFile:@"/Users/songbiwen/Desktop" atomically:YES];
+//        [responseObject writeToFile:@"/Users/songbiwen/Desktop/comment.plist" atomically:YES];
+        
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            
+            [self.tableView.mj_header endRefreshing];
+            
+            if (self.latestComments.count + self.hotComments.count >= totalCount) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }else {
+                [self.tableView.mj_footer endRefreshing];
+            }
+            
+            return ;
+        }
         
         totalCount = [responseObject[@"total"] integerValue];
         
