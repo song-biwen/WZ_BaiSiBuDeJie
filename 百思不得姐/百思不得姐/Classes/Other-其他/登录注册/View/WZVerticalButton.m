@@ -7,6 +7,8 @@
 //
 
 #import "WZVerticalButton.h"
+#import "WZMeModel.h"
+#import <UIButton+WebCache.h>
 
 @implementation WZVerticalButton
 
@@ -27,7 +29,7 @@
     
     //重写图片
     self.imageView.x = self.scale > 0 ? (self.width - self.width * self.scale)* 0.5: 0;
-    self.imageView.y = 0;
+    self.imageView.y = self.scale > 0 ? self.width * self.scale *0.2 : 0;
     self.imageView.width = self.scale > 0 ? self.width * self.scale : self.width;
     self.imageView.height = self.imageView.width;
     
@@ -41,5 +43,13 @@
 //属性设置
 - (void)setUp {
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+}
+
+
+- (void)setMeModel:(WZMeModel *)meModel {
+    _meModel = meModel;
+    
+    [self setTitle:meModel.name forState:UIControlStateNormal];
+    [self sd_setImageWithURL:WZUrl(meModel.icon) forState:UIControlStateNormal];
 }
 @end

@@ -9,15 +9,23 @@
 #import "WZMeViewController.h"
 #import "WZMeCell.h" //cell
 #import "WZMeFooterView.h" //footerView
+#import "WZMeModel.h" //model
+#import "WZCollectionViewCell.h" //collectioncell
 
 
 static NSString *cellIndetifier = @"WZMeCell";
+static NSString *collectionCellIndetifier = @"CollectionCell";
+
+#define WZMax_clos 4
+#define CollectionViewW WZScreenWidth / WZMax_clos
+#define CollectionViewH CollectionViewW
 
 @interface WZMeViewController ()
-<UITableViewDelegate,UITableViewDataSource>
+<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) NSMutableArray *lists;
 @end
 
 @implementation WZMeViewController
@@ -30,6 +38,9 @@ static NSString *cellIndetifier = @"WZMeCell";
     
     //设置tablevIew
     [self setupTableView];
+    
+    //加载数据
+    [self loadingData];
 }
 
 
@@ -37,7 +48,7 @@ static NSString *cellIndetifier = @"WZMeCell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -53,15 +64,88 @@ static NSString *cellIndetifier = @"WZMeCell";
     }else if (indexPath.section == 1) {
         cell.textLabel.text = @"离线下载";
     }
+    else if (indexPath.section == 2) {
+        //定义collectionView的布局对象
+        UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
+        layout.minimumLineSpacing = 0;
+        layout.minimumInteritemSpacing = 0;
+        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        //定义collectionview的信息 NSUInteger rows = (square_list.count + max_clos - 1) / max_clos;
+        UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WZScreenWidth, (self.lists.count + WZMax_clos - 1) / WZMax_clos * CollectionViewH) collectionViewLayout:layout];
+        //加上tag之,为了更好的实现collcetionview的代理方法 collectionView.tag = 899;
+        collectionView.bounces = NO;
+        collectionView.backgroundColor = [UIColor whiteColor];
+        collectionView.delegate = self;
+        collectionView.dataSource = self;
+        
+        //注册单元格
+        [collectionView registerClass:[WZCollectionViewCell class] forCellWithReuseIdentifier:collectionCellIndetifier];
+        [cell.contentView addSubview:collectionView];
+        
+    }
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 2) {
+        return (self.lists.count + WZMax_clos - 1) / WZMax_clos * CollectionViewH + 1;
+    }else {
+        return 44;
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WZLogFunc;
 }
 
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.lists.count;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    WZCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCellIndetifier forIndexPath:indexPath];
+    cell.contentModel = self.lists[indexPath.row];
+    return cell;
+}
+
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    WZLogFunc;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return CGSizeMake(CollectionViewW, CollectionViewH);
+}
+
+- (void)loadingData {
+    NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
+    parameter[@"a"] = @"square";
+    parameter[@"c"] = @"topic";
+    WZLog(@"%@",parameter);
+    
+    [[AFHTTPSessionManager manager] GET:WZUrlDefault parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //            [responseObject writeToFile:@"/Users/songbiwen/Desktop/Me.plist" atomically:YES];
+        
+        if ([responseObject isKindOfClass:[NSDictionary class]] && [[(NSDictionary *)responseObject allKeys]  containsObject:@"square_list"]) {
+            NSArray *square_list = [WZMeModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
+            self.lists = [NSMutableArray arrayWithArray:square_list];
+            
+            [self.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+    }];
+    
+}
 /** 设置tablevIew */
 - (void)setupTableView {
     
@@ -73,10 +157,7 @@ static NSString *cellIndetifier = @"WZMeCell";
     tableView.contentInset = UIEdgeInsetsMake(WZEssenceBaseCellMargin - 35, 0,0, 0);
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.tableFooterView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    tableView.tableFooterView = [[WZMeFooterView alloc] init];
-    tableView.height += 900;
-    tableView.backgroundColor = [UIColor redColor];
+//    tableView.tableFooterView = [[WZMeFooterView alloc] init];//显示不完整
     [self.view addSubview:tableView];
     
     self.tableView = tableView;

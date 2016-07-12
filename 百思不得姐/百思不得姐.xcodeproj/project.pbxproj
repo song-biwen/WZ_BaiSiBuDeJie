@@ -23,6 +23,7 @@
 		4C21B1811D0D559500D2CDB3 /* WZRecommandTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21B17F1D0D559500D2CDB3 /* WZRecommandTagsCell.m */; };
 		4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C21B1801D0D559500D2CDB3 /* WZRecommandTagsCell.xib */; };
 		4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */; };
+		4C2497321D34D2F600FFB4E7 /* WZCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2497311D34D2F600FFB4E7 /* WZCollectionViewCell.m */; };
 		4C4B8ABC1D2BA0780052B032 /* WZTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */; };
 		4C564ABC1D333D80006EBF87 /* WZMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABB1D333D80006EBF87 /* WZMeCell.m */; };
 		4C564ABF1D334204006EBF87 /* WZMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABE1D334204006EBF87 /* WZMeFooterView.m */; };
@@ -116,6 +117,8 @@
 		4C21B1801D0D559500D2CDB3 /* WZRecommandTagsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZRecommandTagsCell.xib; sourceTree = "<group>"; };
 		4C21B1831D0D592B00D2CDB3 /* WZRecommandTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZRecommandTag.h; sourceTree = "<group>"; };
 		4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandTag.m; sourceTree = "<group>"; };
+		4C2497301D34D2F600FFB4E7 /* WZCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZCollectionViewCell.h; sourceTree = "<group>"; };
+		4C2497311D34D2F600FFB4E7 /* WZCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZCollectionViewCell.m; sourceTree = "<group>"; };
 		4C4B8ABA1D2BA0780052B032 /* WZTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTopWindow.h; sourceTree = "<group>"; };
 		4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTopWindow.m; sourceTree = "<group>"; };
 		4C564ABA1D333D80006EBF87 /* WZMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeCell.h; sourceTree = "<group>"; };
@@ -523,6 +526,8 @@
 				4C564ABB1D333D80006EBF87 /* WZMeCell.m */,
 				4C564ABD1D334204006EBF87 /* WZMeFooterView.h */,
 				4C564ABE1D334204006EBF87 /* WZMeFooterView.m */,
+				4C2497301D34D2F600FFB4E7 /* WZCollectionViewCell.h */,
+				4C2497311D34D2F600FFB4E7 /* WZCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -798,6 +803,7 @@
 				4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */,
 				4CBDE09E1D050F2F00A7FAF5 /* WZEssenceViewController.m in Sources */,
 				4CBDE09F1D050F2F00A7FAF5 /* WZFriendTrendsViewController.m in Sources */,
+				4C2497321D34D2F600FFB4E7 /* WZCollectionViewCell.m in Sources */,
 				4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */,
 				4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */,
 				4C75B58E1D1BC49000D611A1 /* WZEssenceTopComentModel.m in Sources */,
