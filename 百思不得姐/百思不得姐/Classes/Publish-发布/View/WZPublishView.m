@@ -9,6 +9,9 @@
 #import "WZPublishView.h"
 #import "WZVerticalButton.h" //图片与文字竖直排列
 #import <POP.h> //动画
+#import "WZNavigationController.h" //导航
+#import "WZPublishWordController.h" //发段子
+#import "WZHomeTabBarController.h" //首页
 
 
 #define WZTimeInterval 0.1
@@ -55,7 +58,15 @@ static UIWindow *window_;
     
     [self dismissWithCompletionBlock:^{
         WZLog(@"按钮点击事情");
+        WZLog(@"%@",sender.titleLabel.text);
+        NSString *button_title = sender.titleLabel.text;
         
+        WZHomeTabBarController *vc = (WZHomeTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        if ([button_title isEqualToString:@"发段子"]) {
+            WZPublishWordController *publishWord = [[WZPublishWordController alloc] init];
+            WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:publishWord];
+            [vc presentViewController:nav animated:YES completion:nil];
+        }
     }];
 }
 

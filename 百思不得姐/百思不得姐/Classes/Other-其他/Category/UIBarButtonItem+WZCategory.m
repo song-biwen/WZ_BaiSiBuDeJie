@@ -12,8 +12,14 @@
 + (UIBarButtonItem *)itemWithImageName:(NSString *)imageName highlightImageName:(NSString *)highlightImageName target:(id)target action:(SEL)action {
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundImage:WZImage(imageName) forState:UIControlStateNormal];
-    [button setBackgroundImage:WZImage(highlightImageName) forState:UIControlStateHighlighted];
+    if (imageName.length > 0) {
+        [button setBackgroundImage:WZImage(imageName) forState:UIControlStateNormal];
+    }
+    
+    if (highlightImageName.length > 0) {
+        [button setBackgroundImage:WZImage(highlightImageName) forState:UIControlStateHighlighted];
+    }
+    
     button.size = button.currentBackgroundImage.size;
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return [[self alloc] initWithCustomView:button];
