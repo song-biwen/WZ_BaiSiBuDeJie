@@ -11,4 +11,8 @@
 /** 添加标签 */
 @interface WZAddTagController : UIViewController
 
+@property (nonatomic, copy) void (^addTagsBlock)(NSArray *tags);
+
+@property (nonatomic, strong) NSArray *tags;
+
 @end

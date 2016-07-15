@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSMutableArray *tagButtons;
 
 @property (nonatomic, weak) UIView *contentView;
+
 @end
 
 @implementation WZAddTagController
@@ -42,8 +43,16 @@
     [self setupTextField];
     //初始化doneButton
     [self setupDoneButton];
+    
+    [self addTags];
 }
 
+- (void)addTags {
+    for (int i = 0 ; i < self.tags.count; i ++) {
+        self.textField.text = self.tags[i];
+        [self addTagButton];
+    }
+}
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -68,6 +77,8 @@
         self.textField.x = 0;
         self.textField.y = CGRectGetMaxY(tagButton.frame) + WZTagMargin;
     }
+    
+    self.doneButton.y = CGRectGetMaxY(self.textField.frame) + WZTagMargin;
 }
 
 /** 更新tagButtonframe */
@@ -241,6 +252,9 @@
 
 /** 确定 */
 - (void)done {
+    
+    NSArray *tags = [self.tagButtons valueForKeyPath:@"currentTitle"];
+    !self.addTagsBlock ?: self.addTagsBlock(tags);
     [self.navigationController popViewControllerAnimated:YES];
 }
 
