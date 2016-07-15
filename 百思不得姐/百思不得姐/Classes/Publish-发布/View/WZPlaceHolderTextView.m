@@ -39,6 +39,7 @@
         // 垂直方向上永远有弹簧效果
         self.alwaysBounceVertical = YES;
         
+        self.showsVerticalScrollIndicator = NO;
         //默认字体
         self.font = [UIFont systemFontOfSize:15];
         //默认颜色

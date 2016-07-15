@@ -11,7 +11,7 @@
 
 /** 
  完成精华部门的页面展示
- 下次学习0805 01
+ 下次学习0805 07
  
  pod install --verbose --no-repo-update
  pod update --verbose --no-repo-update
@@ -113,7 +113,6 @@
  - 文件下载，然后显示
  - 怎么批量上传图片啊
  - CASpringAnimation
- - 评论详情 点击评论 popView
  - 在手机上面跑的时候，不流畅 头像圆角优化之后，图片加载不流畅
  */
 #endif /* ___h */

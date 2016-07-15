@@ -40,6 +40,8 @@
 		4C75B5911D1BC7AD00D611A1 /* WZEssenceTopCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C75B5901D1BC7AD00D611A1 /* WZEssenceTopCommentView.m */; };
 		4C75B5931D1BC7CA00D611A1 /* WZEssenceTopCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C75B5921D1BC7CA00D611A1 /* WZEssenceTopCommentView.xib */; };
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
+		4C9C43521D37264600FBEB51 /* WZAddTagToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C43511D37264600FBEB51 /* WZAddTagToolBar.m */; };
+		4C9C43541D37265500FBEB51 /* WZAddTagToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C43531D37265500FBEB51 /* WZAddTagToolBar.xib */; };
 		4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */; };
 		4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */; };
 		4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABC0E01D1CD05A00E15DBB /* WZEssenceCommentController.m */; };
@@ -151,6 +153,9 @@
 		4C82F5ED1D001EC10044509D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C82F5F21D001EC10044509D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C947FAC1D0180B100443770 /* 笔记.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "笔记.h"; sourceTree = "<group>"; };
+		4C9C43501D37264600FBEB51 /* WZAddTagToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZAddTagToolBar.h; sourceTree = "<group>"; };
+		4C9C43511D37264600FBEB51 /* WZAddTagToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZAddTagToolBar.m; sourceTree = "<group>"; };
+		4C9C43531D37265500FBEB51 /* WZAddTagToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZAddTagToolBar.xib; sourceTree = "<group>"; };
 		4CA666A21D10EF4C00E6BEF1 /* WZGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZGuideView.h; sourceTree = "<group>"; };
 		4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZGuideView.m; sourceTree = "<group>"; };
 		4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZGuideView.xib; sourceTree = "<group>"; };
@@ -672,6 +677,9 @@
 				4CE6962B1D3618F800369AC1 /* WZPublishView.xib */,
 				4CE696331D361EDA00369AC1 /* WZPlaceHolderTextView.h */,
 				4CE696341D361EDA00369AC1 /* WZPlaceHolderTextView.m */,
+				4C9C43501D37264600FBEB51 /* WZAddTagToolBar.h */,
+				4C9C43511D37264600FBEB51 /* WZAddTagToolBar.m */,
+				4C9C43531D37265500FBEB51 /* WZAddTagToolBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -751,6 +759,7 @@
 				4C75B5881D1BB16B00D611A1 /* WZEssenceVideoView.xib in Resources */,
 				4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */,
 				4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */,
+				4C9C43541D37265500FBEB51 /* WZAddTagToolBar.xib in Resources */,
 				4CD610DC1D05603900B2580E /* WZRecommandLeftTableViewCell.xib in Resources */,
 				4CC73FFE1D127D790074474D /* WZEssenceCell.xib in Resources */,
 				4CD610E11D05604E00B2580E /* WZRecommandRightTableViewCell.xib in Resources */,
@@ -884,6 +893,7 @@
 				4C75B58B1D1BC3A600D611A1 /* WZEssenceUserModel.m in Sources */,
 				4C564ABC1D333D80006EBF87 /* WZMeCell.m in Sources */,
 				4CBDE0A21D050F2F00A7FAF5 /* AppDelegate.m in Sources */,
+				4C9C43521D37264600FBEB51 /* WZAddTagToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
