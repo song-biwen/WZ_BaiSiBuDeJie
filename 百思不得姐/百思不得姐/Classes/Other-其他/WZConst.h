@@ -36,6 +36,12 @@ UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureMaxHeight;
 /*精华cell 图片超出最大高度后，现在默认高度*/
 UIKIT_EXTERN CGFloat const WZEssenceBaseCellPictureDefaultHeight;
 
+/*添加标签高度*/
+UIKIT_EXTERN CGFloat const WZTagHeight;
+
+/*添加标签间距*/
+UIKIT_EXTERN CGFloat const WZTagMargin;
+
 //性别
 UIKIT_EXTERN NSString *const WZEssenceUserSexMale;
 UIKIT_EXTERN NSString *const WZEssenceUserSexFemale;

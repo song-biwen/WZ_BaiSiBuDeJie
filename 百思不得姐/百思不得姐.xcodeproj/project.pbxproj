@@ -40,6 +40,9 @@
 		4C75B5911D1BC7AD00D611A1 /* WZEssenceTopCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C75B5901D1BC7AD00D611A1 /* WZEssenceTopCommentView.m */; };
 		4C75B5931D1BC7CA00D611A1 /* WZEssenceTopCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C75B5921D1BC7CA00D611A1 /* WZEssenceTopCommentView.xib */; };
 		4C82F5EE1D001EC10044509D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C82F5ED1D001EC10044509D /* Assets.xcassets */; };
+		4C91D0E71D38BEAB00362F9D /* WZAddTagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C91D0E61D38BEAB00362F9D /* WZAddTagController.m */; };
+		4C91D0EA1D38C5A500362F9D /* WZTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C91D0E91D38C5A500362F9D /* WZTagTextField.m */; };
+		4C91D0ED1D38C97D00362F9D /* WZTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C91D0EC1D38C97D00362F9D /* WZTagButton.m */; };
 		4C9C43521D37264600FBEB51 /* WZAddTagToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C43511D37264600FBEB51 /* WZAddTagToolBar.m */; };
 		4C9C43541D37265500FBEB51 /* WZAddTagToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C43531D37265500FBEB51 /* WZAddTagToolBar.xib */; };
 		4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */; };
@@ -152,6 +155,12 @@
 		4C82F5DE1D001EC10044509D /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C82F5ED1D001EC10044509D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C82F5F21D001EC10044509D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C91D0E51D38BEAB00362F9D /* WZAddTagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZAddTagController.h; sourceTree = "<group>"; };
+		4C91D0E61D38BEAB00362F9D /* WZAddTagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZAddTagController.m; sourceTree = "<group>"; };
+		4C91D0E81D38C5A500362F9D /* WZTagTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTagTextField.h; sourceTree = "<group>"; };
+		4C91D0E91D38C5A500362F9D /* WZTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTagTextField.m; sourceTree = "<group>"; };
+		4C91D0EB1D38C97D00362F9D /* WZTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTagButton.h; sourceTree = "<group>"; };
+		4C91D0EC1D38C97D00362F9D /* WZTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTagButton.m; sourceTree = "<group>"; };
 		4C947FAC1D0180B100443770 /* 笔记.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "笔记.h"; sourceTree = "<group>"; };
 		4C9C43501D37264600FBEB51 /* WZAddTagToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZAddTagToolBar.h; sourceTree = "<group>"; };
 		4C9C43511D37264600FBEB51 /* WZAddTagToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZAddTagToolBar.m; sourceTree = "<group>"; };
@@ -658,6 +667,8 @@
 				4CE696261D3618F800369AC1 /* WZPublishViewController.xib */,
 				4CE696301D361A2600369AC1 /* WZPublishWordController.h */,
 				4CE696311D361A2600369AC1 /* WZPublishWordController.m */,
+				4C91D0E51D38BEAB00362F9D /* WZAddTagController.h */,
+				4C91D0E61D38BEAB00362F9D /* WZAddTagController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -680,6 +691,10 @@
 				4C9C43501D37264600FBEB51 /* WZAddTagToolBar.h */,
 				4C9C43511D37264600FBEB51 /* WZAddTagToolBar.m */,
 				4C9C43531D37265500FBEB51 /* WZAddTagToolBar.xib */,
+				4C91D0E81D38C5A500362F9D /* WZTagTextField.h */,
+				4C91D0E91D38C5A500362F9D /* WZTagTextField.m */,
+				4C91D0EB1D38C97D00362F9D /* WZTagButton.h */,
+				4C91D0EC1D38C97D00362F9D /* WZTagButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -844,11 +859,13 @@
 				4C06C1571D2DF3B10055CCAF /* MJPhotoBrowser.m in Sources */,
 				4CD01C471D139B9200E553CF /* WZEssenseBaseController.m in Sources */,
 				4CC73FF91D1242F10074474D /* WZEssenceListModel.m in Sources */,
+				4C91D0E71D38BEAB00362F9D /* WZAddTagController.m in Sources */,
 				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
 				4C06C15A1D2DF3B10055CCAF /* MJPhotoToolbar.m in Sources */,
 				4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */,
 				4CD01C4F1D13ED2100E553CF /* WZEssencePictureView.m in Sources */,
 				4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */,
+				4C91D0EA1D38C5A500362F9D /* WZTagTextField.m in Sources */,
 				4CBDE0A71D050F2F00A7FAF5 /* main.m in Sources */,
 				4CACEBCC1D2F834900E05547 /* UIImageView+WZCategory.m in Sources */,
 				4CD610E01D05604E00B2580E /* WZRecommandRightTableViewCell.m in Sources */,
@@ -880,6 +897,7 @@
 				4C21B17D1D0D553900D2CDB3 /* WZRecommandTagsViewController.m in Sources */,
 				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
 				4CE696321D361A2600369AC1 /* WZPublishWordController.m in Sources */,
+				4C91D0ED1D38C97D00362F9D /* WZTagButton.m in Sources */,
 				4CE9362B1D2A51BE00FFE160 /* WZCommentCell.m in Sources */,
 				4C06C1551D2DF3B10055CCAF /* MJPhoto.m in Sources */,
 				4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */,

@@ -25,6 +25,12 @@ CGFloat const WZEssenceBaseCellPictureMaxHeight = 1000;
 /*精华cell 图片超出最大高度后，现在默认高度*/
 CGFloat const WZEssenceBaseCellPictureDefaultHeight = 250;
 
+/*添加标签高度*/
+CGFloat const WZTagHeight = 25;
+
+/*添加标签间距*/
+CGFloat const WZTagMargin = 5;
+
 //性别
 NSString *const WZEssenceUserSexMale = @"m";
 NSString *const WZEssenceUserSexFemale = @"f";
