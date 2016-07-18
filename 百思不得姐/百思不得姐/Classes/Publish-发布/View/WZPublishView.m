@@ -89,9 +89,10 @@ static UIWindow *window_;
         CGFloat viewX = view.x;
         CGFloat viewY = view.y;
         CGFloat viewH = view.height;
+        CGFloat viewW = view.width;
         
-        animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(viewX, viewY)];
-        animation.toValue = [NSValue valueWithCGPoint:CGPointMake(viewX, viewH + WZScreenHeight)];
+        animation.fromValue = [NSValue valueWithCGRect:CGRectMake(viewX, viewY, viewW, viewH)];
+        animation.toValue = [NSValue valueWithCGRect:CGRectMake(viewX, viewH + WZScreenHeight, viewW, viewH)];
         animation.beginTime = CACurrentMediaTime() + WZTimeInterval * i;
         [view pop_addAnimation:animation forKey:nil];
         if (i == self.subViews.count - 1) {
@@ -158,7 +159,7 @@ static UIWindow *window_;
         
         //添加动画
         POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
-        animation.fromValue = [NSValue valueWithCGRect:CGRectMake(buttonX, -buttonHeight, buttonWidth, buttonHeight)];
+        animation.fromValue = [NSValue valueWithCGRect:CGRectMake(buttonX,buttonHeight - WZScreenHeight, buttonWidth, buttonHeight)];
         animation.toValue = [NSValue valueWithCGRect:CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight)];
         animation.beginTime = CACurrentMediaTime() + WZTimeInterval * (titles.count - 1 - i);
         [button pop_addAnimation:animation forKey:nil];
@@ -168,15 +169,17 @@ static UIWindow *window_;
     
     //app_slogan
     UIImageView *sloganImageView = [[UIImageView alloc] initWithImage:WZImage(@"app_slogan")];
-    CGFloat imageViewX = WZScreenWidth * 0.5;
+    CGFloat imageViewH = sloganImageView.height;
+    CGFloat imageViewW = sloganImageView.width;
+    CGFloat imageViewX = (self.width - imageViewW) * 0.5;
     CGFloat imageViewY = WZScreenHeight * 0.2;
-    
-    //    sloganImageView.center = CGPointMake(WZScreenWidth * 0.5, WZScreenHeight * 0.2);
+    sloganImageView.x = imageViewX;
+    sloganImageView.y = imageViewH - WZScreenHeight;
     [self addSubview:sloganImageView];
     //添加动画
     POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
-    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(imageViewX, -sloganImageView.height)];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(imageViewX, imageViewY)];
+    animation.fromValue = [NSValue valueWithCGRect:CGRectMake(imageViewX, imageViewH - WZScreenHeight, imageViewW, imageViewH)];
+    animation.toValue = [NSValue valueWithCGRect:CGRectMake(imageViewX, imageViewY, imageViewW, imageViewH)];
     animation.beginTime = CACurrentMediaTime() + WZTimeInterval * titles.count;
     [sloganImageView pop_addAnimation:animation forKey:nil];
     [animation setCompletionBlock:^(POPAnimation *animation, BOOL isFinished) {

@@ -34,6 +34,8 @@
      */
    
 //    WZLogFunc;
+    
+    self.interactivePopGestureRecognizer.delegate = nil;
 }
 
 /** 自定义返回按钮 */

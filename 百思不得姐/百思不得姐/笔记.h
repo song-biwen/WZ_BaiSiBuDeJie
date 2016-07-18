@@ -11,7 +11,7 @@
 
 /** 
  完成精华部门的页面展示
- 下次学习0805 07
+ 下次学习0806 02
  
  pod install --verbose --no-repo-update
  pod update --verbose --no-repo-update
@@ -82,6 +82,7 @@
      你下载的时候肯定是下载到本地一个文件夹里面
      然后每次播放的时候先去文件夹里面比对
      本地有的话就直接在本地播放，本地没有才下载啊
+25.interactivePopGestureRecognizer
  
  */
 

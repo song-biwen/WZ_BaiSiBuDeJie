@@ -18,7 +18,6 @@
 
 @property (nonatomic, strong) NSMutableArray *tagLabels;
 
-@property (nonatomic, strong) NSArray *tags;
 @end
 
 @implementation WZAddTagToolBar
@@ -33,17 +32,52 @@
     
     //初始化addbutton
     [self setupAddButton];
-    
-    //更新视图尺寸
-    [self updateViewHeight];
 }
 
-/** 更新视图的高度 */
-- (void)updateViewHeight {
-    self.height = 16 + 35;
-    self.height += WZTagMargin;
-    self.height += self.addButton.height;
-    self.height += WZTagMargin;
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    for (int i = 0; i<self.tagLabels.count; i++) {
+        UILabel *tagLabel = self.tagLabels[i];
+        
+        // 设置位置
+        if (i == 0) { // 最前面的标签
+            tagLabel.x = 0;
+            tagLabel.y = 0;
+        } else { // 其他标签
+            UILabel *lastTagLabel = self.tagLabels[i - 1];
+            // 计算当前行左边的宽度
+            CGFloat leftWidth = CGRectGetMaxX(lastTagLabel.frame) + WZTagMargin;
+            // 计算当前行右边的宽度
+            CGFloat rightWidth = self.topView.width - leftWidth;
+            if (rightWidth >= tagLabel.width) { // 按钮显示在当前行
+                tagLabel.y = lastTagLabel.y;
+                tagLabel.x = leftWidth;
+            } else { // 按钮显示在下一行
+                tagLabel.x = 0;
+                tagLabel.y = CGRectGetMaxY(lastTagLabel.frame) + WZTagMargin;
+            }
+        }
+    }
+    
+    // 最后一个标签
+    UILabel *lastTagLabel = [self.tagLabels lastObject];
+    CGFloat leftWidth = CGRectGetMaxX(lastTagLabel.frame) + WZTagMargin;
+    
+    // 更新textField的frame
+    if (self.topView.width - leftWidth >= self.addButton.width) {
+        self.addButton.y = lastTagLabel.y;
+        self.addButton.x = leftWidth;
+    } else {
+        self.addButton.x = 0;
+        self.addButton.y = CGRectGetMaxY(lastTagLabel.frame) + WZTagMargin;
+    }
+    
+    // 整体的高度
+    CGFloat oldH = self.height;
+    self.height = CGRectGetMaxY(self.addButton.frame) + 16 + 35;
+    self.y -= self.height - oldH;
+    
 }
 
 /** 
@@ -54,45 +88,22 @@
     [button setImage:WZImage(@"tag_add_icon") forState:UIControlStateNormal];
     button.size = button.currentImage.size;
     button.x = WZTagMargin;
-    button.y = WZTagMargin;
     [button addTarget:self action:@selector(addButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.topView addSubview:button];
     
     self.addButton = button;
 }
 
-/** 添加标签 */
+/** 添加标签按钮Action */
 - (void)addButtonAction {
     WZAddTagController *addTagVC = [[WZAddTagController alloc] init];
     __weak typeof(self) weakSelf = self;
     
     [addTagVC setAddTagsBlock:^(NSArray *tags) {
-        
-        weakSelf.tags = tags;
-        [weakSelf.tagLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        [weakSelf.tagLabels removeAllObjects];
-        
-        for (int i = 0; i < tags.count; i ++) {
-            
-            UILabel *label = [[UILabel alloc] init];
-            label.textColor = [UIColor whiteColor];
-            label.backgroundColor = WZColorTagDefault;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.font = WZFont(14);
-            label.text = tags[i];
-            [label sizeToFit];
-            label.height = WZTagHeight;
-            label.width += 2 * WZTagMargin;
-            [weakSelf.topView addSubview:label];
-            [weakSelf.tagLabels addObject:label];
-        }
-        
-        [weakSelf updateTagLabelFrame];
-        [weakSelf updateAddButtonFrame];
-        
+        [weakSelf createTagLabels:tags];
     }];
     
-    addTagVC.tags = self.tags;
+    addTagVC.tags = [self.tagLabels valueForKeyPath:@"text"];
     
     UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
 //    WZLog(@"%@",vc);
@@ -100,6 +111,36 @@
     [(UINavigationController *)vc.presentedViewController pushViewController:addTagVC animated:YES];
     
 }
+
+
+/**
+ * 创建标签
+ */
+- (void)createTagLabels:(NSArray *)tags
+{
+    [self.tagLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.tagLabels removeAllObjects];
+    
+    for (int i = 0; i<tags.count; i++) {
+        UILabel *tagLabel = [[UILabel alloc] init];
+        [self.tagLabels addObject:tagLabel];
+        tagLabel.backgroundColor = WZColorTagDefault;
+        tagLabel.textAlignment = NSTextAlignmentCenter;
+        tagLabel.text = tags[i];
+        tagLabel.font = WZFont(14);
+        // 应该要先设置文字和字体后，再进行计算
+        [tagLabel sizeToFit];
+        tagLabel.width += 2 * WZTagMargin;
+        tagLabel.height = WZTagHeight;
+        tagLabel.textColor = [UIColor whiteColor];
+        [self.topView addSubview:tagLabel];
+    }
+    
+    // 重新布局子控件
+    [self setNeedsLayout];
+}
+
+
 /** 
  * @
  */
@@ -115,48 +156,6 @@
 }
 
 
-/** 更新AddButton */
-- (void)updateAddButtonFrame {
-    UILabel *lastLabel = self.tagLabels.lastObject;
-    CGFloat leftMargin = CGRectGetMaxX(lastLabel.frame) + WZTagMargin;
-    CGFloat rightMargin = self.topView.width - leftMargin;
-    if (rightMargin > WZTagHeight) {
-        self.addButton.x = leftMargin;
-        self.addButton.y = lastLabel.y;
-    }else {
-        self.addButton.x = 0;
-        self.addButton.y = CGRectGetMaxY(lastLabel.frame) + WZTagMargin;
-    }
-
-    self.height -= self.addButton.height;
-    self.height += CGRectGetMaxY(self.addButton.frame);
-}
-
-/** 更新TagLabel */
-- (void)updateTagLabelFrame {
-    for (int i = 0; i < self.tagLabels.count; i ++) {
-        UILabel *tagLabel = self.tagLabels[i];
-        if (i == 0) {
-            tagLabel.x = 0;
-            tagLabel.y = WZTagMargin;
-            
-        }else {
-            UILabel *lastLabel = self.tagLabels[i - 1];
-            CGFloat leftMargin = CGRectGetMaxX(lastLabel.frame) + WZTagMargin;
-            CGFloat rightMargin = self.topView.width - leftMargin;
-            if (tagLabel.width <= rightMargin) {
-                tagLabel.x = leftMargin;
-                tagLabel.y = lastLabel.y;
-                
-            }else {
-                tagLabel.x = 0;
-                tagLabel.y = CGRectGetMaxY(lastLabel.frame) + WZTagMargin;
-            }
-        }
-    }
-}
-
-
 - (NSMutableArray *)tagLabels {
     if (!_tagLabels) {
         _tagLabels = [NSMutableArray array];
@@ -164,11 +163,4 @@
     return _tagLabels;
 }
 
-
-- (NSArray *)tags {
-    if (!_tags) {
-        _tags = [NSArray array];
-    }
-    return _tags;
-}
 @end

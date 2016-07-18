@@ -11,6 +11,7 @@
 #import "WZMeFooterView.h" //footerView
 #import "WZMeModel.h" //model
 #import "WZCollectionViewCell.h" //collectioncell
+#import <SDImageCache.h> //图片缓存
 
 
 static NSString *cellIndetifier = @"WZMeCell";
@@ -203,6 +204,23 @@ static NSString *collectionCellIndetifier = @"CollectionCell";
 /** 设置 */
 - (void)settingButtonAction {
     WZLogFunc;
+    
+    /** 清除图片缓存 */
+    CGFloat size = [SDImageCache sharedImageCache].getSize / 1000.0 / 1000;
+    NSString *message = [NSString stringWithFormat:@"%.2fMB",size];
+    UIAlertController *aletrController = [UIAlertController alertControllerWithTitle:@"清除缓存" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"暂不" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction *clearAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [[SDImageCache sharedImageCache] clearDisk];
+    }];
+    
+    [aletrController addAction:cancelAction];
+    [aletrController addAction:clearAction];
+    
+    [self.navigationController presentViewController:aletrController animated:YES completion:nil];
 }
 
 /** 模式 */

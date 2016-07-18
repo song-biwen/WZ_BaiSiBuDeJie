@@ -22,6 +22,12 @@
 
 @implementation WZPublishWordController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+//    [self.view endEditing:YES];
+    [self.textView becomeFirstResponder];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -89,10 +95,9 @@
     WZPlaceHolderTextView *textView = [[WZPlaceHolderTextView alloc] initWithFrame:self.view.bounds];
     textView.placeHolder = @"把好玩的图片，好笑的段子或糗事发到这里，接受千万网友膜拜吧！发布违反国家法律内容的，我们将依法提交给有关部门处理。";
     textView.delegate = self;
+//    textView.backgroundColor = [UIColor brownColor];
     [self.view addSubview:textView];
     self.textView = textView;
-    
-    [self.textView becomeFirstResponder];
 }
 
 /** 
