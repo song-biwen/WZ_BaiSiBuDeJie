@@ -47,6 +47,7 @@
 		4C9C43541D37265500FBEB51 /* WZAddTagToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C43531D37265500FBEB51 /* WZAddTagToolBar.xib */; };
 		4CA666A41D10EF4C00E6BEF1 /* WZGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */; };
 		4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */; };
+		4CAADB261D3CAFEE0027F6F8 /* WZLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CAADB251D3CAFEE0027F6F8 /* WZLoginTool.m */; };
 		4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABC0E01D1CD05A00E15DBB /* WZEssenceCommentController.m */; };
 		4CABC0E31D1CD05A00E15DBB /* WZEssenceCommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CABC0E11D1CD05A00E15DBB /* WZEssenceCommentController.xib */; };
 		4CABF62F1D0E9F1800503A29 /* WZLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABF62D1D0E9F1800503A29 /* WZLoginRegisterViewController.m */; };
@@ -168,6 +169,8 @@
 		4CA666A21D10EF4C00E6BEF1 /* WZGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZGuideView.h; sourceTree = "<group>"; };
 		4CA666A31D10EF4C00E6BEF1 /* WZGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZGuideView.m; sourceTree = "<group>"; };
 		4CA666A51D10EF6E00E6BEF1 /* WZGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZGuideView.xib; sourceTree = "<group>"; };
+		4CAADB241D3CAFEE0027F6F8 /* WZLoginTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLoginTool.h; sourceTree = "<group>"; };
+		4CAADB251D3CAFEE0027F6F8 /* WZLoginTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLoginTool.m; sourceTree = "<group>"; };
 		4CABC0DF1D1CD05A00E15DBB /* WZEssenceCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZEssenceCommentController.h; sourceTree = "<group>"; };
 		4CABC0E01D1CD05A00E15DBB /* WZEssenceCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZEssenceCommentController.m; sourceTree = "<group>"; };
 		4CABC0E11D1CD05A00E15DBB /* WZEssenceCommentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZEssenceCommentController.xib; sourceTree = "<group>"; };
@@ -601,6 +604,8 @@
 				4C1DA4AC1D055A0100F18B82 /* Foundation+Log.m */,
 				4CD01C481D13A64900E553CF /* WZConst.h */,
 				4CD01C491D13A64900E553CF /* WZConst.m */,
+				4CAADB241D3CAFEE0027F6F8 /* WZLoginTool.h */,
+				4CAADB251D3CAFEE0027F6F8 /* WZLoginTool.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				4C1DA4AD1D055A0100F18B82 /* Foundation+Log.m in Sources */,
 				4C06C15A1D2DF3B10055CCAF /* MJPhotoToolbar.m in Sources */,
 				4CABF6331D0EA8C300503A29 /* WZVerticalButton.m in Sources */,
+				4CAADB261D3CAFEE0027F6F8 /* WZLoginTool.m in Sources */,
 				4CD01C4F1D13ED2100E553CF /* WZEssencePictureView.m in Sources */,
 				4CABC0E21D1CD05A00E15DBB /* WZEssenceCommentController.m in Sources */,
 				4C91D0EA1D38C5A500362F9D /* WZTagTextField.m in Sources */,

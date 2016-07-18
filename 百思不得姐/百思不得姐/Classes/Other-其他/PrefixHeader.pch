@@ -48,6 +48,7 @@
 #import "WZConst.h"
 #import "UIImage+WZCategory.h"
 #import "UIImageView+WZCategory.h"
+#import "WZLoginTool.h"
 
 
 #import <AFNetworking.h>

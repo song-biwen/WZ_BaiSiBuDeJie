@@ -63,6 +63,9 @@ static UIWindow *window_;
         
         WZHomeTabBarController *vc = (WZHomeTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         if ([button_title isEqualToString:@"发段子"]) {
+            
+            if ([[WZLoginTool getUid:YES] length] == 0) return ;
+            
             WZPublishWordController *publishWord = [[WZPublishWordController alloc] init];
             WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:publishWord];
             [vc presentViewController:nav animated:YES completion:nil];
