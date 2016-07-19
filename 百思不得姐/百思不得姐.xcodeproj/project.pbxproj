@@ -24,6 +24,12 @@
 		4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C21B1801D0D559500D2CDB3 /* WZRecommandTagsCell.xib */; };
 		4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */; };
 		4C2497321D34D2F600FFB4E7 /* WZCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2497311D34D2F600FFB4E7 /* WZCollectionViewCell.m */; };
+		4C280FC11D3DC7C600D8076C /* WZWaterFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C280FC01D3DC7C600D8076C /* WZWaterFlowController.m */; };
+		4C280FC41D3DCB1800D8076C /* WZWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C280FC31D3DCB1800D8076C /* WZWaterFlowLayout.m */; };
+		4C280FC61D3E06B000D8076C /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C280FC51D3E06B000D8076C /* 1.plist */; };
+		4C280FCA1D3E06E400D8076C /* WZWaterFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C280FC81D3E06E400D8076C /* WZWaterFlowCell.m */; };
+		4C280FCB1D3E06E400D8076C /* WZWaterFlowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C280FC91D3E06E400D8076C /* WZWaterFlowCell.xib */; };
+		4C280FCE1D3E07D000D8076C /* WZShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C280FCD1D3E07D000D8076C /* WZShopModel.m */; };
 		4C4B8ABC1D2BA0780052B032 /* WZTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */; };
 		4C564ABC1D333D80006EBF87 /* WZMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABB1D333D80006EBF87 /* WZMeCell.m */; };
 		4C564ABF1D334204006EBF87 /* WZMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABE1D334204006EBF87 /* WZMeFooterView.m */; };
@@ -127,6 +133,16 @@
 		4C21B1841D0D592B00D2CDB3 /* WZRecommandTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZRecommandTag.m; sourceTree = "<group>"; };
 		4C2497301D34D2F600FFB4E7 /* WZCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZCollectionViewCell.h; sourceTree = "<group>"; };
 		4C2497311D34D2F600FFB4E7 /* WZCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZCollectionViewCell.m; sourceTree = "<group>"; };
+		4C280FBF1D3DC7C600D8076C /* WZWaterFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZWaterFlowController.h; sourceTree = "<group>"; };
+		4C280FC01D3DC7C600D8076C /* WZWaterFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZWaterFlowController.m; sourceTree = "<group>"; };
+		4C280FC21D3DCB1800D8076C /* WZWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZWaterFlowLayout.h; sourceTree = "<group>"; };
+		4C280FC31D3DCB1800D8076C /* WZWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZWaterFlowLayout.m; sourceTree = "<group>"; };
+		4C280FC51D3E06B000D8076C /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
+		4C280FC71D3E06E400D8076C /* WZWaterFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZWaterFlowCell.h; sourceTree = "<group>"; };
+		4C280FC81D3E06E400D8076C /* WZWaterFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZWaterFlowCell.m; sourceTree = "<group>"; };
+		4C280FC91D3E06E400D8076C /* WZWaterFlowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZWaterFlowCell.xib; sourceTree = "<group>"; };
+		4C280FCC1D3E07D000D8076C /* WZShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZShopModel.h; sourceTree = "<group>"; };
+		4C280FCD1D3E07D000D8076C /* WZShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZShopModel.m; sourceTree = "<group>"; };
 		4C4B8ABA1D2BA0780052B032 /* WZTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTopWindow.h; sourceTree = "<group>"; };
 		4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTopWindow.m; sourceTree = "<group>"; };
 		4C564ABA1D333D80006EBF87 /* WZMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeCell.h; sourceTree = "<group>"; };
@@ -332,6 +348,7 @@
 				4C82F5ED1D001EC10044509D /* Assets.xcassets */,
 				4C82F5F21D001EC10044509D /* Info.plist */,
 				4C947FAC1D0180B100443770 /* 笔记.h */,
+				4C280FC51D3E06B000D8076C /* 1.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -674,6 +691,8 @@
 				4CE696311D361A2600369AC1 /* WZPublishWordController.m */,
 				4C91D0E51D38BEAB00362F9D /* WZAddTagController.h */,
 				4C91D0E61D38BEAB00362F9D /* WZAddTagController.m */,
+				4C280FBF1D3DC7C600D8076C /* WZWaterFlowController.h */,
+				4C280FC01D3DC7C600D8076C /* WZWaterFlowController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -681,6 +700,8 @@
 		4CE696271D3618F800369AC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C280FCC1D3E07D000D8076C /* WZShopModel.h */,
+				4C280FCD1D3E07D000D8076C /* WZShopModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -700,6 +721,11 @@
 				4C91D0E91D38C5A500362F9D /* WZTagTextField.m */,
 				4C91D0EB1D38C97D00362F9D /* WZTagButton.h */,
 				4C91D0EC1D38C97D00362F9D /* WZTagButton.m */,
+				4C280FC21D3DCB1800D8076C /* WZWaterFlowLayout.h */,
+				4C280FC31D3DCB1800D8076C /* WZWaterFlowLayout.m */,
+				4C280FC71D3E06E400D8076C /* WZWaterFlowCell.h */,
+				4C280FC81D3E06E400D8076C /* WZWaterFlowCell.m */,
+				4C280FC91D3E06E400D8076C /* WZWaterFlowCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -776,6 +802,7 @@
 			files = (
 				4CE9362C1D2A51BE00FFE160 /* WZCommentCell.xib in Resources */,
 				4CE6962F1D3618F800369AC1 /* WZPublishView.xib in Resources */,
+				4C280FC61D3E06B000D8076C /* 1.plist in Resources */,
 				4C75B5881D1BB16B00D611A1 /* WZEssenceVideoView.xib in Resources */,
 				4CABF6301D0E9F1800503A29 /* WZLoginRegisterViewController.xib in Resources */,
 				4C21B1821D0D559500D2CDB3 /* WZRecommandTagsCell.xib in Resources */,
@@ -793,6 +820,7 @@
 				4C06C1561D2DF3B10055CCAF /* MJPhotoBrowser.bundle in Resources */,
 				4CD01C511D13ED2D00E553CF /* WZEssencePictureView.xib in Resources */,
 				4C63994E1D067CE500192953 /* WZRecommandLeft2TableViewCell.xib in Resources */,
+				4C280FCB1D3E06E400D8076C /* WZWaterFlowCell.xib in Resources */,
 				4CD206FB1D17D03C002CB379 /* WZShowImageViewController.xib in Resources */,
 				4CA666A61D10EF6E00E6BEF1 /* WZGuideView.xib in Resources */,
 			);
@@ -883,6 +911,7 @@
 				4CD9CCBF1D0FAB2C000DFECF /* WZTextFieldPlaceHolder.m in Sources */,
 				4C75B58E1D1BC49000D611A1 /* WZEssenceTopComentModel.m in Sources */,
 				4CBDE0A11D050F2F00A7FAF5 /* WZNewViewController.m in Sources */,
+				4C280FC41D3DCB1800D8076C /* WZWaterFlowLayout.m in Sources */,
 				4CEC43AC1D2B4C4500E2E3D9 /* WZTableViewHeaderFooterView.m in Sources */,
 				4CBDE0A31D050F2F00A7FAF5 /* UIBarButtonItem+WZCategory.m in Sources */,
 				4C75B5911D1BC7AD00D611A1 /* WZEssenceTopCommentView.m in Sources */,
@@ -900,11 +929,14 @@
 				4CD206FE1D17D091002CB379 /* WZCircularProgressView.m in Sources */,
 				4CD206FA1D17D03C002CB379 /* WZShowImageViewController.m in Sources */,
 				4C564ABF1D334204006EBF87 /* WZMeFooterView.m in Sources */,
+				4C280FCA1D3E06E400D8076C /* WZWaterFlowCell.m in Sources */,
 				4C21B17D1D0D553900D2CDB3 /* WZRecommandTagsViewController.m in Sources */,
 				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
 				4CE696321D361A2600369AC1 /* WZPublishWordController.m in Sources */,
 				4C91D0ED1D38C97D00362F9D /* WZTagButton.m in Sources */,
 				4CE9362B1D2A51BE00FFE160 /* WZCommentCell.m in Sources */,
+				4C280FCE1D3E07D000D8076C /* WZShopModel.m in Sources */,
+				4C280FC11D3DC7C600D8076C /* WZWaterFlowController.m in Sources */,
 				4C06C1551D2DF3B10055CCAF /* MJPhoto.m in Sources */,
 				4CBDE0A01D050F2F00A7FAF5 /* WZMeViewController.m in Sources */,
 				4C21B1851D0D592B00D2CDB3 /* WZRecommandTag.m in Sources */,

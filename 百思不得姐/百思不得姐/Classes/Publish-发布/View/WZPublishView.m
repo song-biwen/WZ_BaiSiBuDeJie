@@ -12,6 +12,7 @@
 #import "WZNavigationController.h" //导航
 #import "WZPublishWordController.h" //发段子
 #import "WZHomeTabBarController.h" //首页
+#import "WZWaterFlowController.h" //瀑布流
 
 
 #define WZTimeInterval 0.1
@@ -68,6 +69,12 @@ static UIWindow *window_;
             
             WZPublishWordController *publishWord = [[WZPublishWordController alloc] init];
             WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:publishWord];
+            [vc presentViewController:nav animated:YES completion:nil];
+        }else {
+            
+            //瀑布流
+            WZWaterFlowController *waterFlowVC = [[WZWaterFlowController alloc] init];
+            WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:waterFlowVC];
             [vc presentViewController:nav animated:YES completion:nil];
         }
     }];
