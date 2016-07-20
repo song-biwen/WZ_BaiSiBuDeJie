@@ -13,6 +13,7 @@
 #import "WZPublishWordController.h" //发段子
 #import "WZHomeTabBarController.h" //首页
 #import "WZWaterFlowController.h" //瀑布流
+#import "WZFlowLayoutController.h" //自定义布局
 
 
 #define WZTimeInterval 0.1
@@ -70,13 +71,20 @@ static UIWindow *window_;
             WZPublishWordController *publishWord = [[WZPublishWordController alloc] init];
             WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:publishWord];
             [vc presentViewController:nav animated:YES completion:nil];
-        }else {
+        }else if ([button_title isEqualToString:@"发视频"]) {
             
             //瀑布流
             WZWaterFlowController *waterFlowVC = [[WZWaterFlowController alloc] init];
             WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:waterFlowVC];
             [vc presentViewController:nav animated:YES completion:nil];
+        }else if ([button_title isEqualToString:@"发图片"]) {
+            
+            //自定义布局
+            WZFlowLayoutController *flowLayoutVC = [[WZFlowLayoutController alloc] init];
+            WZNavigationController *nav = [[WZNavigationController alloc] initWithRootViewController:flowLayoutVC];
+            [vc presentViewController:nav animated:YES completion:nil];
         }
+
     }];
 }
 
