@@ -30,6 +30,7 @@
 		4C280FCA1D3E06E400D8076C /* WZWaterFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C280FC81D3E06E400D8076C /* WZWaterFlowCell.m */; };
 		4C280FCB1D3E06E400D8076C /* WZWaterFlowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C280FC91D3E06E400D8076C /* WZWaterFlowCell.xib */; };
 		4C280FCE1D3E07D000D8076C /* WZShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C280FCD1D3E07D000D8076C /* WZShopModel.m */; };
+		4C2E29D51D4075DF0072BA47 /* WZCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E29D41D4075DF0072BA47 /* WZCircleLayout.m */; };
 		4C4B8ABC1D2BA0780052B032 /* WZTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */; };
 		4C564ABC1D333D80006EBF87 /* WZMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABB1D333D80006EBF87 /* WZMeCell.m */; };
 		4C564ABF1D334204006EBF87 /* WZMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C564ABE1D334204006EBF87 /* WZMeFooterView.m */; };
@@ -148,6 +149,8 @@
 		4C280FC91D3E06E400D8076C /* WZWaterFlowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZWaterFlowCell.xib; sourceTree = "<group>"; };
 		4C280FCC1D3E07D000D8076C /* WZShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZShopModel.h; sourceTree = "<group>"; };
 		4C280FCD1D3E07D000D8076C /* WZShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZShopModel.m; sourceTree = "<group>"; };
+		4C2E29D31D4075DF0072BA47 /* WZCircleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZCircleLayout.h; sourceTree = "<group>"; };
+		4C2E29D41D4075DF0072BA47 /* WZCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZCircleLayout.m; sourceTree = "<group>"; };
 		4C4B8ABA1D2BA0780052B032 /* WZTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTopWindow.h; sourceTree = "<group>"; };
 		4C4B8ABB1D2BA0780052B032 /* WZTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTopWindow.m; sourceTree = "<group>"; };
 		4C564ABA1D333D80006EBF87 /* WZMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZMeCell.h; sourceTree = "<group>"; };
@@ -746,6 +749,8 @@
 				4CD4BE751D3F4C11003248C9 /* WZFlowLayout.m */,
 				4CD4BE771D3F6C69003248C9 /* WZCollectionViewLayout.h */,
 				4CD4BE781D3F6C69003248C9 /* WZCollectionViewLayout.m */,
+				4C2E29D31D4075DF0072BA47 /* WZCircleLayout.h */,
+				4C2E29D41D4075DF0072BA47 /* WZCircleLayout.m */,
 				4CD4BE7F1D3F756C003248C9 /* WZCustomCell.h */,
 				4CD4BE801D3F756C003248C9 /* WZCustomCell.m */,
 				4CD4BE811D3F756C003248C9 /* WZCustomCell.xib */,
@@ -961,6 +966,7 @@
 				4C6399491D0676D800192953 /* WZRecommandType.m in Sources */,
 				4CE696321D361A2600369AC1 /* WZPublishWordController.m in Sources */,
 				4C91D0ED1D38C97D00362F9D /* WZTagButton.m in Sources */,
+				4C2E29D51D4075DF0072BA47 /* WZCircleLayout.m in Sources */,
 				4CE9362B1D2A51BE00FFE160 /* WZCommentCell.m in Sources */,
 				4C280FCE1D3E07D000D8076C /* WZShopModel.m in Sources */,
 				4C280FC11D3DC7C600D8076C /* WZWaterFlowController.m in Sources */,
