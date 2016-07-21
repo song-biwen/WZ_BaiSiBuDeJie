@@ -56,6 +56,7 @@ static NSString *const cellIdentifier = @"Cell";
     collectionView.dataSource = self;
     collectionView.delegate = self;
     [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([WZCustomCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([WZCustomCell class])];
+    collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     [self.view addSubview:collectionView];
 
     
@@ -97,7 +98,8 @@ static NSString *const cellIdentifier = @"Cell";
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self.namesArray removeObjectAtIndex:indexPath.item];
+    [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
 }
 
 - (NSMutableArray *)namesArray {

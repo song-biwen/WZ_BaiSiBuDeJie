@@ -23,6 +23,7 @@
         UICollectionViewLayoutAttributes *attrs = [self layoutAttributesForItemAtIndexPath:indexPath];
         [self.attrsArray addObject:attrs];
     }
+    
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
@@ -37,10 +38,15 @@
     CGFloat radius = 100;
     CGFloat oX = self.collectionView.width * 0.5;
     CGFloat oY = self.collectionView.height * 0.5;
-    CGFloat angle = 2 * M_PI / count;
-    CGFloat centerX = oX + radius * sin(angle * indexPath.item);
-    CGFloat centerY = oY + radius * cos(angle * indexPath.item);
-    attrs.center = CGPointMake(centerX, centerY);
+    if (count == 1) {
+        attrs.center = CGPointMake(oX, oY);
+    }else {
+        CGFloat angle = 2 * M_PI / count;
+        CGFloat centerX = oX + radius * sin(angle * indexPath.item);
+        CGFloat centerY = oY + radius * cos(angle * indexPath.item);
+        attrs.center = CGPointMake(centerX, centerY);
+    }
+   
     return attrs;
 }
 
