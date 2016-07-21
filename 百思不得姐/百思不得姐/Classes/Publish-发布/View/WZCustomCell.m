@@ -11,6 +11,9 @@
 @interface WZCustomCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *corver_imageView;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @end
 @implementation WZCustomCell
 
@@ -22,5 +25,7 @@
 - (void)setImageName:(NSString *)imageName {
     _imageName = [imageName copy];
     self.corver_imageView.image = [UIImage imageNamed:imageName];
+    self.label.text = imageName;
 }
+
 @end

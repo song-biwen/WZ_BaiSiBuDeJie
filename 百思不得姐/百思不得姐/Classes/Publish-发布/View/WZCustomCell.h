@@ -11,4 +11,5 @@
 @interface WZCustomCell : UICollectionViewCell
 
 @property (nonatomic, copy) NSString *imageName;
+
 @end
